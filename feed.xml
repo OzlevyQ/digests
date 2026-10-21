@@ -10,6 +10,267 @@
     <itunes:explicit>no</itunes:explicit>
     <itunes:category text="Technology"/>
     <item>
+      <title>דייג&#x27;סט ערב 18.10 - חדשות AI</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-18-evening-ai</guid>
+      <pubDate>Sun, 18 Oct 2026 18:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-18-evening-ai.ogg" length="529128" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>ערב טוב, שני סיפורים היום מראים איך בינה מלאכותית מפסיקה להיות רק צ&#x27;אט יפה ומתחילה להתערב בעולם האמיתי: ברפואה מצד אחד, וברובוטיקה מצד שני.</p><p>מקורות:<br/><a href="https://www.nature.com/articles/s41591-026-04626-w">https://www.nature.com/articles/s41591-026-04626-w</a><br/><a href="https://developers.google.com/health-ai-developer-foundations/medgemma">https://developers.google.com/health-ai-developer-foundations/medgemma</a><br/><a href="https://huggingface.co/google/medgemma-4b-it">https://huggingface.co/google/medgemma-4b-it</a><br/><a href="https://arxiv.org/html/2507.05201v4">https://arxiv.org/html/2507.05201v4</a><br/><a href="https://github.com/Google-Health/medgemma">https://github.com/Google-Health/medgemma</a><br/><a href="https://research.nvidia.com/labs/gear/aspire/">https://research.nvidia.com/labs/gear/aspire/</a><br/><a href="https://github.com/NVlabs/ASPIRE">https://github.com/NVlabs/ASPIRE</a><br/><a href="https://arxiv.org/html/2607.00272">https://arxiv.org/html/2607.00272</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט ערב 17.10 - חדשות AI</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-17-evening-ai</guid>
+      <pubDate>Sat, 17 Oct 2026 18:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-17-evening-ai.ogg" length="447500" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>ערב טוב, עוז. שתי ידיעות מהיממה האחרונה מראות את שני הצדדים של הבינה: צד אחד הופך סוכנים לזולים ומהירים יותר, והצד השני נותן לרובוטים עור שבאמת מרגיש.</p><p>מקורות:<br/><a href="https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017">https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017</a><br/><a href="https://api-docs.deepseek.com/updates">https://api-docs.deepseek.com/updates</a><br/><a href="https://vercel.com/changelog/deepseek-v4-1-flash-1017-now-available-on-ai-gateway">https://vercel.com/changelog/deepseek-v4-1-flash-1017-now-available-on-ai-gateway</a><br/><a href="https://www.nature.com/articles/s42256-026-01325-6">https://www.nature.com/articles/s42256-026-01325-6</a><br/><a href="https://github.com/jioy/NI-skins">https://github.com/jioy/NI-skins</a><br/><a href="https://the-decoder.com/deepseek-v4-1-flash-1017-beats-larger-rivals-in-agentic-tasks-while-once-again-massively-cutting-per-task-costs/">https://the-decoder.com/deepseek-v4-1-flash-1017-beats-larger-rivals-in-agentic-tasks-while-once-again-massively-cutting-per-task-costs/</a><br/><a href="https://www.marktechpost.com/2026/10/17/deepseek-just-released-v4-1-flash-1017-scores-77-0-on-deepswe-opens-search-api/">https://www.marktechpost.com/2026/10/17/deepseek-just-released-v4-1-flash-1017-scores-77-0-on-deepswe-opens-search-api/</a><br/><a href="https://bioengineer.org/artificial-skin-with-brain-like-wiring-gives-humanoid-robots-a-human-sense-of-touch/">https://bioengineer.org/artificial-skin-with-brain-like-wiring-gives-humanoid-robots-a-human-sense-of-touch/</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט ערב 17.10 - פצצות מגיטהאב</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-17-evening-gh</guid>
+      <pubDate>Sat, 17 Oct 2026 18:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-17-evening-gh.ogg" length="516679" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>ועכשיו ארבעה ריפוז חדשים מ־17 באוקטובר, וכל אחד מהם עושה משהו שהיית מצפה למצוא במחלקת מו&quot;פ, לא בריפו שנולד היום. Tangentry הוא קורא תוכן לוקאלי למי שחי בין עשרה פידים.</p><p>מקורות:<br/><a href="https://github.com/mu-zi-lee/Tangentry">https://github.com/mu-zi-lee/Tangentry</a><br/><a href="https://github.com/lubaxe/glovebox">https://github.com/lubaxe/glovebox</a><br/><a href="https://github.com/sandlbn/SidTracker">https://github.com/sandlbn/SidTracker</a><br/><a href="https://github.com/123llyrr/clarion">https://github.com/123llyrr/clarion</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט בוקר 17.10 - חדשות AI</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-17-morning-ai</guid>
+      <pubDate>Sat, 17 Oct 2026 06:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-17-morning-ai.ogg" length="461603" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>בוקר טוב, עוז. תאר לעצמך שהמודל שלך מפסיק רק לכתוב תשובות, ומתחיל לעצב מעגלים קוונטיים ולהפעיל מעבדה אמיתית. זה בדיוק הכיוון של שני הפרסומים מאתמול.</p><p>מקורות:<br/><a href="https://www.anthropic.com/research/designing-efficient-quantum-circuits">https://www.anthropic.com/research/designing-efficient-quantum-circuits</a><br/><a href="https://arxiv.org/html/2610.22367">https://arxiv.org/html/2610.22367</a><br/><a href="https://singularityradar.com/items/llms-and-evaluators-co-design-smaller-quantum-circuits">https://singularityradar.com/items/llms-and-evaluators-co-design-smaller-quantum-circuits</a><br/><a href="https://explainx.ai/blog/claude-quantum-circuits-anthropic-research-fewer-qubits-gates-53-hour-run-2026">https://explainx.ai/blog/claude-quantum-circuits-anthropic-research-fewer-qubits-gates-53-hour-run-2026</a><br/><a href="https://research.google/blog/grounding-ai-agents-in-biological-reality-building-blocks-for-autonomous-wet-labs/">https://research.google/blog/grounding-ai-agents-in-biological-reality-building-blocks-for-autonomous-wet-labs/</a><br/><a href="https://interestingengineering.com/ai-robotics/google-protein-design-cancer-binders">https://interestingengineering.com/ai-robotics/google-protein-design-cancer-binders</a><br/><a href="https://explainx.ai/blog/google-research-verid-digital-twin-autonomous-wet-lab-agents-aptamers-fap-binders-2026">https://explainx.ai/blog/google-research-verid-digital-twin-autonomous-wet-lab-agents-aptamers-fap-binders-2026</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט בוקר 17.10 - פצצות מגיטהאב</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-17-morning-gh</guid>
+      <pubDate>Sat, 17 Oct 2026 06:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-17-morning-gh.ogg" length="427392" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>ועכשיו ארבעה ריפוז חדשים מ־16 באוקטובר, מהסוג שמרגיש כמו ארגז כלים של עולם מקביל. פתחנו עם OpenMOSS/MOSS-Image.</p><p>מקורות:<br/><a href="https://github.com/OpenMOSS/MOSS-Image">https://github.com/OpenMOSS/MOSS-Image</a><br/><a href="https://huggingface.co/OpenMOSS-Team/MOSS-Image-Base">https://huggingface.co/OpenMOSS-Team/MOSS-Image-Base</a><br/><a href="https://huggingface.co/OpenMOSS-Team/MOSS-Image-SFT">https://huggingface.co/OpenMOSS-Team/MOSS-Image-SFT</a><br/><a href="https://github.com/Noniv/web-ocean">https://github.com/Noniv/web-ocean</a><br/><a href="https://github.com/sailingexodus/exodus-radar">https://github.com/sailingexodus/exodus-radar</a><br/><a href="https://github.com/remnient/romulus">https://github.com/remnient/romulus</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט ערב 16.10 - חדשות AI</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-16-evening-ai</guid>
+      <pubDate>Fri, 16 Oct 2026 18:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-16-evening-ai.ogg" length="527873" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>עוז, הערב מתחילים לא בצ&#x27;אט, אלא בהתנגשויות פרוטונים. סרן ומיסטרל הודיעו אתמול על הצהרת כוונות לשותפות ארוכת טווח, ובמרכזה מודל בסיס לפיזיקת חלקיקים.</p><p>מקורות:<br/><a href="https://home.cern/cern-and-mistral-join-forces-to-accelerate-ai-for-science/">https://home.cern/cern-and-mistral-join-forces-to-accelerate-ai-for-science/</a><br/><a href="https://www.channelnewsasia.com/business/cern-and-mistral-partner-build-flare-new-ai-model-physics-6462341">https://www.channelnewsasia.com/business/cern-and-mistral-partner-build-flare-new-ai-model-physics-6462341</a><br/><a href="https://blogs.nvidia.com/blog/nemotron-3-5-super-vl/">https://blogs.nvidia.com/blog/nemotron-3-5-super-vl/</a><br/><a href="https://developer.nvidia.com/blog/nvidia-nemotron-3-5-super-vl-powers-specialized-agents-with-multimodal-reasoning/">https://developer.nvidia.com/blog/nvidia-nemotron-3-5-super-vl-powers-specialized-agents-with-multimodal-reasoning/</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט ערב 16.10 - פצצות מגיטהאב</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-16-evening-gh</guid>
+      <pubDate>Fri, 16 Oct 2026 18:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-16-evening-gh.ogg" length="515644" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>ארבעה ריפוז מהיום: מגנט אייז הופך שינויים בשדה המגנטי של האייפון לתנועת עיניים. תשעה-עשר כוכבים. בקוד רואים סינון של המדידה, חיסור קו בסיס ומיפוי של שני רכיבי שדה למבט.</p><p>מקורות:<br/><a href="https://github.com/betomoedano/magnet-eyes">https://github.com/betomoedano/magnet-eyes</a><br/><a href="https://github.com/CluvexStudio/Strata">https://github.com/CluvexStudio/Strata</a><br/><a href="https://github.com/JD-P/verified-tiff">https://github.com/JD-P/verified-tiff</a><br/><a href="https://github.com/windquill/FreeMouse">https://github.com/windquill/FreeMouse</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט בוקר 16.10 - חדשות AI</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-16-morning-ai</guid>
+      <pubDate>Fri, 16 Oct 2026 06:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-16-morning-ai.ogg" length="519961" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>בוקר טוב עוז. מטא שחררה אתמול משקולות של מיוז ספארק אופן, והמספרים גדולים גם ביחס לשוק שכבר התרגל למספרים גדולים: שמונה מאות ושישה-עשר מיליארד פרמטרים, ארבעים ושניים…</p><p>מקורות:<br/><a href="https://research.meta.ai/blog/muse-spark-open">https://research.meta.ai/blog/muse-spark-open</a><br/><a href="https://huggingface.co/blog/meta-muse-spark-open">https://huggingface.co/blog/meta-muse-spark-open</a><br/><a href="https://mistral.ai/news/timestral">https://mistral.ai/news/timestral</a><br/><a href="https://github.com/mistralai/timestral">https://github.com/mistralai/timestral</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט בוקר 16.10 - פצצות מגיטהאב</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-16-morning-gh</guid>
+      <pubDate>Fri, 16 Oct 2026 06:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-16-morning-gh.ogg" length="488962" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>ארבעה ריפוז טריים מאתמול, עם מנגנונים שאפשר למצוא בקוד. ראשון, אירשוט, נותן לכלי קוד דרך לבדוק את הסאונד שהם מייצרים. חמישים וחמישה כוכבים, אם-איי-טי.</p><p>מקורות:<br/><a href="https://github.com/Leonxlnx/earshot">https://github.com/Leonxlnx/earshot</a><br/><a href="https://github.com/YildizDikme/Focus">https://github.com/YildizDikme/Focus</a><br/><a href="https://github.com/leekt/skim">https://github.com/leekt/skim</a><br/><a href="https://github.com/Administracion-Abierta/AutoFirme">https://github.com/Administracion-Abierta/AutoFirme</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט ערב 15.10 - חדשות AI</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-15-evening-ai</guid>
+      <pubDate>Thu, 15 Oct 2026 18:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-15-evening-ai.ogg" length="515923" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>עוז, הערב יש שני סיפורים על להכניס יותר בינה למקומות שבהם היא עדיין מגמגמת: שפה מקומית וחומרה מקומית. נתחיל בג&#x27;ייס שלוש, שהוכרז היום באבו דאבי.</p><p>מקורות:<br/><a href="https://ifm.ai/jais3/press-release/">https://ifm.ai/jais3/press-release/</a><br/><a href="https://ifm.ai/jais">https://ifm.ai/jais</a><br/><a href="https://www.prnewswire.com/news-releases/modelbest-and-openbmb-launch-minicpm-v-4-7--bringing-a-35b-multimodal-moe-model-to-phones-and-tablets-with-about-3-gb-of-memory-302909881.html">https://www.prnewswire.com/news-releases/modelbest-and-openbmb-launch-minicpm-v-4-7--bringing-a-35b-multimodal-moe-model-to-phones-and-tablets-with-about-3-gb-of-memory-302909881.html</a><br/><a href="https://huggingface.co/openbmb/MiniCPM-V-4.7-35B-A3B">https://huggingface.co/openbmb/MiniCPM-V-4.7-35B-A3B</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט ערב 15.10 - פצצות מגיטהאב</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-15-evening-gh</guid>
+      <pubDate>Thu, 15 Oct 2026 18:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-15-evening-gh.ogg" length="547399" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>ארבעה ריפוז נולדו היום, וכל אחד לוקח רעיון מוכר ומסובב אותו. הראשון, האנדוויירד: לוגיקה של ג&#x27;אווה-סקריפט שהופכת למעגל חישוב דמוי רשת עצבית.</p><p>מקורות:<br/><a href="https://github.com/chenglou/handwired">https://github.com/chenglou/handwired</a><br/><a href="https://github.com/feder-cr/open_scion">https://github.com/feder-cr/open_scion</a><br/><a href="https://github.com/Binaryify/MonitorBar">https://github.com/Binaryify/MonitorBar</a><br/><a href="https://github.com/antirez/c64-hw-simulator">https://github.com/antirez/c64-hw-simulator</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט בוקר 15.10 - חדשות AI</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-15-morning-ai</guid>
+      <pubDate>Thu, 15 Oct 2026 06:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-15-morning-ai.ogg" length="501269" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>בוקר טוב עוז. גרוק וויס שלוש הוכרז אתמול, והחידוש הוא שיחה מקול לקול, עם פחות המתנה ויותר יכולת להתמודד עם הפרעות.</p><p>מקורות:<br/><a href="https://x.ai/news/grok-voice-3">https://x.ai/news/grok-voice-3</a><br/><a href="https://artificialanalysis.ai/speech-to-speech">https://artificialanalysis.ai/speech-to-speech</a><br/><a href="https://www.paperinstruments.com/blog/ultramarine">https://www.paperinstruments.com/blog/ultramarine</a><br/><a href="https://www.paperinstruments.com/ultramarine">https://www.paperinstruments.com/ultramarine</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט בוקר 15.10 - פצצות מגיטהאב</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-15-morning-gh</guid>
+      <pubDate>Thu, 15 Oct 2026 06:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-15-morning-gh.ogg" length="536095" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>ארבעה ריפוז טריים מאתמול. הראשון, לין-סיל, מביא הוכחות פורמליות לעולם דוט-נט.</p><p>מקורות:<br/><a href="https://github.com/NethermindEth/LeanCIL">https://github.com/NethermindEth/LeanCIL</a><br/><a href="https://github.com/MarketKernel/html-disasm">https://github.com/MarketKernel/html-disasm</a><br/><a href="https://github.com/FirmwareVersion/choravox">https://github.com/FirmwareVersion/choravox</a><br/><a href="https://github.com/Graphicle-AI/graphicle">https://github.com/Graphicle-AI/graphicle</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט ערב 14.10 - חדשות AI</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-14-evening-ai</guid>
+      <pubDate>Wed, 14 Oct 2026 18:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-14-evening-ai.ogg" length="494459" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>עוז, הערב מתחיל במודל קטן שלא רוצה לדבר איתך. אולטרה-ברט של מעבדת דימיס, שפורסם היום, הוא משפחה של מקודדי טקסט באנגלית: מאה וחמישים מיליון ושלוש מאות ושמונים מיליון…</p><p>מקורות:<br/><a href="https://huggingface.co/blog/dmis-lab/ultrabert">https://huggingface.co/blog/dmis-lab/ultrabert</a><br/><a href="https://huggingface.co/dmis-lab/UltraBERT-Embed-150M">https://huggingface.co/dmis-lab/UltraBERT-Embed-150M</a><br/><a href="https://via.tt.se/pressmeddelande/4595428/neura-robotics-introduces-neuron-ai-the-brain-of-the-physical-world?lang=en&amp;publisherId=259167">https://via.tt.se/pressmeddelande/4595428/neura-robotics-introduces-neuron-ai-the-brain-of-the-physical-world?lang=en&amp;publisherId=259167</a><br/><a href="https://tsnmedia.org/dmis-lab-ultrabert-open-32k-encoders-masking-explainer/">https://tsnmedia.org/dmis-lab-ultrabert-open-32k-encoders-masking-explainer/</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט ערב 14.10 - פצצות מגיטהאב</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-14-evening-gh</guid>
+      <pubDate>Wed, 14 Oct 2026 18:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-14-evening-gh.ogg" length="512491" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>ארבעה ריפוז שנוצרו היום. הראשון, מיני קיי-וי, הוא שיעור קטן בבניית שרת נתונים: סי אחת-עשרה, לינוקס, לולאת אירועים עם אי-פול ופרוטוקול שמדבר עם לקוחות רדיס בחלק מהפקודות.</p><p>מקורות:<br/><a href="https://github.com/Dexel-Software-Solutions/MiniKV">https://github.com/Dexel-Software-Solutions/MiniKV</a><br/><a href="https://github.com/fzn0x/getman">https://github.com/fzn0x/getman</a><br/><a href="https://github.com/cobanov/freeband">https://github.com/cobanov/freeband</a><br/><a href="https://github.com/caveman-ai/trim-1">https://github.com/caveman-ai/trim-1</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט בוקר 14.10 - חדשות AI</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-14-morning-ai</guid>
+      <pubDate>Wed, 14 Oct 2026 06:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-14-morning-ai.ogg" length="501627" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>בוקר טוב עוז. ארגון של גוגל כבר אינו רק הכרזה מסוף ספטמבר: אתמול גוגל פתחה את ג&#x27;מיני ארבע ארגון לזמינות גלובלית, עם הבדלים בין המוצרים והמנויים.</p><p>מקורות:<br/><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/">https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/</a><br/><a href="https://www.liquid.ai/blog/lfm2-5-24b-a2b">https://www.liquid.ai/blog/lfm2-5-24b-a2b</a><br/><a href="https://huggingface.co/LiquidAI/LFM2.5-24B-A2B">https://huggingface.co/LiquidAI/LFM2.5-24B-A2B</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט בוקר 14.10 - פצצות מגיטהאב</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-14-morning-gh</guid>
+      <pubDate>Wed, 14 Oct 2026 06:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-14-morning-gh.ogg" length="521535" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>ארבעה ריפוז טריים מאתמול, והשניים הראשונים מטפלים בבעיה שנראית פשוטה עד שהיא שוברת חיפוש.</p><p>מקורות:<br/><a href="https://github.com/datalab-to/indra">https://github.com/datalab-to/indra</a><br/><a href="https://github.com/cdcailf/cjkfold">https://github.com/cdcailf/cjkfold</a><br/><a href="https://github.com/gabrielgreco1/LGwebOS-menubar">https://github.com/gabrielgreco1/LGwebOS-menubar</a><br/><a href="https://github.com/MrLouisWright/csp-forge">https://github.com/MrLouisWright/csp-forge</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט ערב 13.10 - חדשות AI</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-13-evening-ai</guid>
+      <pubDate>Tue, 13 Oct 2026 18:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-13-evening-ai.ogg" length="511136" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>עוז, הערב יש חידוש אחד שאפשר לשמוע, ואחד שמסתתר בתוך הזיכרון של הכרטיס. פיש אודיו השיקה היום את דרמה שלוש.</p><p>מקורות:<br/><a href="https://www.prnewswire.com/news-releases/fish-audio-launches-drama-3-direct-ai-voices-in-plain-language-control-every-word-and-shift-emotion-mid-sentence-302906620.html">https://www.prnewswire.com/news-releases/fish-audio-launches-drama-3-direct-ai-voices-in-plain-language-control-every-word-and-shift-emotion-mid-sentence-302906620.html</a><br/><a href="https://developer.nvidia.com/blog/replayssm-rethinking-state-storage-for-faster-hybrid-model-decoding/">https://developer.nvidia.com/blog/replayssm-rethinking-state-storage-for-faster-hybrid-model-decoding/</a><br/><a href="https://arxiv.org/html/2610.13778">https://arxiv.org/html/2610.13778</a><br/><a href="https://blockchain.news/news/nvidia-princeton-replayssm-hybrid-model-inference">https://blockchain.news/news/nvidia-princeton-replayssm-hybrid-model-inference</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט ערב 13.10 - פצצות מגיטהאב</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-13-evening-gh</guid>
+      <pubDate>Tue, 13 Oct 2026 18:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-13-evening-gh.ogg" length="501500" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>ארבעה ריפוז שנוצרו היום. הראשון מתחיל באיקאה, לא בענן: איקאה קלוק לאב משתלט על לוח לד של קורטליניה עם בקר אס-פי שלושים ושתיים סי שש.</p><p>מקורות:<br/><a href="https://github.com/kobebeefg/ikea-clock-lab">https://github.com/kobebeefg/ikea-clock-lab</a><br/><a href="https://github.com/L110011101c/mcu-timer-calc">https://github.com/L110011101c/mcu-timer-calc</a><br/><a href="https://github.com/mylacc/yoto-audiobookshelf-bridge">https://github.com/mylacc/yoto-audiobookshelf-bridge</a><br/><a href="https://github.com/Bentheminernz/reef">https://github.com/Bentheminernz/reef</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט בוקר 13.10 - חדשות AI</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-13-morning-ai</guid>
+      <pubDate>Tue, 13 Oct 2026 06:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-13-morning-ai.ogg" length="543104" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>בוקר טוב עוז. מטא חזרה לשולחן עם מיוז וונדר ומיוז וונדר פול, שהוכרזו אתמול. המסר שלה הפעם אינו רק תשובה חכמה יותר, אלא סוכן שזוכר הקשר וממשיך לעבוד כשמשימה מסתבכת.</p><p>מקורות:<br/><a href="https://research.meta.ai/blog/muse-wonder">https://research.meta.ai/blog/muse-wonder</a><br/><a href="https://sakana.ai/mass/">https://sakana.ai/mass/</a><br/><a href="https://pub.sakana.ai/mass/?href=">https://pub.sakana.ai/mass/?href=</a><br/><a href="https://traictory.com/news/2026-10-13-sakana-mass-recursive-self-improvement">https://traictory.com/news/2026-10-13-sakana-mass-recursive-self-improvement</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט בוקר 13.10 - פצצות מגיטהאב</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-13-morning-gh</guid>
+      <pubDate>Tue, 13 Oct 2026 06:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-13-morning-gh.ogg" length="497979" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>ארבעה ריפוז טריים מאתמול, והפעם מתחילים בחפץ אמיתי: מי סקייל דשבורד, למשקל הרכב הגוף השני של שיאומי.</p><p>מקורות:<br/><a href="https://github.com/BrOrlandi/miscale-dashboard">https://github.com/BrOrlandi/miscale-dashboard</a><br/><a href="https://github.com/ironicsans/livelight.koplugin">https://github.com/ironicsans/livelight.koplugin</a><br/><a href="https://github.com/abradburne/mado">https://github.com/abradburne/mado</a><br/><a href="https://github.com/heiheids/schematic-manager">https://github.com/heiheids/schematic-manager</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט ערב 12.10 - חדשות AI</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-12-evening-ai</guid>
+      <pubDate>Mon, 12 Oct 2026 18:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-12-evening-ai.ogg" length="513755" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>עוז, הערב מתחיל ברגע שבו עולם שנוצר מבינה מלאכותית מפסיק להיות שקט.</p><p>מקורות:<br/><a href="https://noiz.ai/lp/blog/meet-helix-world">https://noiz.ai/lp/blog/meet-helix-world</a><br/><a href="https://arxiv.org/html/2609.38123">https://arxiv.org/html/2609.38123</a><br/><a href="https://newsroom.amd.com/news/open-rack-blueprint-scale-agentic-ai/">https://newsroom.amd.com/news/open-rack-blueprint-scale-agentic-ai/</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט ערב 12.10 - פצצות מגיטהאב</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-12-evening-gh</guid>
+      <pubDate>Mon, 12 Oct 2026 18:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-12-evening-gh.ogg" length="482707" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>הערב ארבעה ריפוז שנוצרו היום. הראשון, סוליד גלאס, הוא ערכת עיצוב לשאד-סי-אן יו-איי: במקום לשנות כל קומפוננטה, גיליון סי-אס-אס מזהה אותה דרך הסלוטים והמחלקות שכבר קיימים.</p><p>מקורות:<br/><a href="https://github.com/deeplethe/solid-glass">https://github.com/deeplethe/solid-glass</a><br/><a href="https://github.com/LumiaGG/GestureEVO">https://github.com/LumiaGG/GestureEVO</a><br/><a href="https://github.com/lewispour/pulse-proxy-checker">https://github.com/lewispour/pulse-proxy-checker</a><br/><a href="https://github.com/egoist/uma">https://github.com/egoist/uma</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט בוקר 12.10 - חדשות AI</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-12-morning-ai</guid>
+      <pubDate>Mon, 12 Oct 2026 06:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-12-morning-ai.ogg" length="458385" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>בוקר טוב עוז. היום שני מחקרים שמנסים להפוך סוכן ממשהו שמדבר יפה למשהו שאפשר לבדוק. הראשון, וואן-סרץ&#x27; וי-אל, מחבר מחקר על תמונות ועל וידאו.</p><p>מקורות:<br/><a href="https://arxiv.org/html/2610.12419">https://arxiv.org/html/2610.12419</a><br/><a href="https://arxiv.org/html/2610.12424">https://arxiv.org/html/2610.12424</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט בוקר 12.10 - פצצות מגיטהאב</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-12-morning-gh</guid>
+      <pubDate>Mon, 12 Oct 2026 06:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-12-morning-gh.ogg" length="470165" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>ארבעה ריפוז טריים מאתמול, והראשון קטן בצורה חשודה כמעט: אם-דוקר, עטיפת סוויפט לפקודת קונטיינר של אפל. היא לא מנוע דוקר חדש.</p><p>מקורות:<br/><a href="https://github.com/ddalcu/mdocker">https://github.com/ddalcu/mdocker</a><br/><a href="https://github.com/rupeshs/filedig">https://github.com/rupeshs/filedig</a><br/><a href="https://github.com/Slymaster/masame">https://github.com/Slymaster/masame</a><br/><a href="https://github.com/datosh/nixos-vex">https://github.com/datosh/nixos-vex</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט ערב 11.10 - חדשות AI</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-11-evening-ai</guid>
+      <pubDate>Sun, 11 Oct 2026 18:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-11-evening-ai.ogg" length="492415" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>עוז, הערב מתחילים במשהו שאפשר כמעט להיכנס לתוכו. אודיסי שלוש קיבל השבוע תצוגת מחקר ציבורית: כותבים תיאור של סביבה, ואז נעים בתוך עולם שהמודל ממשיך לייצר בזמן אמת.</p><p>מקורות:<br/><a href="https://odyssey.systems/meet-odyssey-3">https://odyssey.systems/meet-odyssey-3</a><br/><a href="https://the-decoder.com/odyssey-3-is-a-new-generative-world-model-that-you-can-try-for-free/">https://the-decoder.com/odyssey-3-is-a-new-generative-world-model-that-you-can-try-for-free/</a><br/><a href="https://huggingface.co/laion/Humaneness-Voice-Converter">https://huggingface.co/laion/Humaneness-Voice-Converter</a><br/><a href="https://artrealmai.com/article/laion-humaneness-voice-converter-open-chatterbox-vc">https://artrealmai.com/article/laion-humaneness-voice-converter-open-chatterbox-vc</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט ערב 11.10 - פצצות מגיטהאב</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-11-evening-gh</guid>
+      <pubDate>Sun, 11 Oct 2026 18:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-11-evening-gh.ogg" length="455266" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>ארבעה ריפוז שנוצרו היום, והראשון נראה כאילו נפל מחללית. אקסלרנדו שמונה-אחד-תשע-שתיים: אלפבית של שמונת אלפים מאה תשעים ושניים גליפים, שכל אחד מהם מתאים למזהה בטוקנייזר.</p><p>מקורות:<br/><a href="https://github.com/gillverd/accelerando-8192">https://github.com/gillverd/accelerando-8192</a><br/><a href="https://github.com/Sridhar1030/SnapFade">https://github.com/Sridhar1030/SnapFade</a><br/><a href="https://github.com/19h/zrax-isa-workbench">https://github.com/19h/zrax-isa-workbench</a><br/><a href="https://github.com/seuros/padded_cell">https://github.com/seuros/padded_cell</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט בוקר 11.10 - חדשות AI</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-11-morning-ai</guid>
+      <pubDate>Sun, 11 Oct 2026 06:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-11-morning-ai.ogg" length="472135" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>בוקר טוב עוז. הפעם שני מחקרים על מה שקורה אחרי שמודל כבר אומן: איך הוא לומד משהו חדש, ואיך יודעים שהוא לא בטוח. מתחילים בממנטו שלוש, מחקר שפורסם השבוע.</p><p>מקורות:<br/><a href="https://arxiv.org/html/2610.11794">https://arxiv.org/html/2610.11794</a><br/><a href="https://aicoder.com/news/news-20261010-memento3-model-based-recursive-self-improvement-rulebooks">https://aicoder.com/news/news-20261010-memento3-model-based-recursive-self-improvement-rulebooks</a><br/><a href="https://arxiv.org/html/2610.09087">https://arxiv.org/html/2610.09087</a><br/><a href="https://s2lab.org/U-Space/">https://s2lab.org/U-Space/</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט בוקר 11.10 - פצצות מגיטהאב</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-11-morning-gh</guid>
+      <pubDate>Sun, 11 Oct 2026 06:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-11-morning-gh.ogg" length="482001" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>ארבעה ריפוז טריים מאתמול, בלי עוד מסגרת סוכנים גנרית. הראשון, מוטריקס מיי-גו: לוקחים את מנהל ההורדות מוטריקס ומחליפים את ממשק האלקטרון בממשק גו נטיבי, בלי ווב-ויו.</p><p>מקורות:<br/><a href="https://github.com/missuo/motrix-mygo">https://github.com/missuo/motrix-mygo</a><br/><a href="https://github.com/riticulus/ha-thread-pulse">https://github.com/riticulus/ha-thread-pulse</a><br/><a href="https://github.com/kasp0r/wideband-sdr">https://github.com/kasp0r/wideband-sdr</a><br/><a href="https://github.com/sachasayan/skylit">https://github.com/sachasayan/skylit</a><br/></p>]]></description>
+    </item>
+    <item>
       <title>דייג&#x27;סט ערב 10.10 - חדשות AI</title>
       <link>https://ozlevyq.github.io/digests/</link>
       <guid isPermaLink="false">digest-2026-10-10-evening-ai</guid>
@@ -35,6 +296,15 @@
       <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-10-morning-ai.ogg" length="450165" type="audio/ogg"/>
       <itunes:author>Oz Levy</itunes:author>
       <description><![CDATA[<p>בוקר טוב עוז. תקשיב לטוויסט של מיקרוסופט: מודל חדש שלא בא לכתוב לך מאמר, אלא לבחור.</p><p>מקורות:<br/><a href="https://commandline.microsoft.com/microsoft-decision-1-model-foundry/">https://commandline.microsoft.com/microsoft-decision-1-model-foundry/</a><br/><a href="https://ai.azure.com/catalog/models/Microsoft-Decision-1">https://ai.azure.com/catalog/models/Microsoft-Decision-1</a><br/><a href="https://www.theverge.com/ai-artificial-intelligence/1009190/microsoft-ai-decision-model">https://www.theverge.com/ai-artificial-intelligence/1009190/microsoft-ai-decision-model</a><br/><a href="https://huggingface.co/blog/HuggingFaceBio/carbon-annotator-genbank-genome-annotation">https://huggingface.co/blog/HuggingFaceBio/carbon-annotator-genbank-genome-annotation</a><br/><a href="https://huggingface.co/HuggingFaceBio/Carbon-A-1.2B">https://huggingface.co/HuggingFaceBio/Carbon-A-1.2B</a><br/><a href="https://aitamer.news/posts/huggingface-carbon-a-gene-annotation/">https://aitamer.news/posts/huggingface-carbon-a-gene-annotation/</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט בוקר 10.10 - פצצות מגיטהאב</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-10-morning-gh</guid>
+      <pubDate>Sat, 10 Oct 2026 06:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-10-morning-gh.ogg" length="477210" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>הבוקר ארבעה ריפוז שנולדו אתמול, וכל אחד מגיע מכיוון אחר לגמרי. הראשון: אף-אף טראקינג. שש שניות של קולנוע שנוצר כולו מקוד.</p><p>מקורות:<br/><a href="https://github.com/mrsarac/ff-tracking">https://github.com/mrsarac/ff-tracking</a><br/><a href="https://github.com/a-funk/open-appleremote">https://github.com/a-funk/open-appleremote</a><br/><a href="https://github.com/fayazara/robot-heads">https://github.com/fayazara/robot-heads</a><br/><a href="https://github.com/WonderLantern/z7-qemu">https://github.com/WonderLantern/z7-qemu</a><br/></p>]]></description>
     </item>
     <item>
       <title>דייג&#x27;סט ערב 9.10 - חדשות AI</title>
