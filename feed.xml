@@ -10,6 +10,24 @@
     <itunes:explicit>no</itunes:explicit>
     <itunes:category text="Technology"/>
     <item>
+      <title>דייג&#x27;סט ערב 21.10 - חדשות AI</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-21-evening-ai</guid>
+      <pubDate>Wed, 21 Oct 2026 18:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-21-evening-ai.ogg" length="924895" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>ערב טוב עוז. תאר לך כמעט אלפיים סוכני בינה מלאכותית נכנסים יחד למעבדה, קוראים נתונים משמונה מיליון תאי מוח, ויוצאים אחרי שלושים ושתיים דקות עם מפה של רמזים שאפשר לבדוק.</p><p>מקורות:<br/><a href="https://openai.com/index/scaling-ai-research-for-complex-biological-data/">https://openai.com/index/scaling-ai-research-for-complex-biological-data/</a><br/><a href="https://www.prnewswire.com/news-releases/perturbai-and-openai-unveil-first-of-its-kind-ai-reasoning-agents-to-scale-biomedical-discovery-302914929.html">https://www.prnewswire.com/news-releases/perturbai-and-openai-unveil-first-of-its-kind-ai-reasoning-agents-to-scale-biomedical-discovery-302914929.html</a><br/><a href="https://mistral.ai/news/voxtral-3/">https://mistral.ai/news/voxtral-3/</a><br/><a href="https://docs.mistral.ai/studio/audio/voice-agents/overview">https://docs.mistral.ai/studio/audio/voice-agents/overview</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט ערב 21.10 - פצצות מגיטהאב</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-21-evening-gh</guid>
+      <pubDate>Wed, 21 Oct 2026 18:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-21-evening-gh.ogg" length="974242" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>ועכשיו גיטהאב, ויש הערב חמישה פרויקטים חדשים שמרגישים כמו חמישה סרטוני פתיחה שונים. מתחילים ב-EvaOmni, תשעה עשר כוכבים, MIT.</p><p>מקורות:<br/><a href="https://github.com/VisionXLab/EvaOmni">https://github.com/VisionXLab/EvaOmni</a><br/><a href="https://github.com/a616567126/WanderRadio">https://github.com/a616567126/WanderRadio</a><br/><a href="https://github.com/RanggaCasper/ShaolinMonks-Android">https://github.com/RanggaCasper/ShaolinMonks-Android</a><br/><a href="https://github.com/Manan-Santoki/OpenShelf">https://github.com/Manan-Santoki/OpenShelf</a><br/><a href="https://github.com/appshubcc/go-iperf3">https://github.com/appshubcc/go-iperf3</a><br/></p>]]></description>
+    </item>
+    <item>
       <title>דייג&#x27;סט בוקר 21.10 - חדשות AI</title>
       <link>https://ozlevyq.github.io/digests/</link>
       <guid isPermaLink="false">digest-2026-10-21-morning-ai</guid>
