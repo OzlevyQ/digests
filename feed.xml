@@ -9,6 +9,50 @@
     <itunes:author>Oz Levy</itunes:author>
     <itunes:explicit>no</itunes:explicit>
     <itunes:category text="Technology"/>
-
+    <item>
+      <title>דייג&#x27;סט ערב 10.10 - חדשות AI</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-10-evening-ai</guid>
+      <pubDate>Sat, 10 Oct 2026 18:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-10-evening-ai.ogg" length="472636" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>עוז, הערב מתחילים בתמונה שנולדת מהר יותר. קוון פרסמו אתמול את אימג&#x27; שתיים נקודה אחת טורבו: אותו מנוע חזותי בן שבעה מיליארד פרמטרים, אבל יצירה ועריכה בשמונה צעדי הסרת רעש…</p><p>מקורות:<br/><a href="https://huggingface.co/Qwen/Qwen-Image-2.1-Turbo">https://huggingface.co/Qwen/Qwen-Image-2.1-Turbo</a><br/><a href="https://github.com/QwenLM/Qwen-Image-2.1">https://github.com/QwenLM/Qwen-Image-2.1</a><br/><a href="https://huggingface.co/Qwen/Qwen-Image-2.1-Turbo/raw/main/LICENSE">https://huggingface.co/Qwen/Qwen-Image-2.1-Turbo/raw/main/LICENSE</a><br/><a href="https://www.deai.org/news/qwen-image-2-1-turbo-8-step-checkpoint">https://www.deai.org/news/qwen-image-2-1-turbo-8-step-checkpoint</a><br/><a href="https://h-jepa.com/">https://h-jepa.com/</a><br/><a href="https://venturebeat.com/technology/h-jepa-teaches-world-models-to-plan-at-multiple-levels-of-abstraction">https://venturebeat.com/technology/h-jepa-teaches-world-models-to-plan-at-multiple-levels-of-abstraction</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט ערב 10.10 - פצצות מגיטהאב</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-10-evening-gh</guid>
+      <pubDate>Sat, 10 Oct 2026 18:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-10-evening-gh.ogg" length="459927" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>ארבעה ריפוז מהיום, ובערב הזה אנחנו עוברים ממכשירים קטנים לרשת בלי אינטרנט, ואז למעבדות ולניוזלטרים.</p><p>מקורות:<br/><a href="https://github.com/caneroglu/Geri">https://github.com/caneroglu/Geri</a><br/><a href="https://github.com/MeshLive/meshlive-android">https://github.com/MeshLive/meshlive-android</a><br/><a href="https://github.com/zhuzilin/sunabako">https://github.com/zhuzilin/sunabako</a><br/><a href="https://github.com/marclou/mailcheap">https://github.com/marclou/mailcheap</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט בוקר 10.10 - חדשות AI</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-10-morning-ai</guid>
+      <pubDate>Sat, 10 Oct 2026 06:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-10-morning-ai.ogg" length="450165" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>בוקר טוב עוז. תקשיב לטוויסט של מיקרוסופט: מודל חדש שלא בא לכתוב לך מאמר, אלא לבחור.</p><p>מקורות:<br/><a href="https://commandline.microsoft.com/microsoft-decision-1-model-foundry/">https://commandline.microsoft.com/microsoft-decision-1-model-foundry/</a><br/><a href="https://ai.azure.com/catalog/models/Microsoft-Decision-1">https://ai.azure.com/catalog/models/Microsoft-Decision-1</a><br/><a href="https://www.theverge.com/ai-artificial-intelligence/1009190/microsoft-ai-decision-model">https://www.theverge.com/ai-artificial-intelligence/1009190/microsoft-ai-decision-model</a><br/><a href="https://huggingface.co/blog/HuggingFaceBio/carbon-annotator-genbank-genome-annotation">https://huggingface.co/blog/HuggingFaceBio/carbon-annotator-genbank-genome-annotation</a><br/><a href="https://huggingface.co/HuggingFaceBio/Carbon-A-1.2B">https://huggingface.co/HuggingFaceBio/Carbon-A-1.2B</a><br/><a href="https://aitamer.news/posts/huggingface-carbon-a-gene-annotation/">https://aitamer.news/posts/huggingface-carbon-a-gene-annotation/</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט ערב 9.10 - חדשות AI</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-09-evening-ai</guid>
+      <pubDate>Fri, 09 Oct 2026 18:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-09-evening-ai.ogg" length="428097" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>קודם כל, שאלה: איך בודקים סוכן בינה מלאכותית לפני שמשחררים אותו על בני אדם אמיתיים? מריצים אותו מול משתמשים מדומים. הבעיה?</p><p>מקורות:<br/><a href="https://arxiv.org/html/2610.09484">https://arxiv.org/html/2610.09484</a><br/><a href="https://huggingface.co/papers/2610.09484">https://huggingface.co/papers/2610.09484</a><br/><a href="https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(26">https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(26</a><br/><a href="https://blog.google/innovation-and-ai/technology/health/amie-clinical-study-lancet/">https://blog.google/innovation-and-ai/technology/health/amie-clinical-study-lancet/</a><br/><a href="https://www.newswise.com/articles/bidmc-researchers-conduct-first-real-world-study-of-safety-and-quality-of-patient-facing-ai-in-primary-care">https://www.newswise.com/articles/bidmc-researchers-conduct-first-real-world-study-of-safety-and-quality-of-patient-facing-ai-in-primary-care</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט ערב 9.10 - פצצות מגיטהאב</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-09-evening-gh</guid>
+      <pubDate>Fri, 09 Oct 2026 18:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-09-evening-gh.ogg" length="455644" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>ארבעה ריפוז טריים מהיום — ואת הקוד שלהם באמת פתחנו. מתחילים באילי-אופיס: חבילת אופיס מלאה ברסט עם ממשק GPUI — מסמכים, גיליונות, מצגות, PDF.</p><p>מקורות:<br/><a href="https://github.com/ZacharyZhang-NY/ElyOffice">https://github.com/ZacharyZhang-NY/ElyOffice</a><br/><a href="https://github.com/WouterApts/openik-unity">https://github.com/WouterApts/openik-unity</a><br/><a href="https://github.com/mstcvk/MacRAR">https://github.com/mstcvk/MacRAR</a><br/><a href="https://github.com/optozorax/optotracker">https://github.com/optozorax/optotracker</a><br/></p>]]></description>
+    </item>
   </channel>
 </rss>
