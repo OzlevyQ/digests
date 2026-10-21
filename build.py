@@ -112,7 +112,7 @@ def main():
       <div class="track">
         <div class="track-label">{TRACK_HE[track]}</div>
         {teaser_html}
-        <audio controls preload="none" src="audio/{fn}"></audio>
+        <audio controls preload="metadata" src="audio/{fn}"></audio>
         {script_html}
         {links_html}
       </div>""")
