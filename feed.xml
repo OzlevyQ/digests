@@ -10,6 +10,87 @@
     <itunes:explicit>no</itunes:explicit>
     <itunes:category text="Technology"/>
     <item>
+      <title>דייג&#x27;סט בוקר 21.10 - חדשות AI</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-21-morning-ai</guid>
+      <pubDate>Wed, 21 Oct 2026 06:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-21-morning-ai.ogg" length="527612" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>עוז, הבוקר זה לא עוד מודל שיוצא. זה הרגע שבו שתי חברות פותחות את המכונה שמתחת למודל. מתחילים עם DeepInfer.</p><p>מקורות:<br/><a href="https://github.com/deepseek-ai/DeepInfer">https://github.com/deepseek-ai/DeepInfer</a><br/><a href="https://github.com/deepseek-ai/open-infra-index/tree/main/OpenSourcing_DeepSeek_Inference_Engine">https://github.com/deepseek-ai/open-infra-index/tree/main/OpenSourcing_DeepSeek_Inference_Engine</a><br/><a href="https://research.nvidia.com/labs/gear/flora/">https://research.nvidia.com/labs/gear/flora/</a><br/><a href="https://research.nvidia.com/labs/gear/flora/assets/paper/flora.pdf">https://research.nvidia.com/labs/gear/flora/assets/paper/flora.pdf</a><br/><a href="https://huggingface.co/collections/nvidia/flora">https://huggingface.co/collections/nvidia/flora</a><br/><a href="https://huggingface.co/nvidia/Flora-Rewarder">https://huggingface.co/nvidia/Flora-Rewarder</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט בוקר 21.10 - פצצות מגיטהאב</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-21-morning-gh</guid>
+      <pubDate>Wed, 21 Oct 2026 06:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-21-morning-gh.ogg" length="607832" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>עוז, ציד הגיטהאב הבוקר עובר מהשרת אל אנדרואיד, משם אל CAD, ומסיים בתוך כדור זכוכית מלא מים. חמישה פרויקטים חדשים, וכל אחד עם קוד אמיתי מאחוריו.</p><p>מקורות:<br/><a href="https://github.com/NVIDIA/flare-local-inference">https://github.com/NVIDIA/flare-local-inference</a><br/><a href="https://github.com/reveny/Android-Compatibility-Layer">https://github.com/reveny/Android-Compatibility-Layer</a><br/><a href="https://github.com/igsova/SimpleCAD">https://github.com/igsova/SimpleCAD</a><br/><a href="https://github.com/Leonxlnx/procedural-alpine-lake">https://github.com/Leonxlnx/procedural-alpine-lake</a><br/><a href="https://github.com/willwaltz/globes">https://github.com/willwaltz/globes</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט ערב 20.10 - חדשות AI</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-20-evening-ai</guid>
+      <pubDate>Tue, 20 Oct 2026 18:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-20-evening-ai.ogg" length="523102" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>עוז, תחזיק חזק, כי הערב יש שתי הדגמות לעתיד שמרגישות כמו קפיצה אחת קדימה. ראשונה: קלוד מנסה לתקוף רעל עקרבים. לא כסלוגן, אלא כקמפיין מעבדה אמיתי.</p><p>מקורות:<br/><a href="https://www.anthropic.com/research/claude-scorpion-toxin-binder-design">https://www.anthropic.com/research/claude-scorpion-toxin-binder-design</a><br/><a href="https://ropedia.github.io/ropedia-w0/">https://ropedia.github.io/ropedia-w0/</a><br/><a href="https://huggingface.co/ropedia-ai/Ropedia-W0">https://huggingface.co/ropedia-ai/Ropedia-W0</a><br/><a href="https://arxiv.org/abs/2610.26855">https://arxiv.org/abs/2610.26855</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט ערב 20.10 - פצצות מגיטהאב</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-20-evening-gh</guid>
+      <pubDate>Tue, 20 Oct 2026 18:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-20-evening-gh.ogg" length="570658" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>עוז, ציד הגיטהאב הערב משוגע. חמישה פרויקטים חדשים מ-20 באוקטובר, וכל אחד פותח דלת אחרת. מתחילים עם Harp: שבעים כוכבים ביום הראשון.</p><p>מקורות:<br/><a href="https://github.com/dominikmartn/harp">https://github.com/dominikmartn/harp</a><br/><a href="https://github.com/shaom/keyboard-island">https://github.com/shaom/keyboard-island</a><br/><a href="https://github.com/lidedongsn/frame-cut">https://github.com/lidedongsn/frame-cut</a><br/><a href="https://github.com/djbarrow/freecad_solidworks_plugin">https://github.com/djbarrow/freecad_solidworks_plugin</a><br/><a href="https://github.com/Cyberyyc/HoloMotion-Spatial-Robot-Teleoperation">https://github.com/Cyberyyc/HoloMotion-Spatial-Robot-Teleoperation</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט בוקר 20.10 - חדשות AI</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-20-morning-ai</guid>
+      <pubDate>Tue, 20 Oct 2026 06:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-20-morning-ai.ogg" length="511361" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>שתי דלתות נפתחות הבוקר, ובשתיהן AI מפסיק רק לדבר ומתחיל להחליט. הראשונה היא Drex Max של Nace AI. תדמיין סוכן מחשב שמסתכל על המסך וצריך לבחור: ללחוץ כאן? לגלול?</p><p>מקורות:<br/><a href="https://console.nace.ai/docs/drex/guides/drex-max">https://console.nace.ai/docs/drex/guides/drex-max</a><br/><a href="https://console.nace.ai/docs/drex/reference/models">https://console.nace.ai/docs/drex/reference/models</a><br/><a href="https://huggingface.co/datasets/nace-ai/drex-max-v1-decision-index-results">https://huggingface.co/datasets/nace-ai/drex-max-v1-decision-index-results</a><br/><a href="https://www.marktechpost.com/2026/10/19/nace-ai-drex-max-multimodal-decision-model/">https://www.marktechpost.com/2026/10/19/nace-ai-drex-max-multimodal-decision-model/</a><br/><a href="https://www.nature.com/articles/s41551-026-01803-7">https://www.nature.com/articles/s41551-026-01803-7</a><br/><a href="https://www.nature.com/articles/s41551-026-01804-6">https://www.nature.com/articles/s41551-026-01804-6</a><br/><a href="https://www.mdanderson.org/newsroom/research-newsroom/ai-tool-reveals-what-attracts-immune-cells-to-tumors-and-what-keeps-them-away.h00-159859290.html">https://www.mdanderson.org/newsroom/research-newsroom/ai-tool-reveals-what-attracts-immune-cells-to-tumors-and-what-keeps-them-away.h00-159859290.html</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט בוקר 20.10 - פצצות מגיטהאב</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-20-morning-gh</guid>
+      <pubDate>Tue, 20 Oct 2026 06:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-20-morning-gh.ogg" length="579297" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>ועכשיו גיטהאב, ויש היום חמישה פרויקטים חדשים, וכל אחד מהם משחק אחר. מתחילים ב-Free My TV, 427 כוכבים.</p><p>מקורות:<br/><a href="https://github.com/simbasjungles/free-my-tv">https://github.com/simbasjungles/free-my-tv</a><br/><a href="https://github.com/VictorTaelin/uniichat">https://github.com/VictorTaelin/uniichat</a><br/><a href="https://github.com/typecraft-dev/oma-cast">https://github.com/typecraft-dev/oma-cast</a><br/><a href="https://github.com/vercel-labs/fx0">https://github.com/vercel-labs/fx0</a><br/><a href="https://github.com/Ambitosis/OpenWinter">https://github.com/Ambitosis/OpenWinter</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט ערב 19.10 - חדשות AI</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-19-evening-ai</guid>
+      <pubDate>Mon, 19 Oct 2026 18:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-19-evening-ai.ogg" length="480738" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>עוזי, הערב יש שני סיפורים על אותה מלחמה בדיוק: איך לגרום לסוכן AI לעשות יותר, בלי לשרוף את כל התקציב על טוקנים. הראשון הוא MiniMax M3.1 Flash, שיצא היום.</p><p>מקורות:<br/><a href="https://www.minimax.io/blog/minimax-m31f">https://www.minimax.io/blog/minimax-m31f</a><br/><a href="https://platform.minimax.io/docs/guides/models-intro">https://platform.minimax.io/docs/guides/models-intro</a><br/><a href="https://www.marktechpost.com/2026/10/19/minimax-m3-1-flash-release/">https://www.marktechpost.com/2026/10/19/minimax-m3-1-flash-release/</a><br/><a href="https://arxiv.org/html/2610.18861">https://arxiv.org/html/2610.18861</a><br/><a href="https://github.com/togethercomputer/HybridAgent">https://github.com/togethercomputer/HybridAgent</a><br/><a href="https://huggingface.co/togethercomputer/HybridAgent-8B-Agentic">https://huggingface.co/togethercomputer/HybridAgent-8B-Agentic</a><br/><a href="https://huggingface.co/togethercomputer/HybridAgent-14B-Agentic">https://huggingface.co/togethercomputer/HybridAgent-14B-Agentic</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט ערב 19.10 - פצצות מגיטהאב</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-19-evening-gh</guid>
+      <pubDate>Mon, 19 Oct 2026 18:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-19-evening-gh.ogg" length="573410" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>ועכשיו גיטהאב, ומה שנחת היום פשוט פסיכי: משחקי Windows על אייפון, מק אינטל על Apple Silicon, דרווין על חומרה לא של אפל, סוכני קול על השרת שלך ומיקרו-בקר שמבין שבע שפות…</p><p>מקורות:<br/><a href="https://github.com/thebcd69/bcd-games">https://github.com/thebcd69/bcd-games</a><br/><a href="https://github.com/nfzerox/VirtualIntelMacOnAppleSilicon">https://github.com/nfzerox/VirtualIntelMacOnAppleSilicon</a><br/><a href="https://github.com/UniXNU/UniXNU">https://github.com/UniXNU/UniXNU</a><br/><a href="https://github.com/C4rohan/Lampline">https://github.com/C4rohan/Lampline</a><br/><a href="https://github.com/andrisgauracs/whistle-esp32">https://github.com/andrisgauracs/whistle-esp32</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט בוקר 19.10 - פצצות מגיטהאב</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-19-morning-gh</guid>
+      <pubDate>Mon, 19 Oct 2026 06:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-19-morning-gh.ogg" length="555748" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>ועכשיו לגיטהאב, כי מה שנולד שם בסוף השבוע הוא סלט משוגע: סייבר, טלוויזיות, ביטקוין היסטורי, פלייסטיישן חמש ועורך קבצים שנראה כמו קסם. מתחילים עם zero-breach.</p><p>מקורות:<br/><a href="https://github.com/interplains/zero-breach">https://github.com/interplains/zero-breach</a><br/><a href="https://github.com/humblemuzzu/dumbtv">https://github.com/humblemuzzu/dumbtv</a><br/><a href="https://github.com/llamaboi55/DragShift">https://github.com/llamaboi55/DragShift</a><br/><a href="https://github.com/t4t5/bitcoin-0.1-rebuilt">https://github.com/t4t5/bitcoin-0.1-rebuilt</a><br/><a href="https://github.com/soniciso1/ps5-linux-loader">https://github.com/soniciso1/ps5-linux-loader</a><br/></p>]]></description>
+    </item>
+    <item>
       <title>דייג&#x27;סט ערב 18.10 - חדשות AI</title>
       <link>https://ozlevyq.github.io/digests/</link>
       <guid isPermaLink="false">digest-2026-10-18-evening-ai</guid>
@@ -17,6 +98,33 @@
       <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-18-evening-ai.ogg" length="529128" type="audio/ogg"/>
       <itunes:author>Oz Levy</itunes:author>
       <description><![CDATA[<p>ערב טוב, שני סיפורים היום מראים איך בינה מלאכותית מפסיקה להיות רק צ&#x27;אט יפה ומתחילה להתערב בעולם האמיתי: ברפואה מצד אחד, וברובוטיקה מצד שני.</p><p>מקורות:<br/><a href="https://www.nature.com/articles/s41591-026-04626-w">https://www.nature.com/articles/s41591-026-04626-w</a><br/><a href="https://developers.google.com/health-ai-developer-foundations/medgemma">https://developers.google.com/health-ai-developer-foundations/medgemma</a><br/><a href="https://huggingface.co/google/medgemma-4b-it">https://huggingface.co/google/medgemma-4b-it</a><br/><a href="https://arxiv.org/html/2507.05201v4">https://arxiv.org/html/2507.05201v4</a><br/><a href="https://github.com/Google-Health/medgemma">https://github.com/Google-Health/medgemma</a><br/><a href="https://research.nvidia.com/labs/gear/aspire/">https://research.nvidia.com/labs/gear/aspire/</a><br/><a href="https://github.com/NVlabs/ASPIRE">https://github.com/NVlabs/ASPIRE</a><br/><a href="https://arxiv.org/html/2607.00272">https://arxiv.org/html/2607.00272</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט ערב 18.10 - פצצות מגיטהאב</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-18-evening-gh</guid>
+      <pubDate>Sun, 18 Oct 2026 18:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-18-evening-gh.ogg" length="557666" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>ערב טוב, וגיטהאב היום מספק חמישה פרויקטים חדשים עם קוד אמיתי. מתחילים ב-CarDeck, שלושים ושניים כוכבים, Kotlin ו-MIT.</p><p>מקורות:<br/><a href="https://github.com/shaonialife/cardeck">https://github.com/shaonialife/cardeck</a><br/><a href="https://github.com/DustinYe/gesture-media-controller">https://github.com/DustinYe/gesture-media-controller</a><br/><a href="https://github.com/xiaoyang111222/cn-math-taxonomy">https://github.com/xiaoyang111222/cn-math-taxonomy</a><br/><a href="https://github.com/Dong-Fang-Bu-Bai/btr-dualrag">https://github.com/Dong-Fang-Bu-Bai/btr-dualrag</a><br/><a href="https://github.com/nktfh100/lilypond-2-xml">https://github.com/nktfh100/lilypond-2-xml</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט בוקר 18.10 - חדשות AI</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-18-morning-ai</guid>
+      <pubDate>Sun, 18 Oct 2026 06:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-18-morning-ai.ogg" length="508910" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>בוקר טוב, עוז. תאר לעצמך רובוט שלא שוכח מה קרה שנייה לפני, וסוכן מחשב שלא לוחץ עוד כפתור־עוד־כפתור אלא כותב קוד שמסיים את המשימה.</p><p>מקורות:<br/><a href="https://kyutai.org/reki/">https://kyutai.org/reki/</a><br/><a href="https://arxiv.org/html/2610.22178v1">https://arxiv.org/html/2610.22178v1</a><br/><a href="https://huggingface.co/kyutai/reki-2b">https://huggingface.co/kyutai/reki-2b</a><br/><a href="https://github.com/kyutai-labs/reki">https://github.com/kyutai-labs/reki</a><br/><a href="https://arxiv.org/html/2610.22200">https://arxiv.org/html/2610.22200</a><br/><a href="https://github.com/Tongyi-MAI/OpenGCUA">https://github.com/Tongyi-MAI/OpenGCUA</a><br/><a href="https://tongyi-mai.github.io/OpenGCUA/">https://tongyi-mai.github.io/OpenGCUA/</a><br/><a href="https://arxiv.org/html/2610.20939">https://arxiv.org/html/2610.20939</a><br/><a href="https://tongyi-mai.github.io/MAI-Gym/">https://tongyi-mai.github.io/MAI-Gym/</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט בוקר 18.10 - פצצות מגיטהאב</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-18-morning-gh</guid>
+      <pubDate>Sun, 18 Oct 2026 06:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-18-morning-gh.ogg" length="541716" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>בוקר טוב, עוז. ארבעה ריפוזיטורים שנפתחו הלילה מראים איך נראה גיטהאב כשהוא יוצא מהמסלול הרגיל: פרוקסי שמטופל כמו מערכת הפעלה, ביטקוין שנכנס למכונת הוכחות, אלבומי תמונות…</p><p>מקורות:<br/><a href="https://github.com/chekusu/dropack">https://github.com/chekusu/dropack</a><br/><a href="https://github.com/shi3z/qedos">https://github.com/shi3z/qedos</a><br/><a href="https://github.com/Rob1Ham/btc-lean">https://github.com/Rob1Ham/btc-lean</a><br/><a href="https://github.com/abstractpbc/abstract">https://github.com/abstractpbc/abstract</a><br/></p>]]></description>
     </item>
     <item>
       <title>דייג&#x27;סט ערב 17.10 - חדשות AI</title>
