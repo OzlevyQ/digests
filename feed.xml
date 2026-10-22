@@ -10,6 +10,24 @@
     <itunes:explicit>no</itunes:explicit>
     <itunes:category text="Technology"/>
     <item>
+      <title>דייג&#x27;סט ערב 22.10 - חדשות AI</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-22-evening-ai</guid>
+      <pubDate>Thu, 22 Oct 2026 18:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-22-evening-ai.ogg" length="959911" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>ערב טוב עוז. היום AI מפסיק לחכות שתלחץ עליו, וגם לומד לקרוא את האלפבית של החיים. נתחיל בקלוד דיואט של אנתרופיק, וזה לא עוד צ&#x27;אט עם לוגו.</p><p>מקורות:<br/><a href="https://claude.com/resources/articles/claude-duet">https://claude.com/resources/articles/claude-duet</a><br/><a href="https://techcrunch.com/2026/10/22/claude-duet-app-is-anthropics-bet-on-agents/">https://techcrunch.com/2026/10/22/claude-duet-app-is-anthropics-bet-on-agents/</a><br/><a href="https://huggingface.co/HuggingFaceBio/Carbon-X">https://huggingface.co/HuggingFaceBio/Carbon-X</a><br/><a href="https://github.com/huggingface/carbon">https://github.com/huggingface/carbon</a><br/><a href="https://www.wired.com/story/hugging-face-new-ai-biology-model-chat-with-dna/">https://www.wired.com/story/hugging-face-new-ai-biology-model-chat-with-dna/</a><br/><a href="https://thenextweb.com/news/hugging-face-carbon-x-dna-ai-model">https://thenextweb.com/news/hugging-face-carbon-x-dna-ai-model</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט ערב 22.10 - פצצות מגיטהאב</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-22-evening-gh</guid>
+      <pubDate>Thu, 22 Oct 2026 18:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-22-evening-gh.ogg" length="1048584" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>ועכשיו גיטהאב, והערב חמישה פרויקטים שנולדו היום. מתחילים ב-Snapintosh, 393 כוכבים, MIT: macOS 27 עולה על לפטופ ASUS עם Snapdragon X2 Elite.</p><p>מקורות:<br/><a href="https://github.com/Acelogic/Snapintosh">https://github.com/Acelogic/Snapintosh</a><br/><a href="https://github.com/khanhtq29vn/contextcraft">https://github.com/khanhtq29vn/contextcraft</a><br/><a href="https://github.com/KohakuBlueleaf/KohakuGBC">https://github.com/KohakuBlueleaf/KohakuGBC</a><br/><a href="https://github.com/rolottr/bambu-bar">https://github.com/rolottr/bambu-bar</a><br/><a href="https://github.com/corcordata/plus-one">https://github.com/corcordata/plus-one</a><br/></p>]]></description>
+    </item>
+    <item>
       <title>דייג&#x27;סט בוקר 22.10 - חדשות AI</title>
       <link>https://ozlevyq.github.io/digests/</link>
       <guid isPermaLink="false">digest-2026-10-22-morning-ai</guid>
