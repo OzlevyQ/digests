@@ -10,6 +10,24 @@
     <itunes:explicit>no</itunes:explicit>
     <itunes:category text="Technology"/>
     <item>
+      <title>דייג&#x27;סט בוקר 22.10 - חדשות AI</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-22-morning-ai</guid>
+      <pubDate>Thu, 22 Oct 2026 06:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-22-morning-ai.ogg" length="896240" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>בוקר טוב עוז. הלילה AI עשה שני דברים שבדרך כלל לא קורים באותו יום: הוא מצא פצע עתיק בלב האינטרנט, ואז כמעט בנה את הירושה של עצמו. נתחיל באזעקה.</p><p>מקורות:<br/><a href="https://huggingface.co/RecursiveSI/flint">https://huggingface.co/RecursiveSI/flint</a><br/><a href="https://vllm.ai/blog/2026-10-21-flint">https://vllm.ai/blog/2026-10-21-flint</a><br/><a href="https://techcrunch.com/2026/10/21/recursive-launches-flint-a-laptop-coding-model-it-says-was-largely-built-by-ai/">https://techcrunch.com/2026/10/21/recursive-launches-flint-a-laptop-coding-model-it-says-was-largely-built-by-ai/</a><br/><a href="https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities/">https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities/</a><br/><a href="https://techcrunch.com/2026/10/21/php-armageddon-openai-googles-wiz-find-ancient-holes-panicking-the-internet/">https://techcrunch.com/2026/10/21/php-armageddon-openai-googles-wiz-find-ancient-holes-panicking-the-internet/</a><br/><a href="https://www.axios.com/2026/10/21/php-openai-ai-bug-hunting-cyberattacks">https://www.axios.com/2026/10/21/php-openai-ai-bug-hunting-cyberattacks</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט בוקר 22.10 - פצצות מגיטהאב</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-22-morning-gh</guid>
+      <pubDate>Thu, 22 Oct 2026 06:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-22-morning-gh.ogg" length="1078197" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>ועכשיו גיטהאב, והבוקר חמישה פרויקטים שנולדו אתמול, וכל אחד הוא מעבדה אחרת. מתחילים ב-CinderVM, 65 כוכבים, Rust ו-MIT.</p><p>מקורות:<br/><a href="https://github.com/zita-ch/supermimic_vibed">https://github.com/zita-ch/supermimic_vibed</a><br/><a href="https://github.com/xingjian-bai/opal">https://github.com/xingjian-bai/opal</a><br/><a href="https://github.com/isabekastsuc/CinderVM">https://github.com/isabekastsuc/CinderVM</a><br/><a href="https://github.com/unixzii/Champagne">https://github.com/unixzii/Champagne</a><br/><a href="https://github.com/amirmxt/gimbalbar">https://github.com/amirmxt/gimbalbar</a><br/></p>]]></description>
+    </item>
+    <item>
       <title>דייג&#x27;סט ערב 21.10 - חדשות AI</title>
       <link>https://ozlevyq.github.io/digests/</link>
       <guid isPermaLink="false">digest-2026-10-21-evening-ai</guid>
