@@ -45,7 +45,7 @@
   <div class="logo">🎙️</div>
   <div>
     <h1>הדייג'סטים של עוז</h1>
-    <div class="sub">27 מהדורות · בוקר וערב</div>
+    <div class="sub">28 מהדורות · בוקר וערב</div>
   </div>
   <a class="rss-btn" href="feed.xml">הירשם ב-RSS</a>
 </header>
@@ -53,6 +53,26 @@
   <p>כל הדייג'סטים הקוליים במקום אחד: מה חדש ב-AI ומה אפשר לעשות עם זה, והריפואים הכי פראיים בגיטהאב. לחץ פליי, או הוסף את הפיד לאפליקציית פודקאסטים.</p>
 </div>
 <main>
+    <section class="card">
+      <h2><span class="date">23.10</span> דייג'סט בוקר</h2>
+      
+      <div class="track">
+        <div class="track-label">חדשות AI</div>
+        <p class="teaser">בוקר טוב עוז. תאר לך שבמקום להריץ עוד טריליון בדיקות ולקוות שהבאג לא התחבא, אתה מביא הוכחה מתמטית: הקוד הזה לא יקרוס.</p>
+        <audio controls preload="metadata" src="audio/2026-10-23-morning-ai.ogg"></audio>
+        <details class="script"><summary>תמליל מלא</summary><p>בוקר טוב עוז. תאר לך שבמקום להריץ עוד טריליון בדיקות ולקוות שהבאג לא התחבא, אתה מביא הוכחה מתמטית: הקוד הזה לא יקרוס. ואז, באותו בוקר, מודל קטן לוחץ בעצמו על המקלדת ומנצח ענקים במשחק בזמן אמת.</p><p>נתחיל באנתרופיק ובחברת Theorem. הם הפכו בדיקות fuzz קיימות להוכחות פורמליות על קוד מכונה. לא &quot;נראה תקין&quot;. הוכחה שבודק Rocq חותם עליה. בתוך כמה שבועות קלוד הוכיח 239 נקודות כניסה ב-123 ספריות קוד פתוח מ-Google OSS-Fuzz: בלי קריסה, בלי שגיאת זיכרון ובלי assertion, לכל קלט עד 64 מגה־בייט, על RISC-V, תחת מודל מוגדר של לינוקס.</p><p>והמספר מטורף: כ-180 מיליון שורות הוכחה, בדרך כלל כ-600 אלף שורות לספרייה. בדרך הוא מצא ותיקן מאות באגים, כולל כתיבה מחוץ לגבול שצצה רק בקלט של 20 מגה במבנה נדיר, וקריאה מחוץ לגבול שדרשה שתי ידיות לאותו קובץ. אלה דברים ששרדו שנים של fuzzing וטריליוני הרצות. אבל שים לב לגבול: זה לא &quot;נטול באגים&quot;. ההוכחה תקפה רק להיקף שנבדק, לספריות סטטיות חד־חוטיות על RISC-V. מחוץ למודל עדיין צריך ביקורת.</p><p>והסיפור השני הוא GameScaling. צוותים מ-miHoYo, צינגהואה, האקדמיה הסינית למדעים, HKU, NUS ובייג&#x27;ינג שחררו שמונה מודלים פתוחים ברישיון Apache 2, מ-0.8 עד 27 מיליארד פרמטרים. הם מתחילים מ-Qwen3.5, ממשיכים אימון על 1,600 שעות משחק, רואים פריים נוכחי והיסטוריה קצרה, ומחזירים את 200 אלפיות השנייה הבאות של מקלדת ועכבר. שש פעולות של 33 אלפיות, עם תנועת עכבר וגלגלת.</p><p>המחקר בדק 120 קונפיגורציות של גודל, שעות ומגוון משחקים. S1 אומן רק על Minecraft. S3 קיבל 27 אחוז Minecraft והשאר עולמות אחרים. כשהמשחק מקפיא את הזמן, מודלי הגבול עדיין חזקים בעולמות מרוחקים. אבל כשהעולם לא מחכה, הכול מתהפך: מודלי הגבול צריכים 4 עד 24 שניות לצעד, GameScaling צריך 0.13 עד 0.69. גרסת 9B-S3 השיגה ממוצע 25.3 בארבעה מבחנים, מול 19.2 למודל הגבול הטוב ביותר בזמן אמת.</p><p>וזה לא סוף פסוק. ב-GameWorld, סט משחקים רחוק באמת, הגדולים עדיין מובילים. אין קוד אימון, רק לקוח הרצה, ומדובר בחיקוי הקלטות, לא למידה ממשוב חי. אבל סימן הדרך ברור: המודל המהיר לא רק חושב על המשחק. הוא כבר מחזיק את העכבר.
+</p></details>
+        <ul class="links"><li><a href="https://www.anthropic.com/research/formal-verification" target="_blank" rel="noopener">www.anthropic.com/research/formal-verification</a></li><li><a href="https://interestingengineering.com/ai-robotics/claude-formal-verification-software-security" target="_blank" rel="noopener">interestingengineering.com/ai-robotics/claude-formal-veri...</a></li><li><a href="https://arxiv.org/html/2610.28698" target="_blank" rel="noopener">arxiv.org/html/2610.28698</a></li><li><a href="https://github.com/THUSI-Lab/GameScaling" target="_blank" rel="noopener">github.com/THUSI-Lab/GameScaling</a></li><li><a href="https://huggingface.co/collections/THUSI-Lab/gamescaling-model-6acf7c0c6500ebee61a7f872" target="_blank" rel="noopener">huggingface.co/collections/THUSI-Lab/gamescaling-model-6a...</a></li><li><a href="https://gamescaling.github.io" target="_blank" rel="noopener">gamescaling.github.io</a></li><li><a href="https://www.ithome.com/1/016/575.htm" target="_blank" rel="noopener">www.ithome.com/1/016/575.htm</a></li></ul>
+      </div>
+      <div class="track">
+        <div class="track-label">פצצות מגיטהאב</div>
+        <p class="teaser">ועכשיו גיטהאב, ויש הבוקר חמישה פרויקטים שנולדו אתמול. מתחילים ב-VoxCPM2 Turkish Voice Design, 70 כוכבים, Python.</p>
+        <audio controls preload="metadata" src="audio/2026-10-23-morning-gh.ogg"></audio>
+        <details class="script"><summary>תמליל מלא</summary><p>ועכשיו גיטהאב, ויש הבוקר חמישה פרויקטים שנולדו אתמול.</p><p>מתחילים ב-VoxCPM2 Turkish Voice Design, 70 כוכבים, Python. כותבים באנגלית איזה קול מדמיינים, מוסיפים טקסט טורקי, מקבלים וריאציות עם זרעים שונים, בוחרים אחת ומקריאים טקסט חדש. הכול מקומי על GPU של ארבעה ג&#x27;יגה־בייט, דרך audio.cpp עם טלאי, ממשק ווב ושבעה קולות מוכנים. בקוד יש הגנה ברורה: אין העלאת הקלטה ואין שיבוט אדם אמיתי. רק קול סינתטי, שמסומן כ-AI.</p><p>שני, Bastion, 57 כוכבים, Go ו-MIT. אחרי סיפור PHP2Shell של אתמול, זה כלי ההמשך: סורק מקומי שמוצא כל build של PHP בחבילות, קונטיינרים ותהליכים חיים. הוא בודק ראיות תיקון ל-CVE-2026-109618 ו-109619, מחפש סימני פריצה ומפיק דוח HTML אופליין, JSON ו-SARIF. הכי חשוב: אם אין ראיה, הוא אומר unknown. לא מנקה, לא מתקן, לא מרגיע בכזב. רק מראה מה ידוע.</p><p>שלישי, Ticket Tear, 37 כוכבים, TypeScript. כרטיס הופעה תלת־ממדי שמכופפים, הופכים וקורעים על הקו המנוקד. מתחת יש 900 נקודות, קפיצי Verlet, ו-25 קפיצים שבירים על התפר. כל סיב שנקרע משמיע רעש מסונתז בגובה אחר, והנייר ההולוגרפי מגיב ב-GLSL לכיפוף ולאור. אין תמונות, מודלים או קבצי סאונד. הכול מצויר ומנוגן בקוד.</p><p>רביעי, BrawlRecompiled, 21 כוכבים, C++. פורט PC ל-Super Smash Bros. Brawl בלי אמולטור: קוד ה-PowerPC של main.dol ו-126 מודולים מקומפל סטטית ל-C++ דרך WiiCompiled. כבר עולים תפריטים, קרבות VS, שמירות, Classic ופתיח של Subspace. יש 4K, רוחב מסך, בקרים, אינטרפולציה ל-120 פריימים ומודים מכרטיס SD וירטואלי. אין נתוני משחק בריפו; צריך דיסק חוקי משלך. זה WIP, אבל ההנדסה חצי בלתי נתפסת.</p><p>וחמישי, MiThermalScheduler, שמונה כוכבים, Rust ו-GPLv3. מודול KernelSU לשיאומי ו-Redmi שמנהל תרמיקה בלי לגעת במחיצת המערכת: backend ב-Rust, WebUI, ופרופילים לפי אפליקציה, טעינה, מסך כבוי, סוללה וטמפרטורה. יש נעילת קצב רענון, התאמות Joyose, ושחזור אוטומטי לתרמיקה הרשמית בחום יתר. זה דורש root ומשנה מדיניות חום אמיתית, אז ניסוי זהיר בלבד.</p><p>חמש דלתות: קול, אבטחה, נייר, קונסולה וטמפרטורה. וכל זה ביממה אחת.
+</p></details>
+        <ul class="links"><li><a href="https://github.com/alexturkey/voxcpm2-turkce-ses-tasarimi" target="_blank" rel="noopener">github.com/alexturkey/voxcpm2-turkce-ses-tasarimi</a></li><li><a href="https://github.com/BastionPHP/Bastion" target="_blank" rel="noopener">github.com/BastionPHP/Bastion</a></li><li><a href="https://github.com/Sam1983Aing/ticket-tear" target="_blank" rel="noopener">github.com/Sam1983Aing/ticket-tear</a></li><li><a href="https://github.com/josiahg2502-glitch/BrawlRecompiled" target="_blank" rel="noopener">github.com/josiahg2502-glitch/BrawlRecompiled</a></li><li><a href="https://github.com/MiChongs/MiThermalScheduler" target="_blank" rel="noopener">github.com/MiChongs/MiThermalScheduler</a></li></ul>
+      </div>
+    </section>
     <section class="card">
       <h2><span class="date">22.10</span> דייג'סט ערב</h2>
       

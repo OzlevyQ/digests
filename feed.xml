@@ -10,6 +10,24 @@
     <itunes:explicit>no</itunes:explicit>
     <itunes:category text="Technology"/>
     <item>
+      <title>דייג&#x27;סט בוקר 23.10 - חדשות AI</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-23-morning-ai</guid>
+      <pubDate>Fri, 23 Oct 2026 06:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-23-morning-ai.ogg" length="1727639" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>בוקר טוב עוז. תאר לך שבמקום להריץ עוד טריליון בדיקות ולקוות שהבאג לא התחבא, אתה מביא הוכחה מתמטית: הקוד הזה לא יקרוס.</p><p>מקורות:<br/><a href="https://www.anthropic.com/research/formal-verification">https://www.anthropic.com/research/formal-verification</a><br/><a href="https://interestingengineering.com/ai-robotics/claude-formal-verification-software-security">https://interestingengineering.com/ai-robotics/claude-formal-verification-software-security</a><br/><a href="https://arxiv.org/html/2610.28698">https://arxiv.org/html/2610.28698</a><br/><a href="https://github.com/THUSI-Lab/GameScaling">https://github.com/THUSI-Lab/GameScaling</a><br/><a href="https://huggingface.co/collections/THUSI-Lab/gamescaling-model-6acf7c0c6500ebee61a7f872">https://huggingface.co/collections/THUSI-Lab/gamescaling-model-6acf7c0c6500ebee61a7f872</a><br/><a href="https://gamescaling.github.io">https://gamescaling.github.io</a><br/><a href="https://www.ithome.com/1/016/575.htm">https://www.ithome.com/1/016/575.htm</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט בוקר 23.10 - פצצות מגיטהאב</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-23-morning-gh</guid>
+      <pubDate>Fri, 23 Oct 2026 06:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-23-morning-gh.ogg" length="1729350" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>ועכשיו גיטהאב, ויש הבוקר חמישה פרויקטים שנולדו אתמול. מתחילים ב-VoxCPM2 Turkish Voice Design, 70 כוכבים, Python.</p><p>מקורות:<br/><a href="https://github.com/alexturkey/voxcpm2-turkce-ses-tasarimi">https://github.com/alexturkey/voxcpm2-turkce-ses-tasarimi</a><br/><a href="https://github.com/BastionPHP/Bastion">https://github.com/BastionPHP/Bastion</a><br/><a href="https://github.com/Sam1983Aing/ticket-tear">https://github.com/Sam1983Aing/ticket-tear</a><br/><a href="https://github.com/josiahg2502-glitch/BrawlRecompiled">https://github.com/josiahg2502-glitch/BrawlRecompiled</a><br/><a href="https://github.com/MiChongs/MiThermalScheduler">https://github.com/MiChongs/MiThermalScheduler</a><br/></p>]]></description>
+    </item>
+    <item>
       <title>דייג&#x27;סט ערב 22.10 - חדשות AI</title>
       <link>https://ozlevyq.github.io/digests/</link>
       <guid isPermaLink="false">digest-2026-10-22-evening-ai</guid>
