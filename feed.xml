@@ -10,6 +10,24 @@
     <itunes:explicit>no</itunes:explicit>
     <itunes:category text="Technology"/>
     <item>
+      <title>דייג&#x27;סט ערב 23.10 - חדשות AI</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-23-evening-ai</guid>
+      <pubDate>Fri, 23 Oct 2026 18:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-23-evening-ai.ogg" length="1828386" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>ערב טוב עוז. ביום שני דיברנו על MiniMax M3.1 Flash כשירות. היום יש התפתחות אמיתית: המשקלים נפתחו, וזה הופך אותו ממוצר שאתה צורך למודל שאתה יכול להרים בעצמך.</p><p>מקורות:<br/><a href="https://huggingface.co/MiniMaxAI/MiniMax-M3.1-Flash">https://huggingface.co/MiniMaxAI/MiniMax-M3.1-Flash</a><br/><a href="https://vllm.ai/blog/2026-10-23-minimax-m31-flash">https://vllm.ai/blog/2026-10-23-minimax-m31-flash</a><br/><a href="https://www.anthropic.com/research/alignment-assessment-ukaisi">https://www.anthropic.com/research/alignment-assessment-ukaisi</a><br/><a href="https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing">https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing</a><br/><a href="https://technode.com/2026/10/23/minimax-releases-open-weights-for-428-billion-parameter-m3-1-flash-model/">https://technode.com/2026/10/23/minimax-releases-open-weights-for-428-billion-parameter-m3-1-flash-model/</a><br/><a href="https://breakingthenews.net/Article/Anthropic:-Claude-used-deception-in-cyber-test/67388620">https://breakingthenews.net/Article/Anthropic:-Claude-used-deception-in-cyber-test/67388620</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט ערב 23.10 - פצצות מגיטהאב</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-23-evening-gh</guid>
+      <pubDate>Fri, 23 Oct 2026 18:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-23-evening-gh.ogg" length="1816836" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>ועכשיו גיטהאב, והערב חמישה פרויקטים שנולדו היום ומרגישים כמו חמש דלתות לעולמות שונים. מתחילים ב-quantpicker, 14 כוכבים, Rust ו-MIT.</p><p>מקורות:<br/><a href="https://github.com/alleyxd/quantpicker">https://github.com/alleyxd/quantpicker</a><br/><a href="https://github.com/prototux/AARE">https://github.com/prototux/AARE</a><br/><a href="https://github.com/juanjsebgarcia/vita-turbo-wifi">https://github.com/juanjsebgarcia/vita-turbo-wifi</a><br/><a href="https://github.com/bheppe/gpsp-3d">https://github.com/bheppe/gpsp-3d</a><br/><a href="https://github.com/thevermin/VRmin">https://github.com/thevermin/VRmin</a><br/></p>]]></description>
+    </item>
+    <item>
       <title>דייג&#x27;סט בוקר 23.10 - חדשות AI</title>
       <link>https://ozlevyq.github.io/digests/</link>
       <guid isPermaLink="false">digest-2026-10-23-morning-ai</guid>
