@@ -10,6 +10,24 @@
     <itunes:explicit>no</itunes:explicit>
     <itunes:category text="Technology"/>
     <item>
+      <title>דייג&#x27;סט ערב 24.10 - חדשות AI</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-24-evening-ai</guid>
+      <pubDate>Sat, 24 Oct 2026 18:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-24-evening-ai.ogg" length="1848929" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>ערב טוב עוז. שני סיפורים: מודל קטן שמושך הרבה, ומחקר אוטונומי שמפסיק לכתוב טוקן־טוקן. קודם KRAFTON משחררת את Raon-1 mini preview, מודל שאומן מאפס, Apache 2.</p><p>מקורות:<br/><a href="https://huggingface.co/KRAFTON/Raon-1-mini-preview">https://huggingface.co/KRAFTON/Raon-1-mini-preview</a><br/><a href="https://raon-mini.krafton.ai/en/docs/models">https://raon-mini.krafton.ai/en/docs/models</a><br/><a href="https://tensorjournal.com/en/news/krafton-raon-mini-preview-release">https://tensorjournal.com/en/news/krafton-raon-mini-preview-release</a><br/><a href="https://arxiv.org/html/2610.28909">https://arxiv.org/html/2610.28909</a><br/><a href="https://theagenttimes.com/articles/diffusion-language-models-cut-deep-research-latency-sixfold--10abf616">https://theagenttimes.com/articles/diffusion-language-models-cut-deep-research-latency-sixfold--10abf616</a><br/><a href="https://github.com/alanrbtx/DiffResearch">https://github.com/alanrbtx/DiffResearch</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט ערב 24.10 - פצצות מגיטהאב</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-24-evening-gh</guid>
+      <pubDate>Sat, 24 Oct 2026 18:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-24-evening-gh.ogg" length="1752421" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>ועכשיו גיטהאב, הולכים לברזלים. פתיחה עם HackiOS, 1,223 כוכבים: להריץ את XNU של iOS 16.5 על POCO X5 Pro עם Snapdragon 778G, ומעליו את מרחב המשתמש המקורי של iOS.</p><p>מקורות:<br/><a href="https://github.com/oosexgang/hackios-xnu-kernel">https://github.com/oosexgang/hackios-xnu-kernel</a><br/><a href="https://github.com/CH-LaTiao/lumina-guide">https://github.com/CH-LaTiao/lumina-guide</a><br/><a href="https://github.com/MultiX0/ip-nas">https://github.com/MultiX0/ip-nas</a><br/><a href="https://github.com/keremimo/saadet">https://github.com/keremimo/saadet</a><br/><a href="https://github.com/pboyer/polystrata-3d">https://github.com/pboyer/polystrata-3d</a><br/></p>]]></description>
+    </item>
+    <item>
       <title>דייג&#x27;סט בוקר 24.10 - חדשות AI</title>
       <link>https://ozlevyq.github.io/digests/</link>
       <guid isPermaLink="false">digest-2026-10-24-morning-ai</guid>
