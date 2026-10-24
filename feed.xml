@@ -10,6 +10,24 @@
     <itunes:explicit>no</itunes:explicit>
     <itunes:category text="Technology"/>
     <item>
+      <title>דייג&#x27;סט בוקר 24.10 - חדשות AI</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-24-morning-ai</guid>
+      <pubDate>Sat, 24 Oct 2026 06:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-24-morning-ai.ogg" length="1656561" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>בוקר טוב עוז. הבוקר Moonshot מציגה את Kimi K3.1 Pro, מודל 3T-class עם קונטקסט של מיליון טוקנים, אבל שים לב לפרט הקטן: הוא זמין היום ב-Kimi וב-API, והמשקלים המלאים…</p><p>מקורות:<br/><a href="https://www.kimi.ai/blog/kimi-k3-1-pro">https://www.kimi.ai/blog/kimi-k3-1-pro</a><br/><a href="https://www.marktechpost.com/2026/10/23/moonshot-ai-kimi-k3-1-pro-open-weight-model/">https://www.marktechpost.com/2026/10/23/moonshot-ai-kimi-k3-1-pro-open-weight-model/</a><br/><a href="https://siliconangle.com/2026/10/23/moonshot-ai-launches-new-flagship-kim-k3-1-pro-model-with-3t-parameters/">https://siliconangle.com/2026/10/23/moonshot-ai-launches-new-flagship-kim-k3-1-pro-model-with-3t-parameters/</a><br/><a href="https://openai.com/index/securing-our-frontier-model-training-environment/">https://openai.com/index/securing-our-frontier-model-training-environment/</a><br/><a href="https://techcrunch.com/2026/10/23/openai-says-it-will-no-longer-train-its-ai-models-on-the-live-internet-citing-significant-risks/">https://techcrunch.com/2026/10/23/openai-says-it-will-no-longer-train-its-ai-models-on-the-live-internet-citing-significant-risks/</a><br/><a href="https://www.theverge.com/ai-artificial-intelligence/1018021/openai-training-top-ai-models-no-internet">https://www.theverge.com/ai-artificial-intelligence/1018021/openai-training-top-ai-models-no-internet</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט בוקר 24.10 - פצצות מגיטהאב</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-24-morning-gh</guid>
+      <pubDate>Sat, 24 Oct 2026 06:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-24-morning-gh.ogg" length="1748398" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>ועכשיו גיטהאב, חמישה פרויקטים פראיים. HBLauncher, 99 כוכבים, JavaScript: launcher להומברו שרץ דרך SmileBASIC על Nintendo Switch 2.</p><p>מקורות:<br/><a href="https://github.com/ravensclawx/HBLauncher">https://github.com/ravensclawx/HBLauncher</a><br/><a href="https://github.com/ivarvong/lantern">https://github.com/ivarvong/lantern</a><br/><a href="https://github.com/anomalyco/rune">https://github.com/anomalyco/rune</a><br/><a href="https://github.com/y-u-s-u-f/overhead">https://github.com/y-u-s-u-f/overhead</a><br/><a href="https://github.com/EricPAustin/PokemonEmeraldCoop">https://github.com/EricPAustin/PokemonEmeraldCoop</a><br/></p>]]></description>
+    </item>
+    <item>
       <title>דייג&#x27;סט ערב 23.10 - חדשות AI</title>
       <link>https://ozlevyq.github.io/digests/</link>
       <guid isPermaLink="false">digest-2026-10-23-evening-ai</guid>
