@@ -10,6 +10,24 @@
     <itunes:explicit>no</itunes:explicit>
     <itunes:category text="Technology"/>
     <item>
+      <title>דייג&#x27;סט בוקר 25.10 - חדשות AI</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-25-morning-ai</guid>
+      <pubDate>Sun, 25 Oct 2026 06:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-25-morning-ai.ogg" length="1599186" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>בוקר טוב עוז. הבוקר שני סימנים שהממשק הבא הוא לא עוד חלון צ&#x27;אט. הראשון הוא Dessa של Block: מודל שפה שלא קרא אפילו מילה.</p><p>מקורות:<br/><a href="https://block.xyz/dessa">https://block.xyz/dessa</a><br/><a href="https://techcrunch.com/2026/10/24/blocks-new-voice-model-sounds-eerily-human/">https://techcrunch.com/2026/10/24/blocks-new-voice-model-sounds-eerily-human/</a><br/><a href="https://www.canva.com/newsroom/news/canva-craft/">https://www.canva.com/newsroom/news/canva-craft/</a><br/><a href="https://techcrunch.com/2026/10/22/canva-releases-its-first-image-generation-model/">https://techcrunch.com/2026/10/22/canva-releases-its-first-image-generation-model/</a><br/><a href="https://www.theverge.com/ai-artificial-intelligence/1017151/canva-craft-in-house-ai-model">https://www.theverge.com/ai-artificial-intelligence/1017151/canva-craft-in-house-ai-model</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט בוקר 25.10 - פצצות מגיטהאב</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-25-morning-gh</guid>
+      <pubDate>Sun, 25 Oct 2026 06:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-25-morning-gh.ogg" length="1972970" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>ועכשיו גיטהאב, חמש תעלומות מעבדה. פתיחה עם gpu-unlock-ada, 998 כוכבים, C ו-GPL2: מודול קרנל שמפעיל SM speed-select לפני שדרייבר NVIDIA הרגיל עולה.</p><p>מקורות:<br/><a href="https://github.com/JustAResearcher/gpu-unlock-ada">https://github.com/JustAResearcher/gpu-unlock-ada</a><br/><a href="https://github.com/mirkobrombin/raven">https://github.com/mirkobrombin/raven</a><br/><a href="https://github.com/mamcjr/BOTWRecompAndroid">https://github.com/mamcjr/BOTWRecompAndroid</a><br/><a href="https://github.com/oscarlosu-lab/USBAnywhere">https://github.com/oscarlosu-lab/USBAnywhere</a><br/><a href="https://github.com/firelzrd/lru_cast">https://github.com/firelzrd/lru_cast</a><br/></p>]]></description>
+    </item>
+    <item>
       <title>דייג&#x27;סט ערב 24.10 - חדשות AI</title>
       <link>https://ozlevyq.github.io/digests/</link>
       <guid isPermaLink="false">digest-2026-10-24-evening-ai</guid>
