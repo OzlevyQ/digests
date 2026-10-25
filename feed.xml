@@ -10,6 +10,24 @@
     <itunes:explicit>no</itunes:explicit>
     <itunes:category text="Technology"/>
     <item>
+      <title>דייג&#x27;סט ערב 25.10 - חדשות AI</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-25-evening-ai</guid>
+      <pubDate>Sun, 25 Oct 2026 18:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-25-evening-ai.ogg" length="1711674" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>ערב טוב עוז. הערב שני שחרורים פתוחים, אחד בונה עולם ואחד גורם לו לדבר מהמכשיר שלך.</p><p>מקורות:<br/><a href="https://huggingface.co/tencent/Hy-Nomas">https://huggingface.co/tencent/Hy-Nomas</a><br/><a href="https://github.com/Tencent-Hunyuan/Hy-Nomas">https://github.com/Tencent-Hunyuan/Hy-Nomas</a><br/><a href="https://hy-nomas.hy.tencent.com/">https://hy-nomas.hy.tencent.com/</a><br/><a href="https://www.datastudios.org/post/tencent-hy-nomas-open-weight-interactive-world-model">https://www.datastudios.org/post/tencent-hy-nomas-open-weight-interactive-world-model</a><br/><a href="https://www.neuraldaily.news/en/a/tencent-hy-nomas-open-interactive-video-world-model">https://www.neuraldaily.news/en/a/tencent-hy-nomas-open-interactive-video-world-model</a><br/><a href="https://research.nvidia.com/labs/nemotron/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB/">https://research.nvidia.com/labs/nemotron/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB/</a><br/><a href="https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB-DFlash">https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB-DFlash</a><br/><a href="https://catalog.ngc.nvidia.com/orgs/nim/nvidia/containers/nemotron-3.5-bolt-e4b-4gb/-">https://catalog.ngc.nvidia.com/orgs/nim/nvidia/containers/nemotron-3.5-bolt-e4b-4gb/-</a><br/><a href="https://www.marktechpost.com/2026/10/23/nvidia-nemotron-3-5-bolt-e4b-4gb/">https://www.marktechpost.com/2026/10/23/nvidia-nemotron-3-5-bolt-e4b-4gb/</a><br/><a href="https://www.datastudios.org/post/nvidia-nemotron-3-5-bolt-e4b-4gb-local-ai-agents-benchmarks">https://www.datastudios.org/post/nvidia-nemotron-3-5-bolt-e4b-4gb-local-ai-agents-benchmarks</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט ערב 25.10 - פצצות מגיטהאב</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-25-evening-gh</guid>
+      <pubDate>Sun, 25 Oct 2026 18:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-25-evening-gh.ogg" length="1869356" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>ועכשיו גיטהאב, חמישה פרויקטים שמרגישים כמו מעבדות שונות. פתיחה עם gdirect, 464 כוכבים, Rust ו-GPL2: Google Drive מהטרמינל, בלי דפדפן.</p><p>מקורות:<br/><a href="https://github.com/mizorewww/gdirect">https://github.com/mizorewww/gdirect</a><br/><a href="https://github.com/tractordev/webframe">https://github.com/tractordev/webframe</a><br/><a href="https://github.com/dlt2000/xc-soundfont-synth">https://github.com/dlt2000/xc-soundfont-synth</a><br/><a href="https://github.com/loopj/tinysd">https://github.com/loopj/tinysd</a><br/><a href="https://github.com/Leonxlnx/napali">https://github.com/Leonxlnx/napali</a><br/></p>]]></description>
+    </item>
+    <item>
       <title>דייג&#x27;סט בוקר 25.10 - חדשות AI</title>
       <link>https://ozlevyq.github.io/digests/</link>
       <guid isPermaLink="false">digest-2026-10-25-morning-ai</guid>
