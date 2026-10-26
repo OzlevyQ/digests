@@ -10,6 +10,24 @@
     <itunes:explicit>no</itunes:explicit>
     <itunes:category text="Technology"/>
     <item>
+      <title>דייג&#x27;סט ערב 26.10 - חדשות AI</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-26-evening-ai</guid>
+      <pubDate>Mon, 26 Oct 2026 18:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-26-evening-ai.ogg" length="1581570" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>ערב טוב עוז. הערב שני שחרורים פתוחים נוגעים בשני הדברים שהכי קשה לסוכן AI: לענות בזמן, ולזכור בלי לשלם על כל מילה.</p><p>מקורות:<br/><a href="https://huggingface.co/tencent/Hy-SimulMT-30B-A3B">https://huggingface.co/tencent/Hy-SimulMT-30B-A3B</a><br/><a href="https://github.com/Tencent-Hunyuan/Hy-SimulMT">https://github.com/Tencent-Hunyuan/Hy-SimulMT</a><br/><a href="https://www.tmtpost.com/nictation/8182658.html">https://www.tmtpost.com/nictation/8182658.html</a><br/><a href="https://arxiv.org/html/2610.28577">https://arxiv.org/html/2610.28577</a><br/><a href="https://fuvty.github.io/thinking_yard_project_page/projects/akv/">https://fuvty.github.io/thinking_yard_project_page/projects/akv/</a><br/><a href="https://github.com/thu-nics/AKV">https://github.com/thu-nics/AKV</a><br/><a href="https://www.marktechpost.com/2026/10/26/tsinghua-akv-kv-cache-engineering-llm-agents/">https://www.marktechpost.com/2026/10/26/tsinghua-akv-kv-cache-engineering-llm-agents/</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט ערב 26.10 - פצצות מגיטהאב</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-26-evening-gh</guid>
+      <pubDate>Mon, 26 Oct 2026 18:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-26-evening-gh.ogg" length="1771819" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>ועכשיו גיטהאב, חמישה פרויקטים. פותחים ב-GEOInflow, 254 כוכבים, TypeScript ו-MIT: אנליטיקס לעידן שבו הסורקים הם לא רק גוגל.</p><p>מקורות:<br/><a href="https://github.com/yaojingang/GEOInflow">https://github.com/yaojingang/GEOInflow</a><br/><a href="https://github.com/NyxFoundation/nyxis">https://github.com/NyxFoundation/nyxis</a><br/><a href="https://github.com/piermark/omarchytv">https://github.com/piermark/omarchytv</a><br/><a href="https://github.com/heydeer/pngdeer">https://github.com/heydeer/pngdeer</a><br/><a href="https://github.com/cortad/cortad">https://github.com/cortad/cortad</a><br/></p>]]></description>
+    </item>
+    <item>
       <title>דייג&#x27;סט בוקר 26.10 - חדשות AI</title>
       <link>https://ozlevyq.github.io/digests/</link>
       <guid isPermaLink="false">digest-2026-10-26-morning-ai</guid>
