@@ -10,6 +10,24 @@
     <itunes:explicit>no</itunes:explicit>
     <itunes:category text="Technology"/>
     <item>
+      <title>דייג&#x27;סט בוקר 26.10 - חדשות AI</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-26-morning-ai</guid>
+      <pubDate>Mon, 26 Oct 2026 06:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-26-morning-ai.ogg" length="1835789" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>בוקר טוב עוז. הבוקר שני שחרורים פתוחים משני קצוות: אחד מנסה להפוך מודל קטן יחסית לסוכן קוד רציני, והשני מתקן את החלק הנסתר שהופך עולם וידאו לחי. מתחילים ב-Nanbeige4.</p><p>מקורות:<br/><a href="https://huggingface.co/Nanbeige/Nanbeige4.3-33B">https://huggingface.co/Nanbeige/Nanbeige4.3-33B</a><br/><a href="https://www.eesel.ai/blog/nanbeige-4-3">https://www.eesel.ai/blog/nanbeige-4-3</a><br/><a href="https://www.datastudios.org/post/nanbeige-4-3-33b-open-weight-dense-agentic-model-512k-context">https://www.datastudios.org/post/nanbeige-4-3-33b-open-weight-dense-agentic-model-512k-context</a><br/><a href="https://kyutai.org/blog/2026-10-22-cadre/">https://kyutai.org/blog/2026-10-22-cadre/</a><br/><a href="https://github.com/kyutai-labs/cadre-autoencoders-and-world-models">https://github.com/kyutai-labs/cadre-autoencoders-and-world-models</a><br/><a href="https://huggingface.co/collections/kyutai/cadre-autoencoders-and-world-models">https://huggingface.co/collections/kyutai/cadre-autoencoders-and-world-models</a><br/><a href="https://cadre-wm.kyutai.org/">https://cadre-wm.kyutai.org/</a><br/><a href="https://ailookout.news/blog/kyutai-cadre-video-autoencoders-let-world-models-react-in-under-230-ms/">https://ailookout.news/blog/kyutai-cadre-video-autoencoders-let-world-models-react-in-under-230-ms/</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט בוקר 26.10 - פצצות מגיטהאב</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-26-morning-gh</guid>
+      <pubDate>Mon, 26 Oct 2026 06:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-26-morning-gh.ogg" length="1752708" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>ועכשיו גיטהאב, חמישה פרויקטים. מתחילים ב-word-atlas, 799 כוכבים, TypeScript, קוד MIT ותוכן CC BY: 7,298 מילי IELTS, וכל מילה מקבלת איור, שתי דוגמאות, הגייה בריטית…</p><p>מקורות:<br/><a href="https://github.com/designfuchen/word-atlas">https://github.com/designfuchen/word-atlas</a><br/><a href="https://github.com/SamG-Coder/BakedVoxelLighting">https://github.com/SamG-Coder/BakedVoxelLighting</a><br/><a href="https://github.com/Aaryan-Kapoor/english-rs">https://github.com/Aaryan-Kapoor/english-rs</a><br/><a href="https://github.com/subhashhhhhh/Lumen">https://github.com/subhashhhhhh/Lumen</a><br/><a href="https://github.com/assetnote/node2shell-scanner">https://github.com/assetnote/node2shell-scanner</a><br/></p>]]></description>
+    </item>
+    <item>
       <title>דייג&#x27;סט ערב 25.10 - חדשות AI</title>
       <link>https://ozlevyq.github.io/digests/</link>
       <guid isPermaLink="false">digest-2026-10-25-evening-ai</guid>
