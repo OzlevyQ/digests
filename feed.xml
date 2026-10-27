@@ -10,6 +10,24 @@
     <itunes:explicit>no</itunes:explicit>
     <itunes:category text="Technology"/>
     <item>
+      <title>דייג&#x27;סט בוקר 27.10 - חדשות AI</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-27-morning-ai</guid>
+      <pubDate>Tue, 27 Oct 2026 06:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-27-morning-ai.ogg" length="1620487" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>בוקר טוב עוז. הבוקר שני מבחנים לסוכנים: אחד הופך אותם לזולים מספיק לעבודה יומיומית, והשני שואל אם הם באמת יודעים לעשות מחקר. OpenAI שיגרה את GPT-6.</p><p>מקורות:<br/><a href="https://openai.com/index/introducing-gpt-6-1-terra">https://openai.com/index/introducing-gpt-6-1-terra</a><br/><a href="https://developers.openai.com/api/docs/models/gpt-6.1-terra">https://developers.openai.com/api/docs/models/gpt-6.1-terra</a><br/><a href="https://developers.openai.com/api/docs/pricing">https://developers.openai.com/api/docs/pricing</a><br/><a href="https://aws.amazon.com/about-aws/whats-new/2026/10/openai-gpt-6-1-terra-on-amazon-bedrock/">https://aws.amazon.com/about-aws/whats-new/2026/10/openai-gpt-6-1-terra-on-amazon-bedrock/</a><br/><a href="https://www.marktechpost.com/2026/10/26/openai-gpt-6-1-terra/">https://www.marktechpost.com/2026/10/26/openai-gpt-6-1-terra/</a><br/><a href="https://arxiv.org/html/2610.32441">https://arxiv.org/html/2610.32441</a><br/><a href="https://github.com/SKYLENAGE-AI/Sci-Agent-Exam">https://github.com/SKYLENAGE-AI/Sci-Agent-Exam</a><br/><a href="https://www.aimodeling.com/news/slug/sci-agent-exam-scientific-agent-benchmark">https://www.aimodeling.com/news/slug/sci-agent-exam-scientific-agent-benchmark</a><br/><a href="https://syncai.news/article/sci-agent-exam-benchmarking-agents-on-scientific-research-tasks-06153f">https://syncai.news/article/sci-agent-exam-benchmarking-agents-on-scientific-research-tasks-06153f</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט בוקר 27.10 - פצצות מגיטהאב</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-27-morning-gh</guid>
+      <pubDate>Tue, 27 Oct 2026 06:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-27-morning-gh.ogg" length="1744711" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>ועכשיו גיטהאב, חמישה פרויקטים. פותחים ב-trompe, 119 כוכבים, TypeScript ו-Apache 2: הוא לוקח blockout אפור, מתכנן מצלמות במקומות שבהם שחקן עומד, מבקש ממודל תמונה לצבוע כל…</p><p>מקורות:<br/><a href="https://github.com/patch-gg/trompe">https://github.com/patch-gg/trompe</a><br/><a href="https://github.com/ngxson/esp32-usb-to-airprint">https://github.com/ngxson/esp32-usb-to-airprint</a><br/><a href="https://github.com/JunWan666/astrbot-for-android">https://github.com/JunWan666/astrbot-for-android</a><br/><a href="https://github.com/hez2010/SatoriInsight">https://github.com/hez2010/SatoriInsight</a><br/><a href="https://github.com/Leonxlnx/procedural-fire">https://github.com/Leonxlnx/procedural-fire</a><br/></p>]]></description>
+    </item>
+    <item>
       <title>דייג&#x27;סט ערב 26.10 - חדשות AI</title>
       <link>https://ozlevyq.github.io/digests/</link>
       <guid isPermaLink="false">digest-2026-10-26-evening-ai</guid>
