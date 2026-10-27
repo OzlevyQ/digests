@@ -10,6 +10,24 @@
     <itunes:explicit>no</itunes:explicit>
     <itunes:category text="Technology"/>
     <item>
+      <title>דייג&#x27;סט ערב 27.10 - חדשות AI</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-27-evening-ai</guid>
+      <pubDate>Tue, 27 Oct 2026 18:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-27-evening-ai.ogg" length="1683405" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>עוז, ערב טוב. יש היום שתי ידיעות שמרגישות כמו שני קצוות של אותה מהפכה: מצד אחד הכסף נכנס לבורסה, ומצד שני המודלים נוגעים במתמטיקה ובפיזיקה הכי עמוקה שיש.</p><p>מקורות:<br/><a href="https://www.anthropic.com/news/s1-sec">https://www.anthropic.com/news/s1-sec</a><br/><a href="https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm">https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm</a><br/><a href="https://techcrunch.com/2026/10/26/anthropic-officially-files-for-its-public-debut/">https://techcrunch.com/2026/10/26/anthropic-officially-files-for-its-public-debut/</a><br/><a href="https://openai.com/index/building-scientific-understanding-with-academic-communities">https://openai.com/index/building-scientific-understanding-with-academic-communities</a><br/><a href="https://github.com/openai/math/tree/main/preprints/Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026">https://github.com/openai/math/tree/main/preprints/Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026</a><br/><a href="https://github.com/openai/math/tree/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026">https://github.com/openai/math/tree/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026</a><br/><a href="https://www.theverge.com/ai-artificial-intelligence/1019143/openai-eth-kaseya-science-math-physics">https://www.theverge.com/ai-artificial-intelligence/1019143/openai-eth-kaseya-science-math-physics</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט ערב 27.10 - פצצות מגיטהאב</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-27-evening-gh</guid>
+      <pubDate>Tue, 27 Oct 2026 18:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-27-evening-gh.ogg" length="1738156" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>עוז, גיטהאב היום מטורף: חמישה פרויקטים עם קוד אמיתי ואפס הבטחות ריקות. מתחילים ב-anymove של patch-gg: מוקאפ ליצורים דמיוניים מתוך סרטון AI אחד.</p><p>מקורות:<br/><a href="https://github.com/patch-gg/anymove">https://github.com/patch-gg/anymove</a><br/><a href="https://github.com/K240/hdUE">https://github.com/K240/hdUE</a><br/><a href="https://github.com/deepanshu406/scx_pgtier">https://github.com/deepanshu406/scx_pgtier</a><br/><a href="https://github.com/Shagg88/COGBox">https://github.com/Shagg88/COGBox</a><br/><a href="https://github.com/jianxinss/iching-64-motion">https://github.com/jianxinss/iching-64-motion</a><br/></p>]]></description>
+    </item>
+    <item>
       <title>דייג&#x27;סט בוקר 27.10 - חדשות AI</title>
       <link>https://ozlevyq.github.io/digests/</link>
       <guid isPermaLink="false">digest-2026-10-27-morning-ai</guid>
