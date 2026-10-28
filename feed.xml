@@ -10,6 +10,24 @@
     <itunes:explicit>no</itunes:explicit>
     <itunes:category text="Technology"/>
     <item>
+      <title>דייג&#x27;סט ערב 28.10 - חדשות AI</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-28-evening-ai</guid>
+      <pubDate>Wed, 28 Oct 2026 18:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-28-evening-ai.ogg" length="1656459" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>עוז, הערב יש שני סימנים שה-AI יוצא מהמסך אל העולם האמיתי. אנתרופיק פרסמה אתמול עדכון על שש שותפויות בפיתוח תרופות: BigHat Biosciences, בריסטול מאיירס סקוויב, Divergence…</p><p>מקורות:<br/><a href="https://www.anthropic.com/research/early-progress-drug-development">https://www.anthropic.com/research/early-progress-drug-development</a><br/><a href="https://qz.com/anthropic-mithril-medicine-acquisition-drug-programs-102826">https://qz.com/anthropic-mithril-medicine-acquisition-drug-programs-102826</a><br/><a href="https://www.digitalhealthnews.com/anthropic-partners-with-six-life-sciences-organizations-to-advance-drug-development-with-claude">https://www.digitalhealthnews.com/anthropic-partners-with-six-life-sciences-organizations-to-advance-drug-development-with-claude</a><br/><a href="https://explainx.ai/blog/anthropic-drug-development-six-partners-mithril-claude-results-what-is-preclinical-2026">https://explainx.ai/blog/anthropic-drug-development-six-partners-mithril-claude-results-what-is-preclinical-2026</a><br/><a href="https://www.liquid.ai/blog/lfm3">https://www.liquid.ai/blog/lfm3</a><br/><a href="https://huggingface.co/blog/LiquidAI/lfm3">https://huggingface.co/blog/LiquidAI/lfm3</a><br/><a href="https://docs.liquid.ai/lfm/models/complete-library">https://docs.liquid.ai/lfm/models/complete-library</a><br/><a href="https://venturebeat.com/technology/liquid-ais-new-lfm3-models-put-browser-agents-voice-commands-and-image-recognition-onto-enterprise-controlled-devices">https://venturebeat.com/technology/liquid-ais-new-lfm3-models-put-browser-agents-voice-commands-and-image-recognition-onto-enterprise-controlled-devices</a><br/><a href="https://www.marktechpost.com/2026/10/27/liquid-ai-lfm3-open-weight-2b-multimodal-models/">https://www.marktechpost.com/2026/10/27/liquid-ai-lfm3-open-weight-2b-multimodal-models/</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט ערב 28.10 - פצצות מגיטהאב</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-28-evening-gh</guid>
+      <pubDate>Wed, 28 Oct 2026 18:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-28-evening-gh.ogg" length="1797965" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>ועכשיו גיטהאב, ויש חמישה ריפוז טריים, וכל אחד פותח דלת אחרת. מתחילים ב-Anima Ref Adapter, 96 כוכבים, Apache 2.</p><p>מקורות:<br/><a href="https://github.com/ElectronGirl/ComfyUI-Anima-Ref-Adapter">https://github.com/ElectronGirl/ComfyUI-Anima-Ref-Adapter</a><br/><a href="https://github.com/ChiricoG/OneFamily">https://github.com/ChiricoG/OneFamily</a><br/><a href="https://github.com/KramerTech/gen5-RearDashcam">https://github.com/KramerTech/gen5-RearDashcam</a><br/><a href="https://github.com/cutetailbud/ff-ruyijs">https://github.com/cutetailbud/ff-ruyijs</a><br/><a href="https://github.com/mmockett/OP-XY-MNMD">https://github.com/mmockett/OP-XY-MNMD</a><br/></p>]]></description>
+    </item>
+    <item>
       <title>דייג&#x27;סט בוקר 28.10 - חדשות AI</title>
       <link>https://ozlevyq.github.io/digests/</link>
       <guid isPermaLink="false">digest-2026-10-28-morning-ai</guid>
