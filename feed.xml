@@ -10,6 +10,24 @@
     <itunes:explicit>no</itunes:explicit>
     <itunes:category text="Technology"/>
     <item>
+      <title>דייג&#x27;סט בוקר 28.10 - חדשות AI</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-28-morning-ai</guid>
+      <pubDate>Wed, 28 Oct 2026 06:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-28-morning-ai.ogg" length="1660259" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>עוז, בוקר טוב. יש בוקר שבו העתיד לא דופק, הוא פשוט נכנס עם סאונד. Google DeepMind הציגה את Genie 4, research preview של סימולטור עולם אינטראקטיבי בזמן אמת.</p><p>מקורות:<br/><a href="https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/">https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/</a><br/><a href="https://blog.google/innovation-and-ai/models-and-research/google-deepmind/introducing-genie-4/">https://blog.google/innovation-and-ai/models-and-research/google-deepmind/introducing-genie-4/</a><br/><a href="https://techcrunch.com/2026/10/27/googles-genie-4-world-model-adds-audio-more-realistic-worlds-and-real-time-steering/">https://techcrunch.com/2026/10/27/googles-genie-4-world-model-adds-audio-more-realistic-worlds-and-real-time-steering/</a><br/><a href="https://arstechnica.com/google/2026/10/deepminds-genie-4-world-model-adds-audio-and-more-realistic-people-to-simulations/">https://arstechnica.com/google/2026/10/deepminds-genie-4-world-model-adds-audio-and-more-realistic-people-to-simulations/</a><br/><a href="https://www.anthropic.com/research/discovering-vulnerabilities-with-claude">https://www.anthropic.com/research/discovering-vulnerabilities-with-claude</a><br/><a href="https://chromereleases.googleblog.com/2026/10/stable-channel-update-for-desktop_0562499947.html">https://chromereleases.googleblog.com/2026/10/stable-channel-update-for-desktop_0562499947.html</a><br/><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-33096">https://nvd.nist.gov/vuln/detail/CVE-2026-33096</a><br/><a href="https://osv.dev/vulnerability/CVE-2026-98432">https://osv.dev/vulnerability/CVE-2026-98432</a><br/><a href="https://www.rapid7.com/db/vulnerabilities/cve-2026-33096/">https://www.rapid7.com/db/vulnerabilities/cve-2026-33096/</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט בוקר 28.10 - פצצות מגיטהאב</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-28-morning-gh</guid>
+      <pubDate>Wed, 28 Oct 2026 06:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-28-morning-gh.ogg" length="1798284" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>ועכשיו גיטהאב, חמישה פרויקטים שמרגישים כמו מעבדה שפרצה לבוקר. פותחים ב-LiveSimBooter, 42 כוכבים, MIT.</p><p>מקורות:<br/><a href="https://github.com/khanhduytran0/LiveSimBooter">https://github.com/khanhduytran0/LiveSimBooter</a><br/><a href="https://github.com/oxnw/ai-phone">https://github.com/oxnw/ai-phone</a><br/><a href="https://github.com/addozhang/leancast">https://github.com/addozhang/leancast</a><br/><a href="https://github.com/TomWang-NPU/MeCo-Hi">https://github.com/TomWang-NPU/MeCo-Hi</a><br/><a href="https://github.com/bjarneo/velo">https://github.com/bjarneo/velo</a><br/></p>]]></description>
+    </item>
+    <item>
       <title>דייג&#x27;סט ערב 27.10 - חדשות AI</title>
       <link>https://ozlevyq.github.io/digests/</link>
       <guid isPermaLink="false">digest-2026-10-27-evening-ai</guid>
