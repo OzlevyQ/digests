@@ -45,7 +45,7 @@
   <div class="logo">🎙️</div>
   <div>
     <h1>הדייג'סטים של עוז</h1>
-    <div class="sub">40 מהדורות · בוקר וערב</div>
+    <div class="sub">41 מהדורות · בוקר וערב</div>
   </div>
   <a class="rss-btn" href="feed.xml">הירשם ב-RSS</a>
 </header>
@@ -53,6 +53,26 @@
   <p>כל הדייג'סטים הקוליים במקום אחד: מה חדש ב-AI ומה אפשר לעשות עם זה, והריפואים הכי פראיים בגיטהאב. לחץ פליי, או הוסף את הפיד לאפליקציית פודקאסטים.</p>
 </div>
 <main>
+    <section class="card">
+      <h2><span class="date">29.10</span> דייג'סט ערב</h2>
+      
+      <div class="track">
+        <div class="track-label">חדשות AI</div>
+        <p class="teaser">ערב טוב, ויש הערב שני מהלכים שמחזירים את ה-AI אל המכשיר שאצלך ביד.</p>
+        <audio controls preload="metadata" src="audio/2026-10-29-evening-ai.ogg"></audio>
+        <details class="script"><summary>תמליל מלא</summary><p>ערב טוב, ויש הערב שני מהלכים שמחזירים את ה-AI אל המכשיר שאצלך ביד.</p><p>הראשון מגיע מ-Hugging Face: AnySpeechRecognizer ו-AnyDecisionModel, שתי חבילות Swift פתוחות שמחליפות את ברירת המחדל של אפל במודלים פתוחים שרצים מקומית. AnySpeechRecognizer מממש את ה-API החדש של SpeechAnalyzer, כך שאם הקוד שלך כבר משתמש בו, לפי הבלוג שינוי ה-import מספיק. אבל מתחת לפני השטח אתה בוחר מנוע: Parakeet של NVIDIA או Qwen3-ASR של Alibaba על Core ML, ועוד diarization עם Sortformer שעוקב אחרי עד ארבעה דוברים, גם כשהם מדברים ביחד.</p><p>והמספרים מעניינים: על LibriSpeech test-clean, בקבצים של שלוש עד שמונה דקות על M4 Max, Parakeet Unified הגיע ל-1.43 אחוז WER מול 2.12 אצל המתמלל של אפל. שעה של אודיו מתומללת מקובץ תוך בערך 20 עד 40 שניות, או דקה וחצי עד שתיים וחצי בשידור חי, עם כמאה מגה זיכרון אחרי קומפילציית Core ML. אבל הכותבים גם מודים: במפגשי AMI, כשכולם מדברים מעל כולם, כל המנועים שבדקו היו מעל 23 אחוז WER. אז לא קסם. פשוט בסיס מקומי חזק.</p><p>והחלק השני, AnyDecisionModel, הוא הברקה ארכיטקטונית: במקום לבקש טקסט חופשי, שואלים שאלה מובנית וקוראים הסתברויות מ-forward pass אחד. בדמו Emoji Magnet, Qwen3 4B מקומי עם MLX עונה על 16 שאלות בכל מעבר, וממיין 343 אימוג&#x27;י תוך כעשר שניות על M4 Max. החלטות מקומיות, מהירות ומדידות, בלי לנקות טקסט.</p><p>והמהלך השני הוא Granite Switch 4.1.1 של IBM. זה לא מודל חדש מאפס, וזו בדיוק הנקודה. IBM מוכיחה שאפשר לעדכן מודל כמו תוכנה: מספר תיקון, תאימות מלאה אחורה, בלי מיגרציה, ובלי לחשב מחדש את בסיס המודל. מה שמשתנה הוא רק הרכיבים: מודל ASR חדש עם תמלול רב-לשוני בעשר שפות, פיסוק ואותיות גדולות טבעיות, ו-Decision adapter משופר במדד Jev Decision Index. הבסיס נשאר אותו בסיס. אותו endpoint. פשוט מחברים את האדפטרים החדשים ומפרסים.</p><p>וזו בשורה גדולה למי שמתחזק מודלים: במקום להוריד עשרות ג&#x27;יגה על כל תיקון, מקבלים עדכון מודולרי כמו חבילת תוכנה. IBM עובדת על Adapter SDK לצדדים שלישיים. אם זה יקרה, מודלים פתוחים מפסיקים להיות קובץ ענק קפוא ומתחילים להיות מערכת עם גרסאות ותיקונים ברצף.
+</p></details>
+        <ul class="links"><li><a href="https://huggingface.co/blog/anydecisionmodel" target="_blank" rel="noopener">huggingface.co/blog/anydecisionmodel</a></li><li><a href="https://daily.dev/posts/introducing-anyspeechrecognizer-and-anydecisionmodel-open-models-for-speech-and-decisions-on-apple--gt9jk5x6l" target="_blank" rel="noopener">daily.dev/posts/introducing-anyspeechrecognizer-and-anyde...</a></li><li><a href="https://huggingface.co/blog/ibm-granite/granite-switch-4-1-1" target="_blank" rel="noopener">huggingface.co/blog/ibm-granite/granite-switch-4-1-1</a></li><li><a href="https://huggingface.co/ibm-granite/granite-switch-4.1-8b" target="_blank" rel="noopener">huggingface.co/ibm-granite/granite-switch-4.1-8b</a></li></ul>
+      </div>
+      <div class="track">
+        <div class="track-label">פצצות מגיטהאב</div>
+        <p class="teaser">הגיטהאב של הערב: חמישה פרויקטים שמרגישים בלתי אפשריים, אבל עם קוד ממשי. מתחילים ב-Openjutsu, 264 כוכבים, MIT.</p>
+        <audio controls preload="metadata" src="audio/2026-10-29-evening-gh.ogg"></audio>
+        <details class="script"><summary>תמליל מלא</summary><p>הגיטהאב של הערב: חמישה פרויקטים שמרגישים בלתי אפשריים, אבל עם קוד ממשי.</p><p>מתחילים ב-Openjutsu, 264 כוכבים, MIT. זו החלפת דמות או עצם בווידאו, מקומית על ה-GPU שלך: מעלים וידאו ותמונת דמות, MiniMax H3 מייצר את הווידאו, SAM 3.1 עוקב אחרי האנשים, ו-Qwen3-VL 8B כותב את תיאורי הפריימים. המצלמה, החיתוכים והתנועה נשארים. אפשר להחליף עד ארבע דמויות, לשנות שיער או בגד, להסיר עצם, להחליף רקע ולתקן פנים. הרצתי build מלא ו-128 בדיקות עברו. דרוש NVIDIA; ב-4060 Ti קליפ של שש שניות ב-480p לוקח שש עד 13 דקות. מראות עדיין לא עובדות, ולחלק מהמשקולות רישיון מוגבל.</p><p>שני, Pocket Foundry, 85 כוכבים, GPL-3: Factorio על אנדרואיד, בלי אמולציה ובלי סטרימינג. אתה מייבא את עותק Linux ARM64 הרשמי שקנית, והאפליקציה מריצה אותו עם glibc, Mesa, SDL ושרת X. יש בקר על המסך, gamepad, שמירות וייבוא נהגי GPU. מדווח 60 FPS על vivo X200 Ultra, POCO F5 Pro ו-Galaxy S25 FE עם הדרייבר המתאים. אין בתוכו קבצי Factorio, והוא לא קשור ל-Wube.</p><p>שלישי, dartc, 18 כוכבים, MIT: מהדר Dart נטיבי שכתוב כולו ב-Dart. גרסה 0.4 יוצאת היום, עם יעדים ל-macOS ARM64 וללינוקס, והוא בונה מחדש את עצמו. הקובץ שנוצר לא צריך SDK, VM, JIT או snapshot. הכול ב-Dart: מהדר, allocator, runtime וקבצי executable. עדיין early preview: אין generics, mixins, records, async או isolates. אבל bootstrap עצמאי של שפה? מטורף.</p><p>רביעי, Project Helghast, 56 כוכבים, MIT: Killzone 3 כפורט PC לא רשמי, דרך קומפילציה סטטית מהמשחק שלך. Windows x64 ו-Direct3D 12, והסטטוס: partly playable. שום קובץ משחק לא מופץ, אין קשר לסוני או Guerrilla, ויש דפי מצב ובעיות ידועות. לא הרצתי כי צריך את העותק החוקי. ועדיין, PS3 הופך לקוד מקומי? פרא.</p><p>וחמישי, Flix Launcher, 14 כוכבים, MIT: מסך בית קולנועי וקל ל-Android TV. אפליקציות, סרטים וסדרות במסך אחד, רקע וידאו, Kotlin בלי Compose, Android TV 9+, ו-APK של 700KB כדי לא לחנוק טלוויזיות עם 2GB זיכרון. פחות מטורף, אבל שימושי: מסך בית בלי פרסומות ובלי כבדות. חמישה פרויקטים, חמש דלתות.
+</p></details>
+        <ul class="links"><li><a href="https://github.com/D3voz/openjutsu" target="_blank" rel="noopener">github.com/D3voz/openjutsu</a></li><li><a href="https://github.com/JulioFerrero/pocket-foundry" target="_blank" rel="noopener">github.com/JulioFerrero/pocket-foundry</a></li><li><a href="https://github.com/medz/dartc" target="_blank" rel="noopener">github.com/medz/dartc</a></li><li><a href="https://github.com/undecuple/project-helghast" target="_blank" rel="noopener">github.com/undecuple/project-helghast</a></li><li><a href="https://github.com/HatriGt/flix-launcher" target="_blank" rel="noopener">github.com/HatriGt/flix-launcher</a></li></ul>
+      </div>
+    </section>
     <section class="card">
       <h2><span class="date">29.10</span> דייג'סט בוקר</h2>
       

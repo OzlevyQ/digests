@@ -10,6 +10,24 @@
     <itunes:explicit>no</itunes:explicit>
     <itunes:category text="Technology"/>
     <item>
+      <title>דייג&#x27;סט ערב 29.10 - חדשות AI</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-29-evening-ai</guid>
+      <pubDate>Thu, 29 Oct 2026 18:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-29-evening-ai.ogg" length="1651419" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>ערב טוב, ויש הערב שני מהלכים שמחזירים את ה-AI אל המכשיר שאצלך ביד.</p><p>מקורות:<br/><a href="https://huggingface.co/blog/anydecisionmodel">https://huggingface.co/blog/anydecisionmodel</a><br/><a href="https://daily.dev/posts/introducing-anyspeechrecognizer-and-anydecisionmodel-open-models-for-speech-and-decisions-on-apple--gt9jk5x6l">https://daily.dev/posts/introducing-anyspeechrecognizer-and-anydecisionmodel-open-models-for-speech-and-decisions-on-apple--gt9jk5x6l</a><br/><a href="https://huggingface.co/blog/ibm-granite/granite-switch-4-1-1">https://huggingface.co/blog/ibm-granite/granite-switch-4-1-1</a><br/><a href="https://huggingface.co/ibm-granite/granite-switch-4.1-8b">https://huggingface.co/ibm-granite/granite-switch-4.1-8b</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט ערב 29.10 - פצצות מגיטהאב</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-29-evening-gh</guid>
+      <pubDate>Thu, 29 Oct 2026 18:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-29-evening-gh.ogg" length="1732738" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>הגיטהאב של הערב: חמישה פרויקטים שמרגישים בלתי אפשריים, אבל עם קוד ממשי. מתחילים ב-Openjutsu, 264 כוכבים, MIT.</p><p>מקורות:<br/><a href="https://github.com/D3voz/openjutsu">https://github.com/D3voz/openjutsu</a><br/><a href="https://github.com/JulioFerrero/pocket-foundry">https://github.com/JulioFerrero/pocket-foundry</a><br/><a href="https://github.com/medz/dartc">https://github.com/medz/dartc</a><br/><a href="https://github.com/undecuple/project-helghast">https://github.com/undecuple/project-helghast</a><br/><a href="https://github.com/HatriGt/flix-launcher">https://github.com/HatriGt/flix-launcher</a><br/></p>]]></description>
+    </item>
+    <item>
       <title>דייג&#x27;סט בוקר 29.10 - חדשות AI</title>
       <link>https://ozlevyq.github.io/digests/</link>
       <guid isPermaLink="false">digest-2026-10-29-morning-ai</guid>
