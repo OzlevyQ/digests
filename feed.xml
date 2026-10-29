@@ -10,6 +10,24 @@
     <itunes:explicit>no</itunes:explicit>
     <itunes:category text="Technology"/>
     <item>
+      <title>דייג&#x27;סט בוקר 29.10 - חדשות AI</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-29-morning-ai</guid>
+      <pubDate>Thu, 29 Oct 2026 06:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-29-morning-ai.ogg" length="1677103" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>בוקר טוב, ויש היום שני מהלכים שמרגישים כמו פתיחת חזית חדשה. גוגל חשפה את Gemini 4 Carbon, ומציגה אותו כמודל החזית החזק שלה לסייבר ולעבודה ארוכת טווח.</p><p>מקורות:<br/><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/">https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/</a><br/><a href="https://artificialanalysis.ai/articles/gemini-4-carbon-new-number-1">https://artificialanalysis.ai/articles/gemini-4-carbon-new-number-1</a><br/><a href="https://arstechnica.com/ai/2026/10/google-announces-gemini-4-carbon-its-latest-frontier-ai-model-that-you-cant-use/">https://arstechnica.com/ai/2026/10/google-announces-gemini-4-carbon-its-latest-frontier-ai-model-that-you-cant-use/</a><br/><a href="https://the-decoder.com/google-deepmind-releases-gemini-4-carbon-just-two-weeks-after-argon-with-gains-across-the-board/">https://the-decoder.com/google-deepmind-releases-gemini-4-carbon-just-two-weeks-after-argon-with-gains-across-the-board/</a><br/><a href="https://research.nvidia.com/labs/nemotron/NVIDIA-Nemotron-3.5-Transcribe/">https://research.nvidia.com/labs/nemotron/NVIDIA-Nemotron-3.5-Transcribe/</a><br/><a href="https://huggingface.co/blog/nvidia/nemotron-transcribe-granary">https://huggingface.co/blog/nvidia/nemotron-transcribe-granary</a><br/><a href="https://techcrunch.com/2026/10/28/voice-ai-in-vogue-nvidia-releases-new-open-transcription-model/">https://techcrunch.com/2026/10/28/voice-ai-in-vogue-nvidia-releases-new-open-transcription-model/</a><br/><a href="https://research.nvidia.com/labs/nemotron/Granary-v2/">https://research.nvidia.com/labs/nemotron/Granary-v2/</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט בוקר 29.10 - פצצות מגיטהאב</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-29-morning-gh</guid>
+      <pubDate>Thu, 29 Oct 2026 06:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-29-morning-gh.ogg" length="1726567" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>הגיטהאב הפרוע של הבוקר מביא חמישה פרויקטים. מתחילים במים. Ultra-Water הוא מנוע אוקיינוס בזמן אמת ב-three.</p><p>מקורות:<br/><a href="https://github.com/Humpalumps/Ultra-Water">https://github.com/Humpalumps/Ultra-Water</a><br/><a href="https://github.com/anomalyco/hokum">https://github.com/anomalyco/hokum</a><br/><a href="https://github.com/zlinoliver/Holofold">https://github.com/zlinoliver/Holofold</a><br/><a href="https://github.com/denizguneey/invariant-twins">https://github.com/denizguneey/invariant-twins</a><br/><a href="https://github.com/victor-takai/rogue-galaxy-recomp">https://github.com/victor-takai/rogue-galaxy-recomp</a><br/></p>]]></description>
+    </item>
+    <item>
       <title>דייג&#x27;סט ערב 28.10 - חדשות AI</title>
       <link>https://ozlevyq.github.io/digests/</link>
       <guid isPermaLink="false">digest-2026-10-28-evening-ai</guid>
