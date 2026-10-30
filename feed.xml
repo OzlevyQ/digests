@@ -10,6 +10,24 @@
     <itunes:explicit>no</itunes:explicit>
     <itunes:category text="Technology"/>
     <item>
+      <title>דייג&#x27;סט בוקר 30.10 - חדשות AI</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-30-morning-ai</guid>
+      <pubDate>Fri, 30 Oct 2026 06:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-30-morning-ai.ogg" length="1702734" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>בוקר טוב, שני סיפורים: איך שומרים על סוכן חזק, ואיך גורמים לו לרוץ מהר. הראשון: חשיפה חריגה של OpenAI.</p><p>מקורות:<br/><a href="https://openai.com/index/updated-model-spec">https://openai.com/index/updated-model-spec</a><br/><a href="https://openai.com/index/how-we-detect-frontier-model-misalignment">https://openai.com/index/how-we-detect-frontier-model-misalignment</a><br/><a href="https://diffuspace.ai/blog/clover-35b/">https://diffuspace.ai/blog/clover-35b/</a><br/><a href="https://huggingface.co/Diffuspace/Clover-35B-A3B-Preview">https://huggingface.co/Diffuspace/Clover-35B-A3B-Preview</a><br/><a href="https://github.com/DiffuSpace/Clover-35B-A3B-Preview">https://github.com/DiffuSpace/Clover-35B-A3B-Preview</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט בוקר 30.10 - פצצות מגיטהאב</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-30-morning-gh</guid>
+      <pubDate>Fri, 30 Oct 2026 06:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-30-morning-gh.ogg" length="1729508" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>הגיטהאב הפרוע של הבוקר: חמישה פרויקטים עם כותרת מטורפת וקוד. מתחילים ב-TotK Recomp, 643 כוכבים, MIT: Tears of the Kingdom, לא אמולציה, אלא קומפילציה סטטית ל-Windows…</p><p>מקורות:<br/><a href="https://github.com/valentderah/totk-pc-recomp">https://github.com/valentderah/totk-pc-recomp</a><br/><a href="https://github.com/smithjohn78390/tongjiang-lab">https://github.com/smithjohn78390/tongjiang-lab</a><br/><a href="https://github.com/haydenschmitty/floorplan">https://github.com/haydenschmitty/floorplan</a><br/><a href="https://github.com/jackwener/DeepseekHarness-Android">https://github.com/jackwener/DeepseekHarness-Android</a><br/><a href="https://github.com/hugues31/duckpad">https://github.com/hugues31/duckpad</a><br/></p>]]></description>
+    </item>
+    <item>
       <title>דייג&#x27;סט ערב 29.10 - חדשות AI</title>
       <link>https://ozlevyq.github.io/digests/</link>
       <guid isPermaLink="false">digest-2026-10-29-evening-ai</guid>
