@@ -10,6 +10,24 @@
     <itunes:explicit>no</itunes:explicit>
     <itunes:category text="Technology"/>
     <item>
+      <title>דייג&#x27;סט ערב 30.10 - חדשות AI</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-30-evening-ai</guid>
+      <pubDate>Fri, 30 Oct 2026 18:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-30-evening-ai.ogg" length="1661351" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>ערב טוב עוז. שני שחרורים פתוחים, ושניהם תוקפים את אותה בעיה מכיוון אחר: איך מקבלים יכולת רצינית בלי לשלם מחיר ענק בזמן, בטוקנים או בחומרה.</p><p>מקורות:<br/><a href="https://microsoft.github.io/Mage/cowork/">https://microsoft.github.io/Mage/cowork/</a><br/><a href="https://huggingface.co/microsoft/Mage-VL-Cowork">https://huggingface.co/microsoft/Mage-VL-Cowork</a><br/><a href="https://github.com/microsoft/Mage">https://github.com/microsoft/Mage</a><br/><a href="https://pika.art/blog/pika-h3-flex">https://pika.art/blog/pika-h3-flex</a><br/><a href="https://huggingface.co/Pika-Labs/Pika-H3-Flex">https://huggingface.co/Pika-Labs/Pika-H3-Flex</a><br/><a href="https://github.com/Pika-Labs/Pika-H3-Flex">https://github.com/Pika-Labs/Pika-H3-Flex</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט ערב 30.10 - פצצות מגיטהאב</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-30-evening-gh</guid>
+      <pubDate>Fri, 30 Oct 2026 18:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-30-evening-gh.ogg" length="1848685" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>ערב טוב עוז. חמישה ריפוז חדשים שמרגישים כמו דלת אחורית לעולם אחר. מתחילים ב-ForgeKernel של OpenBMB, 67 כוכבים, Apache-2.</p><p>מקורות:<br/><a href="https://github.com/OpenBMB/ForgeKernel">https://github.com/OpenBMB/ForgeKernel</a><br/><a href="https://github.com/zzjcool/krd">https://github.com/zzjcool/krd</a><br/><a href="https://github.com/patch-gg/pixelfx">https://github.com/patch-gg/pixelfx</a><br/><a href="https://github.com/kevinraymond/florilegium">https://github.com/kevinraymond/florilegium</a><br/><a href="https://github.com/alchaincyf/huashu-bird-sticker">https://github.com/alchaincyf/huashu-bird-sticker</a><br/></p>]]></description>
+    </item>
+    <item>
       <title>דייג&#x27;סט בוקר 30.10 - חדשות AI</title>
       <link>https://ozlevyq.github.io/digests/</link>
       <guid isPermaLink="false">digest-2026-10-30-morning-ai</guid>
