@@ -45,7 +45,7 @@
   <div class="logo">🎙️</div>
   <div>
     <h1>הדייג'סטים של עוז</h1>
-    <div class="sub">43 מהדורות · בוקר וערב</div>
+    <div class="sub">44 מהדורות · בוקר וערב</div>
   </div>
   <a class="rss-btn" href="feed.xml">הירשם ב-RSS</a>
 </header>
@@ -53,6 +53,26 @@
   <p>כל הדייג'סטים הקוליים במקום אחד: מה חדש ב-AI ומה אפשר לעשות עם זה, והריפואים הכי פראיים בגיטהאב. לחץ פליי, או הוסף את הפיד לאפליקציית פודקאסטים.</p>
 </div>
 <main>
+    <section class="card">
+      <h2><span class="date">31.10</span> דייג'סט בוקר</h2>
+      
+      <div class="track">
+        <div class="track-label">חדשות AI</div>
+        <p class="teaser">בוקר טוב, יש לי שתי ידיעות AI שהולכות בכיוון הפוך: לא עוד ענק גנרי, אלא מודל קטן שיודע בדיוק על מה הוא מדבר, ומודל שמריץ את אותן שכבות פעמיים כדי לחשוב עוד צעד.</p>
+        <audio controls preload="metadata" src="audio/2026-10-31-morning-ai.ogg"></audio>
+        <details class="script"><summary>תמליל מלא</summary><p>בוקר טוב, יש לי שתי ידיעות AI שהולכות בכיוון הפוך: לא עוד ענק גנרי, אלא מודל קטן שיודע בדיוק על מה הוא מדבר, ומודל שמריץ את אותן שכבות פעמיים כדי לחשוב עוד צעד.</p><p>ראשון: Samaya Sterling. תדמיין סוכן מחקר פיננסי שלא רק עונה שאלות, אלא פותח כלים, בודק מספרים, מחבר ראיות וכותב דו״ח. Samaya לקחה את Nemotron 3.5 Lightning, מודל פתוח של שלושים מיליארד פרמטרים מסוג mixture-of-experts, אבל רק שלושה מיליארד פעילים בכל צעד, ואימנה אותו בארבעה שלבים: שני שלבי למידה מפוקחת, ואז למידת חיזוקים אופליין ואונליין. המספרים? על FrontierFinance, בנצ׳מרק של מאתיים ועשרים שאלות מחקר פיננסיות פתוחות, Sterling קופץ מ-42.5 אחוז ל-58.9 אחוז. Claude Fable 5.1 עומד על 55.9. והעלות: 61 סנט לשאלה מול 6.89 דולר. זה פי אחת עשרה פחות. הכי מעניין: חציון קריאות הכלי עלה משלוש לשבע עשרה, כלומר המודל באמת למד לחקור יותר עמוק. אבל שים לב: אלה נתונים של Samaya על הבנצ׳מרק שלה עצמה, המשקלים של Sterling לא פורסמו, ומערך הנתונים פתוח אבל דורש התחברות. מה שכן פתוח זה הגריידר, וארבעים וארבעה מבחני היחידה שלו עברו אצלי.</p><p>שני: SenseNova-Loop-9B-Preview. כאן הרעיון פשוט ומטורף: למה לערום עוד שכבות אם אפשר להפעיל חלק מהן פעמיים? יש למודל שלושים ושתיים שכבות ייחודיות, אבל שכבות ארבע עד עשרים ושבע רצות פעמיים ברצף, כך שכל forward pass מבצע חמישים ושש שכבות, בלי לשלם פי שניים בזיכרון. מעל זה יש שני ערוצי מידע שנשלטים ב-mHC, ותשומת לב היברידית: שלוש שכבות ליניאריות ואז אחת מלאה. זה מודל מולטימודלי ב-Apache 2.0, עם טקסט ותמונה, הקשר אימון של 262,144 טוקנים, ומשקלים של כשלושים ושמונה ג׳יגה ב-Hugging Face. בבנצ׳מרקים שהחברה עצמה פרסמה הוא מוביל ב-BIRD-Dev עם 71.38, ב-WorkBuddy עם 66.89, ב-TeamBench עם 48.89 וב-Automation עם 13.72, אבל לא מנצח הכול: ב-Terminal Bench הוא על 40.45 מול 49.44 למתחרה, וב-T3-Banking על 18.56 מול 19.59. ועוד נקודה: דוח טכני עדיין לא יצא, ההרצה דורשת קוד מותאם, ותוכניות ההאצה Dspark ו-Dflash2 עוד באימון. אבל הארכיטקטורה עצמה? זו אחת הדרכים הכי מעניינות לסחוט עומק ממודל קטן.
+</p></details>
+        <ul class="links"><li><a href="https://samaya.ai/blog/rl-post-trained-agentic-model" target="_blank" rel="noopener">samaya.ai/blog/rl-post-trained-agentic-model</a></li><li><a href="https://samaya.ai/benchmarks/frontier-finance" target="_blank" rel="noopener">samaya.ai/benchmarks/frontier-finance</a></li><li><a href="https://github.com/samaya-ai/frontier-finance" target="_blank" rel="noopener">github.com/samaya-ai/frontier-finance</a></li><li><a href="https://huggingface.co/datasets/samaya-ai/FrontierFinance" target="_blank" rel="noopener">huggingface.co/datasets/samaya-ai/FrontierFinance</a></li><li><a href="https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview" target="_blank" rel="noopener">huggingface.co/sensenova/SenseNova-Loop-9B-Preview</a></li><li><a href="https://github.com/OpenSenseNova/SenseNova-Loop" target="_blank" rel="noopener">github.com/OpenSenseNova/SenseNova-Loop</a></li><li><a href="https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview/blob/main/config.json" target="_blank" rel="noopener">huggingface.co/sensenova/SenseNova-Loop-9B-Preview/blob/m...</a></li></ul>
+      </div>
+      <div class="track">
+        <div class="track-label">פצצות מגיטהאב</div>
+        <p class="teaser">וברחבי גיטהאב בלילה הזה יש חמישה פרויקטים שהפכו שאלה מטורפת לקוד. ראשון: nesformer.</p>
+        <audio controls preload="metadata" src="audio/2026-10-31-morning-gh.ogg"></audio>
+        <details class="script"><summary>תמליל מלא</summary><p>וברחבי גיטהאב בלילה הזה יש חמישה פרויקטים שהפכו שאלה מטורפת לקוד.</p><p>ראשון: nesformer. מישהו לקח מעבד NES, כלומר 6502 עם שני קילובייט RAM וקרטריג׳, וקימפל אותו לתוך משקלים של מודל Qwen3.5. לא אימון. קומפילר. כל טוקן שהמודל מייצר הוא צעד במעבד. המשקלים הם 466 מיליון פרמטרים ב-BF16, אבל רק 9.3 מיליון לא אפסים, אז הקובץ הדחוס הוא 3.3 מגה. בדיקת ה-SHA-256 ושישה מבחני ליבה עברו. המגבלות: רק מיפוי NROM, אופקודים רשמיים בלבד, בלי IRQ, וזה איטי פי 150 עד 290 מקונסולה אמיתית. אבל זה עדיין NES שחי בתוך רשת עצבית.</p><p>שני: Aura Autopilot. בונה משחקים? Autopilot נכנס ל-Unreal 5, Unity 6 או Godot 4, קורא קוד, מייצר harness, ואז מנגן את המשחק כדי לבדוק באג או מטרה. הוא שומר זיכרון פרויקט ומשתפר בין ריצות. יש פה 444 פונקציות בדיקה, וה-CI האחרון עבר על שלוש מערכות הפעלה ובפייתון 3.12 ו-3.13. זה לא “מנגן כל משחק”, אלא פלייטסטינג לשלושת המנועים האלה.</p><p>שלישי: Weft. מנוע sandbox ווקסלי ב-Rust שבו המשחק עצמו הוא מוד מעל ה-SDK הציבורי. יש שטח שנוצר על ה-GPU, מערות, ממדים, אור RGB, מכונות, מבנים נעים, מודים native ו-multiplayer פ2פ בלי שרת. הגרסה v26.10.2 יצאה ללינוקס, Windows ו-macOS, ותהליך ה-Release עבר. יש 134 קבצי Rust. זה עדיין מוקדם: צריך Vulkan, וממשק המודים והשמירות יכולים להשתנות.</p><p>רביעי: YourOwnWeigh. מישהו החליט שהמשקל שלו לא צריך מנוי לענן של Withings. הפרויקט בונה firmware חלופי לשני דגמים, WBS06 ו-WS-30, מוסיף גשר Bluetooth מקומי, שרת עצמי, וייצוא ל-Apple Health או Google Health. שלושים וארבעה מבחני Node עברו אצלי. וזה המקום להאט: זה צריבת firmware למשקל אמיתי. יש סיכון קטן לבריק, הכיסוי רק לשני דגמים, WBS06 לא מאמת תעודת שרת ב-HTTPS, ו-WS-30 עובד ב-HTTP גלוי.</p><p>וחמישי: RUN. מדריך הגירה ענקי בסינית: שלושים ושש מדינות אירופה, מאה ועשרה מסלולים, ועוד שלושה עשר יעדים גלובליים. בדיקת הבנייה אישרה 36 דפי מדינה ו-110 מסלולים עם פרטים. הוא מתחיל בעיקר מהשאלה “איך אזרח סין עובר מדינה?”, ולא מתיימר להיות ייעוץ משפטי או מס. אבל בתור מפה חיה של אפשרויות, זה אוצר.
+</p></details>
+        <ul class="links"><li><a href="https://github.com/dbreunig/nesformer" target="_blank" rel="noopener">github.com/dbreunig/nesformer</a></li><li><a href="https://github.com/ramenvr/autopilot" target="_blank" rel="noopener">github.com/ramenvr/autopilot</a></li><li><a href="https://github.com/VortexSo4/Weft" target="_blank" rel="noopener">github.com/VortexSo4/Weft</a></li><li><a href="https://github.com/TomAnthony/YourOwnWeigh" target="_blank" rel="noopener">github.com/TomAnthony/YourOwnWeigh</a></li><li><a href="https://github.com/BryceYuuu/RUN" target="_blank" rel="noopener">github.com/BryceYuuu/RUN</a></li></ul>
+      </div>
+    </section>
     <section class="card">
       <h2><span class="date">30.10</span> דייג'סט ערב</h2>
       

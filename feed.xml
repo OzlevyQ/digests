@@ -10,6 +10,24 @@
     <itunes:explicit>no</itunes:explicit>
     <itunes:category text="Technology"/>
     <item>
+      <title>דייג&#x27;סט בוקר 31.10 - חדשות AI</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-31-morning-ai</guid>
+      <pubDate>Sat, 31 Oct 2026 06:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-31-morning-ai.ogg" length="1605749" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>בוקר טוב, יש לי שתי ידיעות AI שהולכות בכיוון הפוך: לא עוד ענק גנרי, אלא מודל קטן שיודע בדיוק על מה הוא מדבר, ומודל שמריץ את אותן שכבות פעמיים כדי לחשוב עוד צעד.</p><p>מקורות:<br/><a href="https://samaya.ai/blog/rl-post-trained-agentic-model">https://samaya.ai/blog/rl-post-trained-agentic-model</a><br/><a href="https://samaya.ai/benchmarks/frontier-finance">https://samaya.ai/benchmarks/frontier-finance</a><br/><a href="https://github.com/samaya-ai/frontier-finance">https://github.com/samaya-ai/frontier-finance</a><br/><a href="https://huggingface.co/datasets/samaya-ai/FrontierFinance">https://huggingface.co/datasets/samaya-ai/FrontierFinance</a><br/><a href="https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview">https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview</a><br/><a href="https://github.com/OpenSenseNova/SenseNova-Loop">https://github.com/OpenSenseNova/SenseNova-Loop</a><br/><a href="https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview/blob/main/config.json">https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview/blob/main/config.json</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט בוקר 31.10 - פצצות מגיטהאב</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-31-morning-gh</guid>
+      <pubDate>Sat, 31 Oct 2026 06:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-31-morning-gh.ogg" length="1603983" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>וברחבי גיטהאב בלילה הזה יש חמישה פרויקטים שהפכו שאלה מטורפת לקוד. ראשון: nesformer.</p><p>מקורות:<br/><a href="https://github.com/dbreunig/nesformer">https://github.com/dbreunig/nesformer</a><br/><a href="https://github.com/ramenvr/autopilot">https://github.com/ramenvr/autopilot</a><br/><a href="https://github.com/VortexSo4/Weft">https://github.com/VortexSo4/Weft</a><br/><a href="https://github.com/TomAnthony/YourOwnWeigh">https://github.com/TomAnthony/YourOwnWeigh</a><br/><a href="https://github.com/BryceYuuu/RUN">https://github.com/BryceYuuu/RUN</a><br/></p>]]></description>
+    </item>
+    <item>
       <title>דייג&#x27;סט ערב 30.10 - חדשות AI</title>
       <link>https://ozlevyq.github.io/digests/</link>
       <guid isPermaLink="false">digest-2026-10-30-evening-ai</guid>
