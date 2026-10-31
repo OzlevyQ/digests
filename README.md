@@ -23,16 +23,19 @@ half (e.g. a stale repeat). Pages updates within ~1 minute of push.
 
 ## PAPit — community rooms (קהילת החדרים)
 
-`community/` is PAPit: anyone can sign in with Google, open a room and publish;
-every room has its own RSS feed, plus one global feed.
+`community/` is PAPit: no accounts or Google sign-in. Anyone can open a
+room; creation returns a one-time room API key, and only its SHA-256 hash is
+stored. The key gates publishing, post deletion and room deletion. Reads are
+public, every room has its own dynamic RSS feed, and one global community feed
+aggregates all rooms.
 
-- Data: Supabase tables `papit_rooms` / `papit_posts` / `papit_profiles` (see
-  `schema/papit.sql`). RLS is enabled with **no** policies, so all access goes
-  through the server API only.
-- Server API: Supabase edge function `supabase/functions/papit-api` —
-  identity via Descope session JWT (JWKS-verified), reads are public, writes
-  need sign-in, RSS at `/functions/v1/papit-api/rss` and `/rss/<room-slug>`.
-- Keviata tables and the digests pipeline are untouched; PAPit account
-  deletion removes only `papit_*` rows.
+- Data: Supabase tables `papit_rooms` / `papit_posts` / `papit_rate_events`
+  (see `schema/papit.sql`). RLS is enabled with **no** policies, so all access
+  goes through the server API only.
+- Server API: Supabase edge function `supabase/functions/papit-api`. Writes
+  use the room key in `x-api-key` or a Bearer token; reads and RSS are public.
+  RSS lives at `/functions/v1/papit-api/rss` and `/rss/<room-slug>`.
+- Browser clients keep room keys in localStorage only. The digests pipeline,
+  `editions.json`, `feed.xml` and `audio/` stay separate.
 - The digests homepage links to the community; `build.py`'s template carries
   the link so edition rebuilds keep it.
