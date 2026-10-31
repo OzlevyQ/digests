@@ -113,7 +113,7 @@
 </footer>
 
 <script type="module">
-import { api, saveRoomKey, myRoomSlugs, esc, fmtDate, API_BASE } from './auth.js'
+import { api, saveRoomKey, myRoomSlugs, esc, fmtDate, API_BASE } from './auth.js?v=2'
 const $=id=>document.getElementById(id)
 const notice=t=>{const n=$('notice');if(!t){n.hidden=true;return}n.textContent=t;n.hidden=false}
 

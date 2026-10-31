@@ -102,7 +102,7 @@
   <a href="./">כל החדרים</a> · <a href="../">ארכיון הדייג'סטים</a> · <a href="privacy.html">פרטיות</a>
 </footer>
 <script type="module">
-import { api, roomKey, saveRoomKey, forgetRoomKey, esc, fmtDate, qs, API_BASE } from './auth.js'
+import { api, roomKey, saveRoomKey, forgetRoomKey, esc, fmtDate, qs, API_BASE } from './auth.js?v=2'
 const $=id=>document.getElementById(id)
 const slug=qs('r')||''
 const notice=t=>{const n=$('notice');if(!t){n.hidden=true;return}n.textContent=t;n.hidden=false}
