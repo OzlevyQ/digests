@@ -10,6 +10,24 @@
     <itunes:explicit>no</itunes:explicit>
     <itunes:category text="Technology"/>
     <item>
+      <title>דייג&#x27;סט ערב 31.10 - חדשות AI</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-31-evening-ai</guid>
+      <pubDate>Sat, 31 Oct 2026 18:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-31-evening-ai.ogg" length="1549841" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>ערב טוב עוז. הערב יש שתי מהדורות כוח, והן הפוכות. אחת מחזירה טריליון פרמטרים לידיים שלך. השנייה נועלת מודל ביולוגי בחדר הכי מבוקר באינטרנט.</p><p>מקורות:<br/><a href="https://mistral.ai/news/mistral-large-4-oss/">https://mistral.ai/news/mistral-large-4-oss/</a><br/><a href="https://docs.mistral.ai/models/mistral-large-4">https://docs.mistral.ai/models/mistral-large-4</a><br/><a href="https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B">https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B</a><br/><a href="https://huggingface.co/blog/mistral-large4">https://huggingface.co/blog/mistral-large4</a><br/><a href="https://deploymentsafety.openai.com/gpt-rosalind-6">https://deploymentsafety.openai.com/gpt-rosalind-6</a><br/><a href="https://deploymentsafety.openai.com/gpt-rosalind-6/trust-based-access">https://deploymentsafety.openai.com/gpt-rosalind-6/trust-based-access</a><br/><a href="https://deploymentsafety.openai.com/gpt-rosalind-6/security-and-access-controls">https://deploymentsafety.openai.com/gpt-rosalind-6/security-and-access-controls</a><br/><a href="https://help.openai.com/en/articles/20001193-gpt-rosalind-for-life-sciences-research">https://help.openai.com/en/articles/20001193-gpt-rosalind-for-life-sciences-research</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט ערב 31.10 - פצצות מגיטהאב</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-10-31-evening-gh</guid>
+      <pubDate>Sat, 31 Oct 2026 18:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-10-31-evening-gh.ogg" length="1702592" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>ועכשיו גיטהאב: חמישה פרויקטים שמחברים דברים שלא אמורים להתחבר. חוק עם גיט, תמונות עם S3, פלייסטיישן עם מחשב, ספר לימוד עם תלת מימד, ותמונה אחת עם עולם שלם.</p><p>מקורות:<br/><a href="https://github.com/lexifina/global-law">https://github.com/lexifina/global-law</a><br/><a href="https://github.com/ashayas/icloud-s3">https://github.com/ashayas/icloud-s3</a><br/><a href="https://support.apple.com/en-us/108916">https://support.apple.com/en-us/108916</a><br/><a href="https://github.com/gothamor/gta-vcs-recomp">https://github.com/gothamor/gta-vcs-recomp</a><br/><a href="https://github.com/nathanliow/atlas-of-physics">https://github.com/nathanliow/atlas-of-physics</a><br/><a href="https://github.com/speridlabs/idol-sdk">https://github.com/speridlabs/idol-sdk</a><br/><a href="https://huggingface.co/speridlabs/idol">https://huggingface.co/speridlabs/idol</a><br/><a href="https://huggingface.co/spaces/speridlabs/idol">https://huggingface.co/spaces/speridlabs/idol</a><br/></p>]]></description>
+    </item>
+    <item>
       <title>דייג&#x27;סט בוקר 31.10 - חדשות AI</title>
       <link>https://ozlevyq.github.io/digests/</link>
       <guid isPermaLink="false">digest-2026-10-31-morning-ai</guid>
