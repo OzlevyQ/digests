@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0d1512">
+<title>חדר · PAPit</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#0d1512; --card:#15211c; --line:#24352d; --ink:#eef4ef; --dim:#9db3a6; --accent:#f0b429; --accent2:#3ecf8e; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--ink); font-family:'Heebo',system-ui,sans-serif; line-height:1.5; }
+  header { position:sticky; top:0; z-index:10; background:rgba(13,21,18,.92); backdrop-filter:blur(10px);
+           border-bottom:1px solid var(--line); padding:14px 18px; display:flex; align-items:center; gap:12px; }
+  .logo { width:38px; height:38px; border-radius:11px; background:linear-gradient(135deg,var(--accent),#e07b39);
+          display:flex; align-items:center; justify-content:center; font-size:20px; font-weight:800; color:#1a1205; flex:none; text-decoration:none; }
+  header h1 { font-size:19px; font-weight:800; }
+  header .sub { font-size:12px; color:var(--dim); }
+  .spacer { margin-inline-start:auto; }
+  .pill { flex:none; background:transparent; color:var(--accent); border:1.5px solid var(--accent);
+          border-radius:999px; padding:8px 14px; font-family:inherit; font-size:13px; font-weight:600; text-decoration:none; cursor:pointer; }
+  main { max-width:640px; margin:0 auto; padding:14px 18px 60px; }
+  .roomhead { padding:20px 0 6px; }
+  .roomhead h2 { font-size:22px; font-weight:800; }
+  .roomhead .desc { color:var(--dim); font-size:14px; margin-top:6px; }
+  .roomhead .meta { font-size:12px; color:var(--dim); margin-top:10px; display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:18px; margin-bottom:14px; }
+  .post h3 { font-size:15px; font-weight:700; }
+  .post .body { font-size:13.5px; color:var(--ink); opacity:.9; margin-top:6px; white-space:pre-wrap; word-break:break-word; }
+  .post .meta { font-size:12px; color:var(--dim); margin-top:10px; display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
+  .post a.ext { color:var(--accent2); font-size:12.5px; direction:ltr; display:inline-block; word-break:break-all; margin-top:6px; }
+  .del { background:none; border:0; color:#e08074; font-family:inherit; font-size:12px; cursor:pointer; padding:0; }
+  .empty { color:var(--dim); font-size:13.5px; text-align:center; padding:24px 0; }
+  .notice { background:#241a08; border:1px solid #4a3a12; color:var(--accent); border-radius:14px; padding:12px 16px; font-size:13px; margin:12px 0; }
+  label { display:block; font-size:13px; font-weight:600; color:var(--dim); margin:12px 0 5px; }
+  input[type=text], input[type=url], textarea { width:100%; background:#0e1a15; border:1px solid var(--line); border-radius:12px; color:var(--ink);
+    font-family:inherit; font-size:14px; padding:11px 13px; }
+  textarea { min-height:90px; resize:vertical; }
+  .btn { width:100%; margin-top:16px; background:linear-gradient(135deg,var(--accent),#e07b39); color:#1a1205; border:0;
+         border-radius:14px; padding:13px; font-family:inherit; font-size:15px; font-weight:800; cursor:pointer; }
+  .btn:disabled { opacity:.55; cursor:default; }
+  .btn.ghost { background:transparent; border:1.5px solid var(--line); color:var(--dim); font-weight:600; }
+  footer { text-align:center; color:var(--dim); font-size:12px; padding:20px; }
+  footer a { color:var(--dim); }
+</style>
+</head>
+<body>
+<header>
+  <a class="logo" href="./">P</a>
+  <div>
+    <h1>PAPit</h1>
+    <div class="sub" id="hdrSub">חדר קהילתי</div>
+  </div>
+  <div class="spacer"></div>
+  <a class="pill" id="rssBtn" href="#">RSS</a>
+  <a class="pill" id="loginBtn" href="login.html">התחברות</a>
+</header>
+<main>
+  <div class="notice" id="notice" hidden></div>
+  <div class="roomhead" id="roomhead"><div class="empty">טוען…</div></div>
+
+  <div class="card" id="composer" hidden>
+    <form id="postForm">
+      <label for="pTitle">כותרת</label>
+      <input type="text" id="pTitle" maxlength="120" required placeholder="מה חדש?">
+      <label for="pBody">תוכן (לא חובה)</label>
+      <textarea id="pBody" maxlength="5000" placeholder="פירוט, דעה, תמליל…"></textarea>
+      <label for="pLink">קישור (לא חובה)</label>
+      <input type="url" id="pLink" maxlength="500" placeholder="https://…" dir="ltr" style="text-align:left">
+      <button class="btn" id="pSubmit" type="submit">פרסם לחדר ול-RSS</button>
+    </form>
+  </div>
+  <div class="card" id="joinCta" hidden>
+    <div style="font-size:14px">כדי לפרסם בחדר הזה צריך להתחבר עם Google. הצפייה פתוחה לכולם.</div>
+    <button class="btn" onclick="location.href='login.html'">התחברות ופרסום</button>
+  </div>
+
+  <div id="posts"><div class="empty">טוען…</div></div>
+  <div class="card" id="ownerZone" hidden>
+    <button class="btn ghost" id="delRoom" style="color:#e08074;border-color:#b0483a">מחיקת החדר (כולל כל הפוסטים בו)</button>
+  </div>
+</main>
+<footer>
+  <a href="./">כל החדרים</a> · <a href="../">ארכיון הדייג'סטים</a> · <a href="privacy.html">פרטיות</a>
+</footer>
+<script src="https://unpkg.com/@descope/web-js-sdk@1.53.1/dist/index.umd.js"></script>
+<script type="module">
+import { api, getUser, esc, fmtDate, qs, API_BASE } from './auth.js'
+const $=id=>document.getElementById(id)
+const slug=qs('r')||''
+const notice=t=>{const n=$('notice');if(!t){n.hidden=true;return}n.textContent=t;n.hidden=false}
+let me=null, room=null
+if(!slug){location.replace('./')}
+$('rssBtn').href=API_BASE+'/rss/'+encodeURIComponent(slug)
+async function load(){
+  let d
+  try{d=await api('/rooms/'+encodeURIComponent(slug))}
+  catch(e){$('roomhead').innerHTML='<div class="empty">החדר לא נמצא או שאין חיבור.</div>';$('posts').innerHTML='';return}
+  room=d.room
+  document.title=room.title+' · PAPit'
+  $('hdrSub').textContent=room.title
+  $('roomhead').innerHTML=`
+    <h2>${esc(room.title)}</h2>
+    ${room.description?`<div class="desc">${esc(room.description)}</div>`:''}
+    <div class="meta">
+      <span>פתח: ${esc(room.owner_name||'אנונימי')}</span>
+      <span>${fmtDate(room.created_at)}</span>
+      <span>${d.posts.length} פוסטים</span>
+      <span>·</span>
+      <span>הפוסטים משודרים ב-RSS של החדר</span>
+    </div>`
+  const canPost=!!me
+  $('composer').hidden=!canPost
+  $('joinCta').hidden=canPost
+  if(me&&room.owner_id===me.id)$('ownerZone').hidden=false
+  if(!d.posts.length){$('posts').innerHTML='<div class="empty">עוד אין פוסטים בחדר. הראשון שייך אליך.</div>';return}
+  $('posts').innerHTML=d.posts.map(p=>{
+    const canDel=me&&(p.author_id===me.id||room.owner_id===me.id)
+    return `<div class="card post" data-id="${p.id}">
+    <h3>${esc(p.title)}</h3>
+    ${p.body?`<div class="body">${esc(p.body)}</div>`:''}
+    ${p.link?`<a class="ext" href="${esc(p.link)}" target="_blank" rel="noopener">${esc(p.link)}</a>`:''}
+    <div class="meta">
+      <span>מאת ${esc(p.author_name||'אנונימי')}</span>
+      <span>${fmtDate(p.created_at)}</span>
+      ${canDel?'<button class="del" data-del="'+p.id+'">מחיקה</button>':''}
+    </div>
+  </div>`}).join('')
+  document.querySelectorAll('[data-del]').forEach(b=>b.onclick=async()=>{
+    if(!confirm('למחוק את הפוסט?'))return
+    try{await api('/posts/'+b.dataset.del,{method:'DELETE',auth:true});load()}
+    catch(e){notice('המחיקה נכשלה: '+(e.message||''))}
+  })
+}
+$('postForm').addEventListener('submit',async e=>{
+  e.preventDefault()
+  const title=$('pTitle').value.trim(), body=$('pBody').value.trim(), link=$('pLink').value.trim()
+  if(!title)return
+  $('pSubmit').disabled=true
+  try{
+    await api('/rooms/'+encodeURIComponent(slug)+'/posts',{method:'POST',auth:true,body:{title,body,link,display_name:me.name,email:me.email,picture_url:me.pictureUrl}})
+    $('pTitle').value='';$('pBody').value='';$('pLink').value=''
+    notice('פורסם! הפוסט כבר נמצא בפיד ה-RSS של החדר.')
+    await load()
+  }catch(err){notice(err.status===401?'צריך להתחבר כדי לפרסם.':('הפרסום נכשל: '+(err.message||'')))}
+  $('pSubmit').disabled=false
+})
+$('delRoom').onclick=async()=>{
+  if(!confirm('למחוק את כל החדר וכל הפוסטים שבו?'))return
+  try{await api('/rooms/'+encodeURIComponent(slug),{method:'DELETE',auth:true});location.replace('./')}
+  catch(e){notice('מחיקת החדר נכשלה: '+(e.message||''))}
+}
+(async()=>{me=await getUser();if(me)$('loginBtn').hidden=true;load()})()
+</script>
+</body>
+</html>

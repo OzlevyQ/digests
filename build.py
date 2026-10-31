@@ -182,6 +182,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
     <div class="sub">__COUNT__ מהדורות · בוקר וערב</div>
   </div>
   <a class="rss-btn" href="feed.xml">הירשם ב-RSS</a>
+  <a class="rss-btn" style="border-color:var(--accent2);color:var(--accent2)" href="community/">קהילת PAPit</a>
 </header>
 <div class="hero">
   <p>כל הדייג'סטים הקוליים במקום אחד: מה חדש ב-AI ומה אפשר לעשות עם זה, והריפואים הכי פראיים בגיטהאב. לחץ פליי, או הוסף את הפיד לאפליקציית פודקאסטים.</p>

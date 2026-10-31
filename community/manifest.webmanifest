@@ -1,0 +1,14 @@
+{
+  "name": "PAPit — קהילת החדרים",
+  "short_name": "PAPit",
+  "description": "קהילת חדרים: כל אחד פותח חדר, מפרסם, וכל חדר משדר RSS.",
+  "lang": "he",
+  "dir": "rtl",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0d1512",
+  "theme_color": "#0d1512",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
