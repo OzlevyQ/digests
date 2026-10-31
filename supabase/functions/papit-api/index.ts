@@ -57,6 +57,29 @@ async function uniqueSlug(base: string): Promise<string> {
     s = base.slice(0, 44) + '-' + i
   }
 }
+
+/* Server-side abuse protection (no accounts, so keyed by caller IP):
+   returns retry-after seconds when the caller is over the limit, else null
+   and records the attempt. Events older than a day are cleaned up lazily. */
+function callerIp(req: Request): string {
+  return (req.headers.get('x-forwarded-for') ?? '').split(',')[0].trim() || 'unknown'
+}
+async function rateLimit(action: string, actor: string, maxHour: number, maxDay: number): Promise<number | null> {
+  const now = Date.now()
+  const hourAgo = new Date(now - 3600e3).toISOString()
+  const dayAgo = new Date(now - 86400e3).toISOString()
+  const { count: h } = await sb.from('papit_rate_events').select('*', { count: 'exact', head: true })
+    .eq('action', action).eq('actor', actor).gte('created_at', hourAgo)
+  if ((h ?? 0) >= maxHour) return 3600
+  const { count: d } = await sb.from('papit_rate_events').select('*', { count: 'exact', head: true })
+    .eq('action', action).eq('actor', actor).gte('created_at', dayAgo)
+  if ((d ?? 0) >= maxDay) return 86400
+  await sb.from('papit_rate_events').insert({ action, actor })
+  if (Math.random() < 0.02) await sb.from('papit_rate_events').delete().lt('created_at', dayAgo)
+  return null
+}
+const tooMany = (retry: number) =>
+  json({ error: 'rate_limited', retry_after_seconds: retry }, 429)
 async function rssFeed(slug: string | null): Promise<Response> {
   let room: { id: string; slug: string; title: string; description: string } | null = null
   if (slug) {
@@ -104,21 +127,23 @@ ${items}
 
 Deno.serve(async (req: Request) => {
   if (req.method === 'OPTIONS') return new Response(null, { status: 204, headers: CORS })
+  const clen = Number(req.headers.get('content-length') ?? 0)
+  if (clen > 65536) return json({ error: 'payload_too_large' }, 413)
   const parts = new URL(req.url).pathname.split('/').filter(Boolean)
   const rest = parts.slice(1) // strip 'papit-api'
   const seg = (i: number) => (rest[i] ? decodeURIComponent(rest[i]) : '')
   try {
-    if (req.method === 'GET' && seg(0) === 'health') return json({ ok: true, service: 'papit-api', version: 2 })
+    if (req.method === 'GET' && seg(0) === 'health') return json({ ok: true, service: 'papit-api', version: 3 })
     if (req.method === 'GET' && seg(0) === 'rss') return await rssFeed(seg(1) || null)
 
     if (req.method === 'GET' && seg(0) === 'rooms' && !seg(1)) {
       const { data, error } = await sb.from('papit_rooms')
-        .select('slug,title,description,created_at,key_hint,papit_posts(count)')
+        .select('slug,title,description,created_at,papit_posts(count)')
         .order('created_at', { ascending: false }).limit(100)
       if (error) throw error
       return json({ rooms: (data ?? []).map((r: Record<string, any>) => ({
         slug: r.slug, title: r.title, description: r.description, created_at: r.created_at,
-        key_hint: r.key_hint, post_count: r.papit_posts?.[0]?.count ?? 0,
+        post_count: r.papit_posts?.[0]?.count ?? 0,
       })) })
     }
 
@@ -145,6 +170,11 @@ Deno.serve(async (req: Request) => {
 
     /* Open room creation. Returns the room's API key exactly once. */
     if (req.method === 'POST' && seg(0) === 'rooms' && !seg(1)) {
+      const ip = callerIp(req)
+      const rl = await rateLimit('create_room', ip, 3, 10)
+      if (rl !== null) return tooMany(rl)
+      const rg = await rateLimit('create_room', 'global', 40, 100)
+      if (rg !== null) return tooMany(rg)
       const b = await req.json().catch(() => ({}))
       const title = clean(b.title, 80)
       if (!title) return json({ error: 'title_required' }, 400)
@@ -161,6 +191,10 @@ Deno.serve(async (req: Request) => {
     if (req.method === 'POST' && seg(0) === 'rooms' && seg(1) && seg(2) === 'posts') {
       const { error, room } = await roomByKey(seg(1), apiKeyFrom(req))
       if (error) return error
+      const rl = await rateLimit('create_post', callerIp(req), 20, 100)
+      if (rl !== null) return tooMany(rl)
+      const { count: roomPosts } = await sb.from('papit_posts').select('*', { count: 'exact', head: true }).eq('room_id', room!.id)
+      if ((roomPosts ?? 0) >= 500) return json({ error: 'room_post_limit' }, 429)
       const b = await req.json().catch(() => ({}))
       const title = clean(b.title, 120)
       if (!title) return json({ error: 'title_required' }, 400)

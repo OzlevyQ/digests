@@ -26,3 +26,15 @@ create index papit_posts_room_created on papit_posts(room_id, created_at desc);
 create index papit_posts_created on papit_posts(created_at desc);
 alter table papit_rooms enable row level security;
 alter table papit_posts enable row level security;
+
+-- Server-side rate limiting for open (accountless) writes. Service-role only:
+-- RLS enabled, zero policies, so only the edge function's service key touches it.
+create table if not exists public.papit_rate_events (
+  id bigint generated always as identity primary key,
+  action text not null,
+  actor text not null,
+  created_at timestamptz not null default now()
+);
+create index if not exists papit_rate_events_lookup
+  on public.papit_rate_events (action, actor, created_at desc);
+alter table public.papit_rate_events enable row level security;
