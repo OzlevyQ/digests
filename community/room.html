@@ -36,13 +36,17 @@
   .empty { color:var(--dim); font-size:13.5px; text-align:center; padding:24px 0; }
   .notice { background:#241a08; border:1px solid #4a3a12; color:var(--accent); border-radius:14px; padding:12px 16px; font-size:13px; margin:12px 0; }
   label { display:block; font-size:13px; font-weight:600; color:var(--dim); margin:12px 0 5px; }
-  input[type=text], input[type=url], textarea { width:100%; background:#0e1a15; border:1px solid var(--line); border-radius:12px; color:var(--ink);
+  input[type=text], input[type=url], input[type=password], textarea { width:100%; background:#0e1a15; border:1px solid var(--line); border-radius:12px; color:var(--ink);
     font-family:inherit; font-size:14px; padding:11px 13px; }
   textarea { min-height:90px; resize:vertical; }
-  .btn { width:100%; margin-top:16px; background:linear-gradient(135deg,var(--accent),#e07b39); color:#1a1205; border:0;
-         border-radius:14px; padding:13px; font-family:inherit; font-size:15px; font-weight:800; cursor:pointer; }
+  .btn { display:block; width:100%; margin-top:16px; background:linear-gradient(135deg,var(--accent),#e07b39); color:#1a1205; border:0;
+         border-radius:14px; padding:13px; font-family:inherit; font-size:15px; font-weight:800; cursor:pointer; text-align:center; text-decoration:none; }
   .btn:disabled { opacity:.55; cursor:default; }
   .btn.ghost { background:transparent; border:1.5px solid var(--line); color:var(--dim); font-weight:600; }
+  .api details, details.apiex { margin-top:10px; }
+  details.apiex summary { font-size:12.5px; color:var(--accent2); cursor:pointer; font-weight:600; }
+  pre.curl { direction:ltr; text-align:left; background:#00000040; border-radius:10px; padding:10px; font-size:11.5px;
+             font-family:ui-monospace,monospace; overflow-x:auto; color:var(--dim); margin-top:8px; white-space:pre-wrap; word-break:break-all; }
   footer { text-align:center; color:var(--dim); font-size:12px; padding:20px; }
   footer a { color:var(--dim); }
 </style>
@@ -56,7 +60,6 @@
   </div>
   <div class="spacer"></div>
   <a class="pill" id="rssBtn" href="#">RSS</a>
-  <a class="pill" id="loginBtn" href="login.html">התחברות</a>
 </header>
 <main>
   <div class="notice" id="notice" hidden></div>
@@ -70,31 +73,57 @@
       <textarea id="pBody" maxlength="5000" placeholder="פירוט, דעה, תמליל…"></textarea>
       <label for="pLink">קישור (לא חובה)</label>
       <input type="url" id="pLink" maxlength="500" placeholder="https://…" dir="ltr" style="text-align:left">
+      <label for="pName">שם מפרסם (לא חובה)</label>
+      <input type="text" id="pName" maxlength="60" placeholder="איך לחתום?">
       <button class="btn" id="pSubmit" type="submit">פרסם לחדר ול-RSS</button>
     </form>
+    <details class="apiex">
+      <summary>פרסום מסקריפט (curl)</summary>
+      <pre class="curl" id="curlEx"></pre>
+    </details>
   </div>
-  <div class="card" id="joinCta" hidden>
-    <div style="font-size:14px">כדי לפרסם בחדר הזה צריך להתחבר עם Google. הצפייה פתוחה לכולם.</div>
-    <button class="btn" onclick="location.href='login.html'">התחברות ופרסום</button>
+
+  <div class="card" id="keyGate" hidden>
+    <div style="font-size:14px">הצפייה פתוחה לכולם. כדי לפרסם בחדר הזה צריך את מפתח ה-API שלו — מי שפתח את החדר קיבל אותו פעם אחת.</div>
+    <form id="keyForm">
+      <label for="kVal">מפתח החדר</label>
+      <input type="password" id="kVal" placeholder="papit_…" dir="ltr" style="text-align:left" autocomplete="off">
+      <button class="btn ghost" type="submit">שמור מפתח בדפדפן הזה</button>
+    </form>
   </div>
 
   <div id="posts"><div class="empty">טוען…</div></div>
   <div class="card" id="ownerZone" hidden>
     <button class="btn ghost" id="delRoom" style="color:#e08074;border-color:#b0483a">מחיקת החדר (כולל כל הפוסטים בו)</button>
+    <button class="btn ghost" id="forgetKey">שכח את המפתח בדפדפן הזה</button>
   </div>
 </main>
 <footer>
   <a href="./">כל החדרים</a> · <a href="../">ארכיון הדייג'סטים</a> · <a href="privacy.html">פרטיות</a>
 </footer>
-<script src="https://unpkg.com/@descope/web-js-sdk@1.53.1/dist/index.umd.js"></script>
 <script type="module">
-import { api, getUser, esc, fmtDate, qs, API_BASE } from './auth.js'
+import { api, roomKey, saveRoomKey, forgetRoomKey, esc, fmtDate, qs, API_BASE } from './auth.js'
 const $=id=>document.getElementById(id)
 const slug=qs('r')||''
 const notice=t=>{const n=$('notice');if(!t){n.hidden=true;return}n.textContent=t;n.hidden=false}
-let me=null, room=null
-if(!slug){location.replace('./')}
+let room=null
+if(!slug)location.replace('./')
 $('rssBtn').href=API_BASE+'/rss/'+encodeURIComponent(slug)
+const key=()=>roomKey(slug)
+
+function renderGate(){
+  const has=!!key()
+  $('composer').hidden=!has
+  $('keyGate').hidden=has
+  $('ownerZone').hidden=!has
+  if(has){
+    $('curlEx').textContent=
+`curl -X POST ${API_BASE}/rooms/${slug}/posts \\
+  -H "x-api-key: ${key()}" \\
+  -H "content-type: application/json" \\
+  -d '{"title":"כותרת","body":"תוכן","link":"https://…","author_name":"שם"}'`
+  }
+}
 async function load(){
   let d
   try{d=await api('/rooms/'+encodeURIComponent(slug))}
@@ -106,54 +135,58 @@ async function load(){
     <h2>${esc(room.title)}</h2>
     ${room.description?`<div class="desc">${esc(room.description)}</div>`:''}
     <div class="meta">
-      <span>פתח: ${esc(room.owner_name||'אנונימי')}</span>
       <span>${fmtDate(room.created_at)}</span>
       <span>${d.posts.length} פוסטים</span>
       <span>·</span>
       <span>הפוסטים משודרים ב-RSS של החדר</span>
     </div>`
-  const canPost=!!me
-  $('composer').hidden=!canPost
-  $('joinCta').hidden=canPost
-  if(me&&room.owner_id===me.id)$('ownerZone').hidden=false
+  renderGate()
   if(!d.posts.length){$('posts').innerHTML='<div class="empty">עוד אין פוסטים בחדר. הראשון שייך אליך.</div>';return}
-  $('posts').innerHTML=d.posts.map(p=>{
-    const canDel=me&&(p.author_id===me.id||room.owner_id===me.id)
-    return `<div class="card post" data-id="${p.id}">
+  const canDel=!!key()
+  $('posts').innerHTML=d.posts.map(p=>`<div class="card post">
     <h3>${esc(p.title)}</h3>
     ${p.body?`<div class="body">${esc(p.body)}</div>`:''}
     ${p.link?`<a class="ext" href="${esc(p.link)}" target="_blank" rel="noopener">${esc(p.link)}</a>`:''}
     <div class="meta">
-      <span>מאת ${esc(p.author_name||'אנונימי')}</span>
+      ${p.author_name?`<span>מאת ${esc(p.author_name)}</span>`:''}
       <span>${fmtDate(p.created_at)}</span>
       ${canDel?'<button class="del" data-del="'+p.id+'">מחיקה</button>':''}
     </div>
-  </div>`}).join('')
+  </div>`).join('')
   document.querySelectorAll('[data-del]').forEach(b=>b.onclick=async()=>{
     if(!confirm('למחוק את הפוסט?'))return
-    try{await api('/posts/'+b.dataset.del,{method:'DELETE',auth:true});load()}
-    catch(e){notice('המחיקה נכשלה: '+(e.message||''))}
+    try{await api('/posts/'+b.dataset.del,{method:'DELETE',apiKey:key()});load()}
+    catch(e){notice(e.message==='bad_api_key'?'המפתח השמור לא מתאים לחדר.':'המחיקה נכשלה.')}
   })
 }
 $('postForm').addEventListener('submit',async e=>{
   e.preventDefault()
-  const title=$('pTitle').value.trim(), body=$('pBody').value.trim(), link=$('pLink').value.trim()
+  const title=$('pTitle').value.trim(), body=$('pBody').value.trim(), link=$('pLink').value.trim(), author_name=$('pName').value.trim()
   if(!title)return
   $('pSubmit').disabled=true
   try{
-    await api('/rooms/'+encodeURIComponent(slug)+'/posts',{method:'POST',auth:true,body:{title,body,link,display_name:me.name,email:me.email,picture_url:me.pictureUrl}})
+    await api('/rooms/'+encodeURIComponent(slug)+'/posts',{method:'POST',apiKey:key(),body:{title,body,link,author_name}})
     $('pTitle').value='';$('pBody').value='';$('pLink').value=''
     notice('פורסם! הפוסט כבר נמצא בפיד ה-RSS של החדר.')
     await load()
-  }catch(err){notice(err.status===401?'צריך להתחבר כדי לפרסם.':('הפרסום נכשל: '+(err.message||'')))}
+  }catch(err){notice(err.message==='bad_api_key'?'המפתח השמור לא מתאים לחדר הזה.':'הפרסום נכשל: '+(err.message||''))}
   $('pSubmit').disabled=false
+})
+$('keyForm').addEventListener('submit',async e=>{
+  e.preventDefault()
+  const k=$('kVal').value.trim()
+  if(!k)return
+  saveRoomKey(slug,k)
+  renderGate();load()
+  notice('המפתח נשמר בדפדפן הזה. אפשר לפרסם.')
 })
 $('delRoom').onclick=async()=>{
   if(!confirm('למחוק את כל החדר וכל הפוסטים שבו?'))return
-  try{await api('/rooms/'+encodeURIComponent(slug),{method:'DELETE',auth:true});location.replace('./')}
+  try{await api('/rooms/'+encodeURIComponent(slug),{method:'DELETE',apiKey:key()});forgetRoomKey(slug);location.replace('./')}
   catch(e){notice('מחיקת החדר נכשלה: '+(e.message||''))}
 }
-(async()=>{me=await getUser();if(me)$('loginBtn').hidden=true;load()})()
+$('forgetKey').onclick=()=>{forgetRoomKey(slug);renderGate();load()}
+load()
 </script>
 </body>
 </html>

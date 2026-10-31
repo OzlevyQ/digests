@@ -1,15 +1,10 @@
-// PAPit server API: rooms, posts, moderation, account deletion, RSS feeds.
-// All PAPit table access flows through this function (tables have RLS with no
-// policies, so direct PostgREST access is denied). Identity = Descope session
-// JWT verified against the project's public JWKS. No user secrets here:
-// SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY are injected by the platform.
+// PAPit server API v2: no user accounts. Anyone can open a room; room creation
+// returns a one-time API key (only its sha256 hash is stored). The key gates
+// publishing, post deletion and room deletion. Reads and RSS are public.
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.45.4'
-import * as jose from 'https://esm.sh/jose@5.9.6'
 
 const SB_URL = Deno.env.get('SUPABASE_URL') ?? ''
 const SVC = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
-const DESCOPE_PID = 'P3JSQ5xGjXf4sEVQz7q0lTaAgN54'
-const JWKS = jose.createRemoteJWKSet(new URL(`https://api.descope.com/v2/keys/${DESCOPE_PID}`))
 const SITE = 'https://ozlevyq.github.io/digests/community'
 const API_PUBLIC = 'https://kuehljnnpwgzyodjaund.supabase.co/functions/v1/papit-api'
 const sb = createClient(SB_URL, SVC)
@@ -17,7 +12,7 @@ const sb = createClient(SB_URL, SVC)
 const CORS: Record<string, string> = {
   'access-control-allow-origin': '*',
   'access-control-allow-methods': 'GET,POST,DELETE,OPTIONS',
-  'access-control-allow-headers': 'authorization,content-type',
+  'access-control-allow-headers': 'authorization,content-type,x-api-key',
 }
 const json = (d: unknown, status = 200) =>
   new Response(JSON.stringify(d), { status, headers: { ...CORS, 'content-type': 'application/json; charset=utf-8' } })
@@ -27,30 +22,27 @@ const rfc822 = (iso: string) => new Date(iso).toUTCString()
 const clean = (v: unknown, max: number) => (typeof v === 'string' ? v.trim().slice(0, max) : '')
 const okLink = (v: string) => v === '' || /^https?:\/\/\S+$/i.test(v)
 
-interface ApiUser { id: string; name: string; email: string; picture: string }
-async function authUser(req: Request): Promise<ApiUser | null> {
-  const h = req.headers.get('authorization') ?? ''
-  const t = h.startsWith('Bearer ') ? h.slice(7) : ''
-  if (!t) return null
-  try {
-    const { payload } = await jose.jwtVerify(t, JWKS)
-    const id = typeof payload.sub === 'string' ? payload.sub : ''
-    if (!id) return null
-    const p = payload as Record<string, unknown>
-    return {
-      id,
-      name: typeof p.name === 'string' ? p.name : '',
-      email: typeof p.email === 'string' ? p.email : '',
-      picture: typeof p.picture === 'string' ? p.picture : '',
-    }
-  } catch { return null }
+async function sha256hex(s: string): Promise<string> {
+  const d = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(s))
+  return [...new Uint8Array(d)].map((b) => b.toString(16).padStart(2, '0')).join('')
 }
-async function ensureProfile(u: ApiUser, displayName: string) {
-  const name = (displayName || u.name || 'חבר/ת קהילה').slice(0, 60)
-  await sb.from('papit_profiles').upsert({
-    id: u.id, display_name: name, email: u.email.slice(0, 120),
-    picture_url: u.picture.slice(0, 300), updated_at: new Date().toISOString(),
-  })
+function newApiKey(): string {
+  const b = new Uint8Array(24)
+  crypto.getRandomValues(b)
+  return 'papit_' + [...b].map((x) => x.toString(16).padStart(2, '0')).join('')
+}
+function apiKeyFrom(req: Request): string {
+  const h = req.headers.get('x-api-key') ?? ''
+  if (h) return h.trim()
+  const a = req.headers.get('authorization') ?? ''
+  return a.startsWith('Bearer ') ? a.slice(7).trim() : ''
+}
+/* Returns the room row iff the presented key matches its stored hash. */
+async function roomByKey(slug: string, key: string) {
+  const { data: room } = await sb.from('papit_rooms').select('id,slug,title,api_key_hash').eq('slug', slug).maybeSingle()
+  if (!room) return { error: json({ error: 'room_not_found' }, 404), room: null }
+  if (!key || (await sha256hex(key)) !== room.api_key_hash) return { error: json({ error: 'bad_api_key' }, 401), room: null }
+  return { error: null, room }
 }
 function slugify(t: string): string {
   let s = t.toLowerCase().normalize('NFKD').replace(/[׳']/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')
@@ -65,7 +57,6 @@ async function uniqueSlug(base: string): Promise<string> {
     s = base.slice(0, 44) + '-' + i
   }
 }
-
 async function rssFeed(slug: string | null): Promise<Response> {
   let room: { id: string; slug: string; title: string; description: string } | null = null
   if (slug) {
@@ -74,7 +65,7 @@ async function rssFeed(slug: string | null): Promise<Response> {
     room = data
   }
   let q = sb.from('papit_posts')
-    .select('id,title,body,link,created_at,papit_profiles(display_name),papit_rooms(slug,title)')
+    .select('id,title,body,link,author_name,created_at,papit_rooms(slug,title)')
     .order('created_at', { ascending: false }).limit(50)
   if (room) q = q.eq('room_id', room.id)
   const { data: posts } = await q
@@ -84,12 +75,13 @@ async function rssFeed(slug: string | null): Promise<Response> {
   const items = (posts ?? []).map((p: Record<string, any>) => {
     const pageLink = `${SITE}/room.html?r=${encodeURIComponent(p.papit_rooms?.slug ?? '')}`
     const desc = (p.body ? `<p>${xesc(p.body)}</p>` : '') + (p.link ? `<p><a href="${xesc(p.link)}">${xesc(p.link)}</a></p>` : '')
+    const creator = p.author_name || p.papit_rooms?.title || ''
     return `    <item>
       <title>${xesc(p.title)}</title>
       <link>${xesc(p.link || pageLink)}</link>
       <guid isPermaLink="false">papit-${p.id}</guid>
       <pubDate>${rfc822(p.created_at)}</pubDate>
-      <dc:creator>${xesc(p.papit_profiles?.display_name ?? '')}</dc:creator>
+      <dc:creator>${xesc(creator)}</dc:creator>
       <category>${xesc(p.papit_rooms?.title ?? '')}</category>
       <description><![CDATA[${cdata(desc)}]]></description>
     </item>`
@@ -116,108 +108,86 @@ Deno.serve(async (req: Request) => {
   const rest = parts.slice(1) // strip 'papit-api'
   const seg = (i: number) => (rest[i] ? decodeURIComponent(rest[i]) : '')
   try {
-    if (req.method === 'GET' && seg(0) === 'health') return json({ ok: true, service: 'papit-api' })
-
+    if (req.method === 'GET' && seg(0) === 'health') return json({ ok: true, service: 'papit-api', version: 2 })
     if (req.method === 'GET' && seg(0) === 'rss') return await rssFeed(seg(1) || null)
 
     if (req.method === 'GET' && seg(0) === 'rooms' && !seg(1)) {
       const { data, error } = await sb.from('papit_rooms')
-        .select('slug,title,description,created_at,owner_id,papit_profiles(display_name),papit_posts(count)')
+        .select('slug,title,description,created_at,key_hint,papit_posts(count)')
         .order('created_at', { ascending: false }).limit(100)
       if (error) throw error
       return json({ rooms: (data ?? []).map((r: Record<string, any>) => ({
         slug: r.slug, title: r.title, description: r.description, created_at: r.created_at,
-        owner_id: r.owner_id, owner_name: r.papit_profiles?.display_name ?? '',
-        post_count: r.papit_posts?.[0]?.count ?? 0,
+        key_hint: r.key_hint, post_count: r.papit_posts?.[0]?.count ?? 0,
       })) })
     }
 
     if (req.method === 'GET' && seg(0) === 'rooms' && seg(1)) {
-      const { data: room } = await sb.from('papit_rooms').select('*').eq('slug', seg(1)).maybeSingle()
+      const { data: room } = await sb.from('papit_rooms').select('id,slug,title,description,created_at').eq('slug', seg(1)).maybeSingle()
       if (!room) return json({ error: 'room_not_found' }, 404)
-      const { data: owner } = await sb.from('papit_profiles').select('display_name').eq('id', room.owner_id).maybeSingle()
       const { data: posts } = await sb.from('papit_posts')
-        .select('id,title,body,link,created_at,author_id,papit_profiles(display_name)')
+        .select('id,title,body,link,author_name,created_at')
         .eq('room_id', room.id).order('created_at', { ascending: false }).limit(200)
-      return json({
-        room: { slug: room.slug, title: room.title, description: room.description, created_at: room.created_at, owner_id: room.owner_id, owner_name: owner?.display_name ?? '' },
-        posts: (posts ?? []).map((p: Record<string, any>) => ({
-          id: p.id, title: p.title, body: p.body, link: p.link, created_at: p.created_at,
-          author_id: p.author_id, author_name: p.papit_profiles?.display_name ?? '',
-        })),
-      })
+      return json({ room: { slug: room.slug, title: room.title, description: room.description, created_at: room.created_at }, posts: posts ?? [] })
     }
 
     if (req.method === 'GET' && seg(0) === 'latest') {
       const { data, error } = await sb.from('papit_posts')
-        .select('id,title,body,link,created_at,papit_rooms(slug,title),papit_profiles(display_name)')
+        .select('id,title,body,link,author_name,created_at,papit_rooms(slug,title)')
         .order('created_at', { ascending: false }).limit(20)
       if (error) throw error
       return json({ posts: (data ?? []).map((p: Record<string, any>) => ({
         id: p.id, title: p.title, body: p.body, link: p.link, created_at: p.created_at,
+        author_name: p.author_name ?? '',
         room_slug: p.papit_rooms?.slug ?? '', room_title: p.papit_rooms?.title ?? '',
-        author_name: p.papit_profiles?.display_name ?? '',
       })) })
     }
 
+    /* Open room creation. Returns the room's API key exactly once. */
     if (req.method === 'POST' && seg(0) === 'rooms' && !seg(1)) {
-      const u = await authUser(req)
-      if (!u) return json({ error: 'not_signed_in' }, 401)
       const b = await req.json().catch(() => ({}))
       const title = clean(b.title, 80)
       if (!title) return json({ error: 'title_required' }, 400)
-      await ensureProfile(u, clean(b.display_name, 60))
       const slug = await uniqueSlug(slugify(title))
-      const { error } = await sb.from('papit_rooms').insert({ slug, title, description: clean(b.description, 300), owner_id: u.id })
+      const apiKey = newApiKey()
+      const { error } = await sb.from('papit_rooms').insert({
+        slug, title, description: clean(b.description, 300),
+        api_key_hash: await sha256hex(apiKey), key_hint: '…' + apiKey.slice(-4),
+      })
       if (error) { console.error(error); return json({ error: 'create_failed' }, 500) }
-      return json({ slug })
+      return json({ slug, api_key: apiKey, rss: `${API_PUBLIC}/rss/${encodeURIComponent(slug)}` })
     }
 
     if (req.method === 'POST' && seg(0) === 'rooms' && seg(1) && seg(2) === 'posts') {
-      const u = await authUser(req)
-      if (!u) return json({ error: 'not_signed_in' }, 401)
-      const { data: room } = await sb.from('papit_rooms').select('id').eq('slug', seg(1)).maybeSingle()
-      if (!room) return json({ error: 'room_not_found' }, 404)
+      const { error, room } = await roomByKey(seg(1), apiKeyFrom(req))
+      if (error) return error
       const b = await req.json().catch(() => ({}))
       const title = clean(b.title, 120)
       if (!title) return json({ error: 'title_required' }, 400)
       const link = clean(b.link, 500)
       if (!okLink(link)) return json({ error: 'invalid_link' }, 400)
-      await ensureProfile(u, clean(b.display_name, 60))
-      const { data, error } = await sb.from('papit_posts')
-        .insert({ room_id: room.id, author_id: u.id, title, body: clean(b.body, 5000), link })
+      const { data, error: ie } = await sb.from('papit_posts')
+        .insert({ room_id: room!.id, title, body: clean(b.body, 5000), link, author_name: clean(b.author_name, 60) })
         .select('id').single()
-      if (error) { console.error(error); return json({ error: 'create_failed' }, 500) }
+      if (ie) { console.error(ie); return json({ error: 'create_failed' }, 500) }
       return json({ id: data.id })
     }
 
     if (req.method === 'DELETE' && seg(0) === 'posts' && seg(1)) {
-      const u = await authUser(req)
-      if (!u) return json({ error: 'not_signed_in' }, 401)
-      const { data: post } = await sb.from('papit_posts').select('id,author_id,room_id').eq('id', seg(1)).maybeSingle()
+      const { data: post } = await sb.from('papit_posts').select('id,room_id').eq('id', seg(1)).maybeSingle()
       if (!post) return json({ error: 'not_found' }, 404)
-      const { data: room } = await sb.from('papit_rooms').select('owner_id').eq('id', post.room_id).maybeSingle()
-      if (post.author_id !== u.id && room?.owner_id !== u.id) return json({ error: 'forbidden' }, 403)
+      const { data: room } = await sb.from('papit_rooms').select('slug,api_key_hash').eq('id', post.room_id).maybeSingle()
+      if (!room) return json({ error: 'not_found' }, 404)
+      const key = apiKeyFrom(req)
+      if (!key || (await sha256hex(key)) !== room.api_key_hash) return json({ error: 'bad_api_key' }, 401)
       await sb.from('papit_posts').delete().eq('id', post.id)
       return json({ ok: true })
     }
 
     if (req.method === 'DELETE' && seg(0) === 'rooms' && seg(1)) {
-      const u = await authUser(req)
-      if (!u) return json({ error: 'not_signed_in' }, 401)
-      const { data: room } = await sb.from('papit_rooms').select('id,owner_id').eq('slug', seg(1)).maybeSingle()
-      if (!room) return json({ error: 'room_not_found' }, 404)
-      if (room.owner_id !== u.id) return json({ error: 'forbidden' }, 403)
-      await sb.from('papit_rooms').delete().eq('id', room.id) // cascades posts
-      return json({ ok: true })
-    }
-
-    if (req.method === 'DELETE' && seg(0) === 'me') {
-      const u = await authUser(req)
-      if (!u) return json({ error: 'not_signed_in' }, 401)
-      await sb.from('papit_posts').delete().eq('author_id', u.id)
-      await sb.from('papit_rooms').delete().eq('owner_id', u.id) // cascades room posts
-      await sb.from('papit_profiles').delete().eq('id', u.id)
+      const { error, room } = await roomByKey(seg(1), apiKeyFrom(req))
+      if (error) return error
+      await sb.from('papit_rooms').delete().eq('id', room!.id) // cascades posts
       return json({ ok: true })
     }
 

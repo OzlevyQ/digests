@@ -21,10 +21,8 @@
   header h1 { font-size:19px; font-weight:800; }
   header .sub { font-size:12px; color:var(--dim); }
   .spacer { margin-inline-start:auto; }
-  .pill { flex:none; background:transparent; color:var(--accent); border:1.5px solid var(--accent);
-          border-radius:999px; padding:8px 14px; font-family:inherit; font-size:13px; font-weight:600; text-decoration:none; cursor:pointer; }
-  .pill.green { color:var(--accent2); border-color:var(--accent2); }
-  .avatar { width:34px; height:34px; border-radius:50%; border:1.5px solid var(--line); object-fit:cover; cursor:pointer; }
+  .pill { flex:none; background:transparent; color:var(--accent2); border:1.5px solid var(--accent2);
+          border-radius:999px; padding:8px 14px; font-family:inherit; font-size:13px; font-weight:600; text-decoration:none; }
   .hero { padding:26px 18px 8px; max-width:640px; margin:0 auto; }
   .hero p { color:var(--dim); font-size:14px; }
   main { max-width:640px; margin:0 auto; padding:14px 18px 60px; }
@@ -35,6 +33,7 @@
   .room .desc { font-size:13.5px; color:var(--dim); margin-top:4px; }
   .room .meta { font-size:12px; color:var(--dim); margin-top:8px; display:flex; gap:10px; flex-wrap:wrap; }
   .room .meta .rss { color:var(--accent); text-decoration:none; }
+  .room .mine { color:var(--accent2); font-weight:600; }
   .post h3 { font-size:15px; font-weight:700; }
   .post .body { font-size:13.5px; color:var(--ink); opacity:.85; margin-top:4px; white-space:pre-wrap; word-break:break-word; }
   .post .meta { font-size:12px; color:var(--dim); margin-top:8px; display:flex; gap:10px; flex-wrap:wrap; }
@@ -45,19 +44,20 @@
   label { display:block; font-size:13px; font-weight:600; color:var(--dim); margin:12px 0 5px; }
   input[type=text], textarea { width:100%; background:#0e1a15; border:1px solid var(--line); border-radius:12px; color:var(--ink);
     font-family:inherit; font-size:14px; padding:11px 13px; }
-  textarea { min-height:90px; resize:vertical; }
+  textarea { min-height:80px; resize:vertical; }
   .btn { display:block; width:100%; margin-top:16px; background:linear-gradient(135deg,var(--accent),#e07b39); color:#1a1205; border:0;
          border-radius:14px; padding:13px; font-family:inherit; font-size:15px; font-weight:800; cursor:pointer; text-align:center; text-decoration:none; }
   .btn:disabled { opacity:.55; cursor:default; }
   .btn.ghost { background:transparent; border:1.5px solid var(--line); color:var(--dim); font-weight:600; }
   details.create summary { list-style:none; }
   details.create summary::-webkit-details-marker { display:none; }
-  .menu[hidden] { display:none; }
-  .menu { position:fixed; inset:0; background:rgba(0,0,0,.55); display:flex; align-items:flex-end; justify-content:center; z-index:50; }
-  .sheet { background:var(--card); border:1px solid var(--line); border-radius:20px 20px 0 0; width:100%; max-width:640px; padding:20px 18px calc(20px + env(safe-area-inset-bottom,0px)); }
-  .sheet h3 { font-size:16px; margin-bottom:4px; }
-  .sheet .who { font-size:12.5px; color:var(--dim); margin-bottom:14px; }
-  .sheet .btn.danger { background:transparent; border:1.5px solid #b0483a; color:#e08074; font-weight:700; }
+  /* key reveal */
+  .keybox { background:#0e1a15; border:1.5px dashed var(--accent); border-radius:14px; padding:14px; margin-top:12px; }
+  .keybox .k { direction:ltr; text-align:left; font-family:ui-monospace,monospace; font-size:13px; word-break:break-all;
+               color:var(--accent); background:#00000040; border-radius:8px; padding:10px; }
+  .keybox .warn { font-size:12.5px; color:var(--accent); margin-top:8px; }
+  .row { display:flex; gap:10px; margin-top:10px; }
+  .row .btn { margin-top:0; }
   footer { text-align:center; color:var(--dim); font-size:12px; padding:20px; }
   footer a { color:var(--dim); }
 </style>
@@ -70,26 +70,37 @@
     <div class="sub">קהילת החדרים · כל חדר עם RSS משלו</div>
   </div>
   <div class="spacer"></div>
-  <a class="pill green" href="../">הדייג'סטים</a>
-  <a class="pill" id="loginBtn" href="login.html">התחברות</a>
-  <img class="avatar" id="avatar" hidden alt="">
+  <a class="pill" href="../">הדייג'סטים</a>
 </header>
 <div class="hero">
-  <p>PAPit הוא האתר של הדייג'סטים שהפך לקהילה: כל אחד יכול לפתוח כאן חדר, לפרסם בו, וכל חדר משדר פיד RSS משלו שאפשר להירשם אליו מכל קורא פידים.</p>
+  <p>PAPit הוא האתר של הדייג'סטים שהפך לקהילה: בלי הרשמה ובלי חשבון. פותחים חדר, מקבלים מפתח API לחדר, ומפרסמים — מהאתר או מכל סקריפט. כל חדר משדר פיד RSS משלו.</p>
 </div>
 <main>
   <div class="notice" id="notice" hidden></div>
 
-  <details class="create card" id="createCard" hidden>
+  <details class="create card" id="createCard">
     <summary><span class="btn" style="margin-top:0">＋ פתח חדר חדש</span></summary>
     <form id="roomForm">
       <label for="rTitle">שם החדר</label>
       <input type="text" id="rTitle" maxlength="80" required placeholder="למשל: מודלים מקומיים">
       <label for="rDesc">תיאור קצר (לא חובה)</label>
       <textarea id="rDesc" maxlength="300" placeholder="על מה החדר?"></textarea>
-      <button class="btn" id="rSubmit" type="submit">פתח את החדר</button>
+      <button class="btn" id="rSubmit" type="submit">פתח את החדר וקבל מפתח</button>
     </form>
   </details>
+
+  <div class="card" id="keyCard" hidden>
+    <h3 style="font-size:16px">החדר נפתח 🎉</h3>
+    <div class="keybox">
+      <div style="font-size:13px;color:var(--dim);margin-bottom:6px">מפתח ה-API של החדר:</div>
+      <div class="k" id="keyVal"></div>
+      <div class="warn">שמור אותו עכשיו — הוא מוצג פעם אחת בלבד. בלעדיו אי אפשר לפרסם או לנהל את החדר. הדפדפן הזה כבר שמר אותו בשבילך.</div>
+      <div class="row">
+        <button class="btn ghost" id="copyKey">העתק מפתח</button>
+        <a class="btn" id="goRoom" href="#">לחדר</a>
+      </div>
+    </div>
+  </div>
 
   <h2 class="sec">חדרים</h2>
   <div id="rooms"><div class="empty">טוען…</div></div>
@@ -101,36 +112,25 @@
   <a href="https://kuehljnnpwgzyodjaund.supabase.co/functions/v1/papit-api/rss">RSS של כל הפוסטים</a> · <a href="../">ארכיון הדייג'סטים</a> · <a href="privacy.html">פרטיות</a>
 </footer>
 
-<div class="menu" id="menu" hidden>
-  <div class="sheet">
-    <h3 id="menuName"></h3>
-    <div class="who" id="menuEmail"></div>
-    <button class="btn ghost" id="myRoomsBtn">החדרים שלי</button>
-    <button class="btn danger" id="deleteBtn">מחיקת החשבון וכל התוכן שלי</button>
-    <button class="btn ghost" id="logoutBtn">התנתקות</button>
-    <button class="btn ghost" id="closeMenu">סגירה</button>
-  </div>
-</div>
-
-<script src="https://unpkg.com/@descope/web-js-sdk@1.53.1/dist/index.umd.js"></script>
 <script type="module">
-import { api, getUser, signOut, esc, fmtDate, API_BASE } from './auth.js'
+import { api, saveRoomKey, myRoomSlugs, esc, fmtDate, API_BASE } from './auth.js'
 const $=id=>document.getElementById(id)
 const notice=t=>{const n=$('notice');if(!t){n.hidden=true;return}n.textContent=t;n.hidden=false}
-let me=null, allRooms=[]
 
 async function loadRooms(){
   try{
     const d=await api('/rooms')
-    allRooms=d.rooms||[]
-    if(!allRooms.length){$('rooms').innerHTML='<div class="empty">עוד אין חדרים. מי שמחובר יכול לפתוח את הראשון.</div>';return}
-    $('rooms').innerHTML=allRooms.map(r=>`
+    const rooms=d.rooms||[]
+    const mine=new Set(myRoomSlugs())
+    if(!rooms.length){$('rooms').innerHTML='<div class="empty">עוד אין חדרים. הראשון שלך?</div>';return}
+    $('rooms').innerHTML=rooms.map(r=>`
     <div class="card room">
       <h3><a href="room.html?r=${encodeURIComponent(r.slug)}">${esc(r.title)}</a></h3>
       ${r.description?`<div class="desc">${esc(r.description)}</div>`:''}
       <div class="meta">
-        <span>פתח: ${esc(r.owner_name||'אנונימי')}</span>
+        ${mine.has(r.slug)?'<span class="mine">החדר שלך 🔑</span>':''}
         <span>${r.post_count} פוסטים</span>
+        <span>${fmtDate(r.created_at)}</span>
         <a class="rss" href="${API_BASE}/rss/${encodeURIComponent(r.slug)}">RSS</a>
       </div>
     </div>`).join('')
@@ -148,7 +148,7 @@ async function loadLatest(){
       ${p.link?`<a class="ext" href="${esc(p.link)}" target="_blank" rel="noopener">${esc(p.link)}</a>`:''}
       <div class="meta">
         <span>בחדר <a href="room.html?r=${encodeURIComponent(p.room_slug)}">${esc(p.room_title)}</a></span>
-        <span>מאת ${esc(p.author_name||'אנונימי')}</span>
+        ${p.author_name?`<span>מאת ${esc(p.author_name)}</span>`:''}
         <span>${fmtDate(p.created_at)}</span>
       </div>
     </div>`).join('')
@@ -156,50 +156,24 @@ async function loadLatest(){
 }
 $('roomForm').addEventListener('submit',async e=>{
   e.preventDefault()
-  if(!me)return
   const title=$('rTitle').value.trim(), desc=$('rDesc').value.trim()
   if(!title)return
   $('rSubmit').disabled=true
   try{
-    const r=await api('/rooms',{method:'POST',auth:true,body:{title,description:desc,display_name:me.name,email:me.email,picture_url:me.pictureUrl}})
-    location.href='room.html?r='+encodeURIComponent(r.slug)
-  }catch(err){notice(err.status===401?'צריך להתחבר כדי לפתוח חדר.':'לא הצלחנו לפתוח את החדר. נסו שוב.');$('rSubmit').disabled=false}
+    const r=await api('/rooms',{method:'POST',body:{title,description:desc}})
+    saveRoomKey(r.slug,r.api_key)
+    $('keyVal').textContent=r.api_key
+    $('goRoom').href='room.html?r='+encodeURIComponent(r.slug)
+    $('copyKey').onclick=async()=>{try{await navigator.clipboard.writeText(r.api_key);$('copyKey').textContent='הועתק ✓'}catch{$('copyKey').textContent='סמן והעתק ידנית'}}
+    $('createCard').open=false
+    $('createCard').hidden=true
+    $('keyCard').hidden=false
+    $('keyCard').scrollIntoView({behavior:'smooth'})
+    loadRooms()
+  }catch(err){notice('לא הצלחנו לפתוח את החדר. נסו שוב.')}
+  $('rSubmit').disabled=false
 })
-$('avatar').addEventListener('click',()=>{
-  if(!me)return
-  $('menuName').textContent=me.name
-  $('menuEmail').textContent=me.email
-  $('menu').hidden=false
-})
-$('closeMenu').onclick=()=>$('menu').hidden=true
-$('menu').addEventListener('click',e=>{if(e.target.id==='menu')$('menu').hidden=true})
-$('myRoomsBtn').onclick=()=>{
-  $('menu').hidden=true
-  if(!me)return
-  const mine=allRooms.filter(r=>r.owner_id===me.id)
-  notice(mine.length?'החדרים שלי: '+mine.map(r=>r.title).join(', '):'עוד לא פתחת חדר.')
-  scrollTo({top:0,behavior:'smooth'})
-}
-$('logoutBtn').onclick=async()=>{await signOut();location.replace('./')}
-$('deleteBtn').onclick=async()=>{
-  if(!me)return
-  if(!confirm('זה ימחק לצמיתות את הפרופיל, כל החדרים וכל הפוסטים שלך ב-PAPit. להמשיך?'))return
-  if(!confirm('בטוח? אין דרך לשחזר אחרי המחיקה.'))return
-  try{
-    await api('/me',{method:'DELETE',auth:true})
-    await signOut()
-    location.replace('./')
-  }catch(e){notice('המחיקה נכשלה. נסו שוב.')}
-}
-(async()=>{
-  me=await getUser()
-  if(me){
-    $('loginBtn').hidden=true
-    const av=$('avatar');av.src=me.pictureUrl||'icon.svg';av.hidden=false
-    $('createCard').hidden=false
-  }
-  loadRooms();loadLatest()
-})()
+loadRooms();loadLatest()
 </script>
 </body>
 </html>
