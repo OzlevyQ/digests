@@ -84,7 +84,7 @@ async function roomByKey(slug: string, key: string) {
 }
 function slugify(t: string): string {
   let s = t.toLowerCase().normalize('NFKD').replace(/[׳']/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')
-  if (!s) s = 'room-' + Math.random().toString(36).slice(2, 8)
+  if (s.length < 3) s = 'room-' + Math.random().toString(36).slice(2, 8)
   return s.slice(0, 48)
 }
 async function uniqueSlug(base: string): Promise<string> {
@@ -275,6 +275,118 @@ Deno.serve(async (req: Request) => {
       const up = await sb.storage.from('papit-covers').upload(`${seg(1)}.png`, bytes, { contentType: ct, upsert: true, cacheControl: '3600' })
       if (up.error) { console.error(up.error); return json({ error: 'upload_failed' }, 500) }
       return json({ url: `${SB_URL}/storage/v1/object/public/papit-covers/${seg(1)}.png` })
+    }
+
+    /* Room management by owner email (the owner explicitly chose email-only management).
+       Rate-limited; never returns the api_key or the full owner_email. */
+    if (req.method === 'POST' && seg(0) === 'rooms' && seg(1) && seg(2) === 'manage') {
+      const rl = await rateLimit('manage', callerIp(req), 30, 150)
+      if (rl !== null) return tooMany(rl)
+      const { data: room } = await sb.from('papit_rooms').select('id,slug,title,description,owner_email,created_at').eq('slug', seg(1)).maybeSingle()
+      if (!room) return json({ error: 'room_not_found' }, 404)
+      const b = await req.json().catch(() => ({}))
+      const email = clean(b.email, 120).toLowerCase()
+      if (!room.owner_email) return json({ error: 'no_owner_email' }, 409)
+      if (!email || email !== room.owner_email) return json({ error: 'email_mismatch' }, 403)
+      const action = clean(b.action, 20)
+      if (action === 'get') {
+        const { data: posts } = await sb.from('papit_posts').select('id,title,body,link,author_name,created_at').eq('room_id', room.id).order('created_at', { ascending: false }).limit(200)
+        const [mu, md] = String(room.owner_email).split('@')
+        const masked = (mu ? mu[0] : '') + '***@' + (md ?? '')
+        return json({ room: { slug: room.slug, title: room.title, description: room.description ?? '', created_at: room.created_at, posts: posts ?? [] }, owner_email_masked: masked, rss: `${API_PUBLIC}/rss/${encodeURIComponent(room.slug)}` })
+      }
+      if (action === 'update_room') {
+        const title = clean(b.title, 80)
+        if (!title) return json({ error: 'title_required' }, 400)
+        const { error } = await sb.from('papit_rooms').update({ title, description: clean(b.description, 300) }).eq('id', room.id)
+        if (error) { console.error(error); return json({ error: 'update_failed' }, 500) }
+        return json({ ok: true })
+      }
+      if (action === 'create_post') {
+        const title = clean(b.title, 120)
+        if (!title) return json({ error: 'title_required' }, 400)
+        const link = clean(b.link, 500)
+        if (!okLink(link)) return json({ error: 'invalid_link' }, 400)
+        const { count } = await sb.from('papit_posts').select('*', { count: 'exact', head: true }).eq('room_id', room.id)
+        if ((count ?? 0) >= 500) return json({ error: 'room_post_limit' }, 429)
+        const { data, error } = await sb.from('papit_posts')
+          .insert({ room_id: room.id, title, body: clean(b.body, 5000), link, author_name: clean(b.author_name, 60) })
+          .select('id').single()
+        if (error) { console.error(error); return json({ error: 'create_failed' }, 500) }
+        const er = (globalThis as { EdgeRuntime?: { waitUntil: (p: Promise<unknown>) => void } }).EdgeRuntime
+        if (er?.waitUntil) er.waitUntil(fanout(room.id))
+        else await fanout(room.id)
+        return json({ id: data.id })
+      }
+      if (action === 'update_post' || action === 'delete_post') {
+        const pid = clean(b.post_id, 40)
+        const { data: post } = await sb.from('papit_posts').select('id,room_id').eq('id', pid).maybeSingle()
+        if (!post || post.room_id !== room.id) return json({ error: 'not_found' }, 404)
+        if (action === 'delete_post') {
+          await sb.from('papit_posts').delete().eq('id', post.id)
+          return json({ ok: true })
+        }
+        const title = clean(b.title, 120)
+        if (!title) return json({ error: 'title_required' }, 400)
+        const link = clean(b.link, 500)
+        if (!okLink(link)) return json({ error: 'invalid_link' }, 400)
+        const { error } = await sb.from('papit_posts').update({ title, body: clean(b.body, 5000), link, author_name: clean(b.author_name, 60) }).eq('id', post.id)
+        if (error) { console.error(error); return json({ error: 'update_failed' }, 500) }
+        return json({ ok: true })
+      }
+      if (action === 'set_cover') {
+        const ct = clean(b.content_type, 40)
+        if (!['image/png', 'image/jpeg', 'image/webp'].includes(ct)) return json({ error: 'invalid_image' }, 400)
+        let bytes: Uint8Array
+        try {
+          const bin = atob(String(b.data ?? '').replace(/\s/g, ''))
+          if (!bin.length) throw new Error('empty')
+          if (bin.length > 3_000_000) return json({ error: 'image_too_large' }, 400)
+          bytes = new Uint8Array(bin.length)
+          for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i)
+        } catch { return json({ error: 'invalid_image' }, 400) }
+        const up = await sb.storage.from('papit-covers').upload(`${room.slug}.png`, bytes, { contentType: ct, upsert: true, cacheControl: '3600' })
+        if (up.error) { console.error(up.error); return json({ error: 'upload_failed' }, 500) }
+        return json({ url: `${SB_URL}/storage/v1/object/public/papit-covers/${room.slug}.png` })
+      }
+      if (action === 'delete_room') {
+        await sb.storage.from('papit-covers').remove([`${room.slug}.png`])
+        const { error } = await sb.from('papit_rooms').delete().eq('id', room.id)
+        if (error) { console.error(error); return json({ error: 'delete_failed' }, 500) }
+        return json({ ok: true })
+      }
+      return json({ error: 'unknown_action' }, 400)
+    }
+
+    /* Signed direct-to-Storage audio upload (owner api key or owner email). The client
+       PUTs the file straight to Storage, so the ~100KB edge body limit does not apply. */
+    if (req.method === 'POST' && seg(0) === 'rooms' && seg(1) && seg(2) === 'audio-sign') {
+      const { data: room } = await sb.from('papit_rooms').select('id,slug,api_key_hash,owner_email').eq('slug', seg(1)).maybeSingle()
+      if (!room) return json({ error: 'room_not_found' }, 404)
+      const b = await req.json().catch(() => ({}))
+      const key = apiKeyFrom(req)
+      const keyOk = !!key && (await sha256hex(key)) === room.api_key_hash
+      const email = clean(b.email, 120).toLowerCase()
+      const emailOk = !!room.owner_email && !!email && email === room.owner_email
+      if (!keyOk && !emailOk) return json({ error: 'bad_auth' }, 401)
+      const rl = await rateLimit('audio_sign', room.slug, 60, 300)
+      if (rl !== null) return tooMany(rl)
+      const ct = clean(b.content_type, 60).toLowerCase()
+      const EXT: Record<string, string> = {
+        'audio/mpeg': 'mp3', 'audio/mp4': 'm4a', 'audio/x-m4a': 'm4a', 'audio/m4a': 'm4a',
+        'audio/ogg': 'ogg', 'audio/wav': 'wav', 'audio/x-wav': 'wav', 'audio/aac': 'aac',
+        'audio/webm': 'webm', 'audio/flac': 'flac', 'audio/opus': 'opus',
+      }
+      const ext = EXT[ct]
+      if (!ext) return json({ error: 'invalid_audio_type' }, 400)
+      const path = `${room.slug}/${Date.now()}-${Math.random().toString(36).slice(2, 8)}.${ext}`
+      const { data, error } = await sb.storage.from('papit-audio').createSignedUploadUrl(path)
+      if (error || !data) { console.error(error); return json({ error: 'sign_failed' }, 500) }
+      return json({
+        path,
+        upload_url: `${SB_URL}/storage/v1/object/upload/sign/papit-audio/${path}?token=${encodeURIComponent(data.token)}`,
+        public_url: `${SB_URL}/storage/v1/object/public/papit-audio/${path}`,
+      })
     }
 
     if (req.method === 'POST' && seg(0) === 'rooms' && seg(1) && seg(2) === 'posts') {

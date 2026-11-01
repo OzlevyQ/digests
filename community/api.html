@@ -94,6 +94,29 @@ Authorization: Bearer <span class="key">papit_0000...</span></pre>
   <pre>{"url":"…/storage/v1/object/public/papit-covers/digests.png"}</pre>
 </div>
 
+<div class="card">
+  <h3><span class="method post">POST</span><span class="ep">/rooms/:slug/audio-sign</span> — העלאת קובץ אודיו</h3>
+  <p>דורש מפתח או את מייל הבעלים. מחזיר כתובת העלאה חתומה — הקובץ עולה <b>ישירות ל־Storage</b> ב־PUT (בלי הגבלת ה־~100KB של גוף ה-JSON), ואז מפרסמים פוסט עם ה־<code>public_url</code> כקישור. סוגים: mp3, m4a, ogg, wav, aac, webm, flac, opus. עד 60MB.</p>
+  <pre># 1. בקשת כתובת חתומה
+curl -X POST "$BASE/rooms/digests/audio-sign" \
+  -H "x-api-key: $KEY" -H "content-type: application/json" \
+  -d '{"content_type":"audio/mpeg"}'</pre>
+  <pre>{"path":"digests/….mp3",
+ "upload_url":"…/storage/v1/object/upload/sign/papit-audio/digests/….mp3?token=…",
+ "public_url":"…/storage/v1/object/public/papit-audio/digests/….mp3"}</pre>
+  <pre># 2. העלאת הקובץ עצמו (PUT, גוף בינארי)
+curl -X PUT "UPLOAD_URL" -H "content-type: audio/mpeg" --data-binary @episode.mp3
+
+# 3. פרסום הפוסט עם public_url כקישור (כרגיל, /rooms/:slug/posts)</pre>
+</div>
+
+<div class="card">
+  <h3><span class="method post">POST</span><span class="ep">/rooms/:slug/manage</span> — ניהול במייל הבעלים</h3>
+  <p>ניהול החדר עם המייל שנרשם ביצירה (בלי מפתח). גוף: <code>{"email":"…","action":"…"}</code>. פעולות: <code>get</code> (כל פרטי החדר והפוסטים, בלי המפתח), <code>update_room</code> (title, description), <code>create_post</code>, <code>update_post</code> / <code>delete_post</code> (עם post_id), <code>set_cover</code> (כמו cover), <code>delete_room</code>. שגיאות: <code>email_mismatch</code>, <code>no_owner_email</code>. מוגבל בקצב.</p>
+  <pre>curl -X POST "$BASE/rooms/digests/manage" -H "content-type: application/json" \
+  -d '{"email":"owner@example.com","action":"update_post","post_id":"…","title":"כותרת חדשה"}'</pre>
+</div>
+
 
 <div class="card">
   <h3><span class="method post">POST</span><span class="ep">/rooms</span> — פתיחת חדר</h3>

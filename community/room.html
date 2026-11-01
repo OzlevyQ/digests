@@ -146,8 +146,22 @@
   details.manage .inner { padding:0 16px 16px; }
   details.manage[open] { background:var(--card); border-style:solid; }
   label { display:block; font-size:13px; font-weight:600; color:var(--dim); margin:12px 0 5px; }
-  input[type=text], input[type=url], input[type=password], textarea { width:100%; background:#0e1a15; border:1px solid var(--line); border-radius:12px; color:var(--ink);
+  input[type=text], input[type=url], input[type=password], input[type=email], textarea { width:100%; background:#0e1a15; border:1px solid var(--line); border-radius:12px; color:var(--ink);
     font-family:inherit; font-size:14px; padding:11px 13px; }
+  .spin { display:inline-block; width:13px; height:13px; border:2px solid rgba(238,244,239,.22); border-top-color:var(--dim);
+          border-radius:50%; animation:sp .7s linear infinite; vertical-align:-2px; margin-inline-end:7px; }
+  @keyframes sp { to { transform:rotate(360deg); } }
+  .filepick { display:block; margin-top:10px; border:1.5px dashed var(--line); border-radius:12px; padding:12px 14px;
+              font-size:13.5px; color:var(--dim); cursor:pointer; text-align:center; }
+  .filepick input { display:none; }
+  .filepick.has { border-color:var(--accent2); color:var(--accent2); }
+  details.mpost { background:#0e1a15; border:1px solid var(--line); border-radius:12px; padding:0; margin-bottom:10px; }
+  details.mpost summary { list-style:none; cursor:pointer; padding:10px 13px; font-size:13.5px; font-weight:600; }
+  details.mpost summary::-webkit-details-marker { display:none; }
+  details.mpost .inner { padding:0 13px 13px; }
+  details.mpost textarea { min-height:64px; }
+  .row { display:flex; gap:10px; flex-wrap:wrap; }
+  .row .btn { flex:1 1 auto; text-align:center; }
   textarea { min-height:90px; resize:vertical; }
   .btn { display:block; width:100%; margin-top:16px; background:linear-gradient(135deg,var(--accent),#e07b39); color:#1a1205; border:0;
          border-radius:14px; padding:13px; font-family:inherit; font-size:15px; font-weight:800; cursor:pointer; text-align:center; text-decoration:none; }
@@ -207,6 +221,45 @@
         <input type="password" id="kVal" placeholder="papit_…" dir="ltr" style="text-align:left" autocomplete="off">
         <button class="btn ghost" type="submit">שמור מפתח בדפדפן הזה</button>
       </form>
+    </div>
+  </details>
+
+  <details class="manage" id="manageZone">
+    <summary>ניהול החדר (לבעלים - כניסה עם המייל שנרשם ביצירה)</summary>
+    <div class="inner">
+      <div id="mLogin">
+        <div style="font-size:13px;color:var(--dim);margin-bottom:6px">עריכת שם ותיאור, תמונת שער, פרסום ועריכת פוסטים, העלאת אודיו מהמכשיר ומחיקת החדר.</div>
+        <form id="mForm">
+          <label for="mEmail">המייל של בעל החדר</label>
+          <input type="email" id="mEmail" required placeholder="you@example.com" dir="ltr" style="text-align:left" autocomplete="off">
+          <button class="btn ghost" id="mGo" type="submit">כניסה לניהול</button>
+        </form>
+      </div>
+      <div id="mConsole" hidden>
+        <div style="font-size:12.5px;color:var(--dim);margin-bottom:8px">מחובר כ־<span id="mMasked"></span> · <a href="#" id="mOut" style="color:var(--dim)">יציאה</a></div>
+        <label for="mTitle">שם החדר</label>
+        <input type="text" id="mTitle" maxlength="80">
+        <label for="mDesc">תיאור</label>
+        <textarea id="mDesc" maxlength="300" rows="2" style="min-height:56px"></textarea>
+        <button class="btn ghost" id="mSaveRoom" type="button">שמירת פרטי החדר</button>
+        <label>תמונת שער</label>
+        <label class="filepick"><span id="mCoverName">בחירת תמונה חדשה</span><input id="mCover" type="file" accept="image/png,image/jpeg,image/webp"></label>
+        <div id="mCoverStat" style="font-size:12.5px;color:var(--dim);margin-top:6px"></div>
+        <label style="font-size:14px;color:var(--ink);margin-top:20px">פוסט חדש</label>
+        <form id="mPostForm">
+          <input type="text" id="mPTitle" maxlength="120" required placeholder="כותרת" style="margin-bottom:8px">
+          <textarea id="mPBody" maxlength="5000" placeholder="תוכן (לא חובה)" style="min-height:64px;margin-bottom:8px"></textarea>
+          <input type="url" id="mPLink" maxlength="500" placeholder="קישור (לא חובה)" dir="ltr" style="text-align:left;margin-bottom:8px">
+          <input type="text" id="mPName" maxlength="60" placeholder="שם מפרסם (לא חובה)">
+          <label class="filepick"><span id="mAudioName">🎧 קובץ אודיו מהמכשיר (לא חובה) - יתפרסם כפרק</span><input id="mAudio" type="file" accept="audio/*"></label>
+          <div id="mUpStat" style="font-size:12.5px;color:var(--dim);margin-top:6px"></div>
+          <button class="btn" id="mPPost" type="submit">פרסם לחדר ול-RSS</button>
+        </form>
+        <label style="font-size:14px;color:var(--ink);margin-top:20px">הפוסטים בחדר</label>
+        <div id="mPosts"></div>
+        <label style="font-size:14px;color:var(--ink);margin-top:20px">אזור מסוכן</label>
+        <button class="btn ghost" id="mDelRoom" type="button" style="color:#e08074;border-color:#b0483a">מחיקת החדר (כולל כל הפוסטים בו)</button>
+      </div>
     </div>
   </details>
 
@@ -649,8 +702,191 @@ $('bellBtn').onclick=async()=>{
 }
 renderBell()
 refreshSwRooms()
+
+/* ---------- owner console: email-based room management ---------- */
+const withTimeout=(p,ms)=>Promise.race([p,new Promise((_,rej)=>setTimeout(()=>rej(new Error('timeout')),ms))])
+const mEmailGet=()=>{try{return localStorage.getItem('papit.manage.'+slug)||''}catch{return ''}}
+const mEmailSet=e=>{try{if(e)localStorage.setItem('papit.manage.'+slug,e);else localStorage.removeItem('papit.manage.'+slug)}catch{}}
+const mapi=(action,payload={})=>api('/rooms/'+encodeURIComponent(slug)+'/manage',{method:'POST',body:{email:mEmailGet(),action,...payload}})
+function coverBlob(file){
+  return new Promise((res,rej)=>{
+    let settled=false
+    const done=(fn,v)=>{if(!settled){settled=true;clearTimeout(to);fn(v)}}
+    const to=setTimeout(()=>done(rej,new Error('timeout')),25000)
+    const img=new Image()
+    img.onload=()=>{
+      if(settled)return
+      try{
+        const tries=[[640,.82],[640,.7],[512,.72],[448,.68],[384,.62],[320,.58]]
+        let out=null
+        for(const [M,q] of tries){
+          const k=Math.min(1,M/Math.max(img.width,img.height))
+          const c=document.createElement('canvas')
+          c.width=Math.max(1,Math.round(img.width*k)); c.height=Math.max(1,Math.round(img.height*k))
+          c.getContext('2d').drawImage(img,0,0,c.width,c.height)
+          const b64=c.toDataURL('image/jpeg',q).split(',')[1]
+          out={ct:'image/jpeg',data:b64}
+          if(b64.length<95000)break
+        }
+        URL.revokeObjectURL(img.src)
+        done(res,out)
+      }catch(e){done(rej,e)}
+    }
+    img.onerror=()=>done(rej,new Error('bad_image'))
+    img.src=URL.createObjectURL(file)
+  })
+}
+function renderMPosts(posts){
+  const w=$('mPosts')
+  if(!posts||!posts.length){w.innerHTML='<div class="empty">אין פוסטים עדיין.</div>';return}
+  w.innerHTML=posts.map(p=>
+    '<details class="mpost" data-id="'+p.id+'">'+
+      '<summary>'+esc(p.title)+' <span style="color:var(--dim);font-weight:400">'+fmtDate(p.created_at)+'</span></summary>'+
+      '<div class="inner">'+
+        '<label>כותרת</label><input class="mp-title" type="text" maxlength="120" value="'+esc(p.title)+'">'+
+        '<label>תוכן</label><textarea class="mp-body" maxlength="5000">'+esc(p.body||'')+'</textarea>'+
+        '<label>קישור</label><input class="mp-link" type="url" maxlength="500" value="'+esc(p.link||'')+'" dir="ltr" style="text-align:left">'+
+        '<label>שם מפרסם</label><input class="mp-name" type="text" maxlength="60" value="'+esc(p.author_name||'')+'">'+
+        '<div class="row">'+
+          '<button class="btn ghost mp-save" type="button">שמירה</button>'+
+          '<button class="btn ghost mp-del" type="button" style="color:#e08074;border-color:#b0483a">מחיקה</button>'+
+        '</div>'+
+      '</div>'+
+    '</details>').join('')
+}
+function renderConsole(d){
+  $('mLogin').hidden=true
+  $('mConsole').hidden=false
+  $('mMasked').textContent=d.owner_email_masked
+  $('mTitle').value=d.room.title
+  $('mDesc').value=d.room.description||''
+  renderMPosts(d.room.posts)
+}
+async function manageLogin(email,silent){
+  mEmailSet(email)
+  try{
+    const d=await withTimeout(mapi('get'),20000)
+    renderConsole(d)
+    return true
+  }catch(e){
+    mEmailSet('')
+    $('mLogin').hidden=false;$('mConsole').hidden=true
+    if(silent)return false
+    if(e&&e.message==='no_owner_email')notice('לחדר הזה אין עדיין ניהול במייל (נפתח לפני שהתווסף שדה המייל).')
+    else if(e&&e.message==='email_mismatch')notice('המייל לא מתאים לחדר הזה.')
+    else notice('הכניסה לניהול נכשלה. נסו שוב.')
+    return false
+  }
+}
+$('mForm').addEventListener('submit',async e=>{
+  e.preventDefault()
+  const btn=$('mGo')
+  btn.disabled=true
+  const t=btn.textContent
+  btn.innerHTML='<span class="spin"></span>בודק…'
+  await manageLogin($('mEmail').value.trim(),false)
+  btn.disabled=false
+  btn.textContent=t
+})
+$('mOut').onclick=e=>{e.preventDefault();mEmailSet('');$('mConsole').hidden=true;$('mLogin').hidden=false;notice('יצאת מהניהול.')}
+$('mSaveRoom').onclick=async()=>{
+  const b=$('mSaveRoom');b.disabled=true;b.textContent='שומר…'
+  try{
+    await withTimeout(mapi('update_room',{title:$('mTitle').value.trim(),description:$('mDesc').value.trim()}),20000)
+    b.textContent='נשמר ✓';load()
+    setTimeout(()=>{b.textContent='שמירת פרטי החדר';b.disabled=false},1500)
+  }catch{b.textContent='נכשל, נסו שוב';b.disabled=false}
+}
+$('mCover').addEventListener('change',async()=>{
+  const f=$('mCover').files[0]
+  if(!f)return
+  $('mCoverName').textContent='✓ '+f.name
+  $('mCoverStat').innerHTML='<span class="spin"></span>מעלה את תמונת השער…'
+  try{
+    const cov=await coverBlob(f)
+    await withTimeout(mapi('set_cover',{content_type:cov.ct,data:cov.data}),30000)
+    $('mCoverStat').textContent='תמונת השער עודכנה ✓'
+    load()
+  }catch{$('mCoverStat').textContent='ההעלאה נכשלה. נסו שוב.'}
+})
+function audioUpload(url,file,ct){
+  return new Promise((res,rej)=>{
+    const x=new XMLHttpRequest()
+    x.upload.onprogress=e=>{if(e.lengthComputable)$('mUpStat').innerHTML='<span class="spin"></span>מעלה אודיו… '+Math.round(e.loaded/e.total*100)+'%'}
+    x.onload=()=>{(x.status>=200&&x.status<300)?res():rej(new Error('upload_'+x.status))}
+    x.onerror=()=>rej(new Error('upload_failed'))
+    x.open('PUT',url)
+    x.setRequestHeader('content-type',ct)
+    x.send(file)
+  })
+}
+$('mAudio').addEventListener('change',()=>{
+  const f=$('mAudio').files[0]
+  $('mAudioName').textContent=f?('✓ '+f.name):'🎧 קובץ אודיו מהמכשיר (לא חובה) - יתפרסם כפרק'
+})
+$('mPostForm').addEventListener('submit',async e=>{
+  e.preventDefault()
+  const title=$('mPTitle').value.trim()
+  if(!title)return
+  const btn=$('mPPost')
+  btn.disabled=true
+  const af=$('mAudio').files[0]
+  let link=$('mPLink').value.trim()
+  try{
+    if(af){
+      const ct=(af.type||'').toLowerCase()
+      if(!ct.startsWith('audio/'))throw new Error('bad_type')
+      $('mUpStat').innerHTML='<span class="spin"></span>מכין העלאה…'
+      const s=await withTimeout(api('/rooms/'+encodeURIComponent(slug)+'/audio-sign',{method:'POST',body:{email:mEmailGet(),content_type:ct}}),20000)
+      await withTimeout(audioUpload(s.upload_url,af,ct),180000)
+      link=s.public_url
+      $('mUpStat').textContent='האודיו עלה ✓'
+    }
+    await withTimeout(mapi('create_post',{title,body:$('mPBody').value.trim(),link,author_name:$('mPName').value.trim()}),20000)
+    $('mPTitle').value='';$('mPBody').value='';$('mPLink').value='';$('mPName').value=''
+    $('mAudio').value='';$('mAudioName').textContent='🎧 קובץ אודיו מהמכשיר (לא חובה) - יתפרסם כפרק'
+    if(af)$('mUpStat').textContent='האודיו עלה ופורסם ✓'
+    notice('הפוסט פורסם ✓')
+    load()
+    const d=await mapi('get');renderConsole(d)
+  }catch(err){
+    notice(err&&err.message==='bad_type'?'זה לא קובץ אודיו.':err&&err.message==='invalid_audio_type'?'סוג האודיו לא נתמך (mp3, m4a, ogg, wav, aac, webm, flac, opus).':'הפרסום נכשל. נסו שוב.')
+    $('mUpStat').textContent=''
+  }
+  btn.disabled=false
+})
+$('mPosts').addEventListener('click',async e=>{
+  const det=e.target.closest('details.mpost')
+  if(!det)return
+  const id=det.dataset.id
+  if(e.target.classList.contains('mp-save')){
+    const b=e.target;b.disabled=true;b.textContent='שומר…'
+    try{
+      await withTimeout(mapi('update_post',{post_id:id,title:det.querySelector('.mp-title').value.trim(),body:det.querySelector('.mp-body').value.trim(),link:det.querySelector('.mp-link').value.trim(),author_name:det.querySelector('.mp-name').value.trim()}),20000)
+      det.querySelector('summary').firstChild.textContent=det.querySelector('.mp-title').value.trim()+' '
+      b.textContent='נשמר ✓';load()
+      setTimeout(()=>{b.textContent='שמירה';b.disabled=false},1500)
+    }catch{b.textContent='נכשל, נסו שוב';b.disabled=false}
+  }
+  if(e.target.classList.contains('mp-del')){
+    if(!confirm('למחוק את הפוסט?'))return
+    try{await withTimeout(mapi('delete_post',{post_id:id}),20000);det.remove();load()}catch{notice('המחיקה נכשלה.')}
+  }
+})
+$('mDelRoom').onclick=async()=>{
+  if(!confirm('למחוק את החדר כולו, כולל כל הפוסטים? אין דרך חזרה.'))return
+  try{
+    await withTimeout(mapi('delete_room'),20000)
+    forgetRoomKey(slug)
+    mEmailSet('')
+    location.replace('./')
+  }catch{notice('מחיקת החדר נכשלה.')}
+}
+if(mEmailGet())manageLogin(mEmailGet(),true)
+
 load()
 </script>
+
 
 <script>
 /* first-visit install hint: shown once, dismissible, skipped when already installed */

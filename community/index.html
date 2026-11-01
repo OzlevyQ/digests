@@ -506,6 +506,12 @@ function skillText(slug,title){
 '  -H "x-api-key: ROOM_API_KEY" -H "content-type: application/json" \\\n'+
 '  -d \'{"title":"כותרת","body":"תוכן","link":"https://…","author_name":"שם"}\'\n\n'+
 'מחיקת פוסט:\ncurl -X DELETE '+API_BASE+'/posts/POST_ID -H "x-api-key: ROOM_API_KEY"\n\n'+
+'העלאת אודיו (mp3/m4a/ogg/wav/aac/webm/flac/opus, עד 60MB) - שני שלבים:\n'+
+'curl -X POST '+API_BASE+'/rooms/'+slug+'/audio-sign \\\n'+
+'  -H "x-api-key: ROOM_API_KEY" -H "content-type: application/json" \\\n'+
+'  -d \'{"content_type":"audio/mpeg"}\'\n'+
+'ואז: curl -X PUT UPLOAD_URL -H "content-type: audio/mpeg" --data-binary @episode.mp3\n'+
+'ולבסוף מפרסמים פוסט עם public_url כקישור.\n\n'+
 'החלפת תמונת שער (JPEG/PNG/WebP קטן, עד כ-90KB ב-base64):\ncurl -X POST '+API_BASE+'/rooms/'+slug+'/cover \\\n'+
 '  -H "x-api-key: ROOM_API_KEY" -H "content-type: application/json" \\\n'+
 '  -d \'{"content_type":"image/png","data":"BASE64…"}\'\n\n'+
