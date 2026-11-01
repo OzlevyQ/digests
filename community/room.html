@@ -260,6 +260,7 @@
 <script type="module">
 import { api, roomKey, saveRoomKey, forgetRoomKey, esc, fmtDate, qs, API_BASE } from './auth.js?v=2'
 import { supported as pushSupported, roomState, subscribeRoom, unsubscribeRoom, refreshSwRooms } from './push.js?v=1'
+import { attachPlayerFX, takeHandoff } from './playerfx.js?v=1'
 const $=id=>document.getElementById(id)
 const slug=qs('r')||''
 const notice=t=>{const n=$('notice');if(!t){n.hidden=true;return}n.textContent=t;n.hidden=false}
@@ -459,6 +460,10 @@ $('fpSeek').onclick=e=>{
   const d=audio.duration||0
   if(d)audio.currentTime=ratio*d
 }
+attachPlayerFX({audio,
+  getPost:()=>{const p=allPosts.find(x=>x.id===curId);return p?{...p,room_title:room.title,room_slug:slug}:null},
+  step:d=>{if(d>0)$('pbNext').onclick();else $('fpPrev').onclick()},
+  backSec:30,fwdSec:30})
 /* ---------- render ---------- */
 function renderHero(){
   if(!podcast){$('podhero').hidden=true;$('roomhead').hidden=false;return}
@@ -573,11 +578,13 @@ async function load(){
   $('filterWrap').hidden=!allPosts.length
   renderPosts()
   if(podcast&&!curId){
-    const st=loadState()
+    const h=takeHandoff()
+    const st=h&&allPosts.some(p=>p.id===h.id)?h:loadState()
     if(st&&st.id&&allPosts.some(p=>p.id===st.id)){
       curId=st.id
       const p=allPosts.find(x=>x.id===st.id)
       audio.src=p.link
+      if(h&&h.playing)audio.play().catch(()=>{})
       audio.onloadedmetadata=()=>{if(st.t>3&&st.t<audio.duration-8)audio.currentTime=st.t;durs[p.id]=audio.duration;updateBar()}
       updateBar();renderPosts()
     }

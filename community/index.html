@@ -229,6 +229,7 @@
 <script type="module">
 import { api, saveRoomKey, myRoomSlugs, esc, fmtDate, API_BASE } from './auth.js?v=2'
 import { supported as pushSupported, roomState, subscribeRoom, unsubscribeRoom, refreshSwRooms, localRooms } from './push.js?v=1'
+import { attachPlayerFX, takeHandoff } from './playerfx.js?v=1'
 const $=id=>document.getElementById(id)
 const notice=t=>{const n=$('notice');if(!t){n.hidden=true;return}n.textContent=t;n.hidden=false}
 
@@ -335,6 +336,17 @@ const seekFrom=(el,e)=>{
 }
 $('pbSeek').onclick=e=>seekFrom(e.currentTarget,e)
 $('fpSeek').onclick=e=>seekFrom(e.currentTarget,e)
+attachPlayerFX({audio,getPost:()=>latestPosts.find(x=>x.id===curId)||null,step,backSec:15,fwdSec:30})
+function resumeHandoff(){
+  const h=takeHandoff();if(!h)return
+  const p=latestPosts.find(x=>x.id===h.id);if(!p||!isAudio(p))return
+  curId=p.id
+  audio.src=p.link
+  if(h.playing)audio.play().catch(()=>{})
+  audio.onloadedmetadata=()=>{durs[p.id]=audio.duration;if(h.t>2&&(!isFinite(audio.duration)||h.t<audio.duration-2))audio.currentTime=h.t;updateBar()}
+  document.body.classList.add('player-on')
+  renderLatest();updateBar()
+}
 
 /* ---------- latest posts ---------- */
 let durObs=null
@@ -461,6 +473,7 @@ async function loadLatest(){
     const d=await api('/latest')
     latestPosts=d.posts||[]
     renderLatest()
+    if(!curId)resumeHandoff()
   }catch(e){$('latest').innerHTML=''}
 }
 $('roomForm').addEventListener('submit',async e=>{
