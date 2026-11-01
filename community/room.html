@@ -263,6 +263,7 @@ import { supported as pushSupported, roomState, subscribeRoom, unsubscribeRoom, 
 import { attachPlayerFX, takeHandoff } from './playerfx.js?v=1'
 const $=id=>document.getElementById(id)
 const slug=qs('r')||''
+const COVERS='https://kuehljnnpwgzyodjaund.supabase.co/storage/v1/object/public/papit-covers/'
 const notice=t=>{const n=$('notice');if(!t){n.hidden=true;return}n.textContent=t;n.hidden=false}
 let room=null, allPosts=[]
 if(!slug)location.replace('./')
@@ -404,9 +405,8 @@ function updateBar(){
     $('fpCover').style.background=grad(hueOf(tag||p.title))
     $('fpFallback').textContent=(tag||p.title||'♪').charAt(0)
     const img=$('fpImg')
-    const src='cover-'+slug+'.png'
-    if(!img.src.endsWith(src)){img.style.display='';img.src=src}
-    img.onerror=()=>{img.style.display='none'}
+    if(img.dataset.cov!==slug){img.dataset.cov=slug;delete img.dataset.fb;img.style.display='';img.src=COVERS+slug+'.png'}
+    img.onerror=()=>{if(!img.dataset.fb){img.dataset.fb=1;img.src='cover-'+slug+'.png'}else{img.style.display='none'}}
     $('fpKind').textContent='מתנגן מחדר · '+room.title
     $('fpTitle').textContent=p.title
     $('fpSub').textContent=(p.author_name?p.author_name+' · ':'')+dayLabel(p.created_at)+' '+timeLabel(p.created_at)
@@ -485,7 +485,7 @@ function renderHero(){
   $('podhero').innerHTML=`
     <div class="podcover">
       <div class="fallback">${esc(room.title.charAt(0))}</div>
-      <img src="cover-${slug}.png" alt="" onerror="this.remove()">
+      <img src="${COVERS}${slug}.png" alt="" onerror="if(!this.dataset.fb){this.dataset.fb=1;this.src='cover-${slug}.png'}else{this.remove()}">
     </div>
     <div class="podmeta">
       <div class="kind">פודקאסט · חדר PAPit</div>

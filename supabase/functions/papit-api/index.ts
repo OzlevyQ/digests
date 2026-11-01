@@ -244,14 +244,37 @@ Deno.serve(async (req: Request) => {
       const b = await req.json().catch(() => ({}))
       const title = clean(b.title, 80)
       if (!title) return json({ error: 'title_required' }, 400)
+      const email = clean(b.email, 120).toLowerCase()
+      if (!email) return json({ error: 'email_required' }, 400)
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return json({ error: 'invalid_email' }, 400)
       const slug = await uniqueSlug(slugify(title))
       const apiKey = newApiKey()
       const { error } = await sb.from('papit_rooms').insert({
-        slug, title, description: clean(b.description, 300),
+        slug, title, description: clean(b.description, 300), owner_email: email,
         api_key_hash: await sha256hex(apiKey), key_hint: '…' + apiKey.slice(-4),
       })
       if (error) { console.error(error); return json({ error: 'create_failed' }, 500) }
       return json({ slug, api_key: apiKey, rss: `${API_PUBLIC}/rss/${encodeURIComponent(slug)}` })
+    }
+
+    /* Room cover upload (owner key). Public read from the papit-covers bucket. */
+    if (req.method === 'POST' && seg(0) === 'rooms' && seg(1) && seg(2) === 'cover') {
+      const { error, room } = await roomByKey(seg(1), apiKeyFrom(req))
+      if (error) return error
+      const b = await req.json().catch(() => ({}))
+      const ct = clean(b.content_type, 40)
+      if (!['image/png', 'image/jpeg', 'image/webp'].includes(ct)) return json({ error: 'invalid_image' }, 400)
+      let bytes: Uint8Array
+      try {
+        const bin = atob(String(b.data ?? '').replace(/\s/g, ''))
+        if (!bin.length) throw new Error('empty')
+        if (bin.length > 3_000_000) return json({ error: 'image_too_large' }, 400)
+        bytes = new Uint8Array(bin.length)
+        for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i)
+      } catch { return json({ error: 'invalid_image' }, 400) }
+      const up = await sb.storage.from('papit-covers').upload(`${seg(1)}.png`, bytes, { contentType: ct, upsert: true, cacheControl: '3600' })
+      if (up.error) { console.error(up.error); return json({ error: 'upload_failed' }, 500) }
+      return json({ url: `${SB_URL}/storage/v1/object/public/papit-covers/${seg(1)}.png` })
     }
 
     if (req.method === 'POST' && seg(0) === 'rooms' && seg(1) && seg(2) === 'posts') {

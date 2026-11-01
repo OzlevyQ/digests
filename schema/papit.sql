@@ -49,3 +49,11 @@ create table if not exists public.papit_push_subs (
   unique (room_id, endpoint)
 );
 alter table public.papit_push_subs enable row level security;
+
+-- 2026-11-01: room owner contact (private, never returned by the API reads)
+alter table papit_rooms add column if not exists owner_email text;
+
+-- room cover images, publicly readable, written only by the edge function (service role)
+insert into storage.buckets (id, name, public)
+values ('papit-covers', 'papit-covers', true)
+on conflict (id) do nothing;

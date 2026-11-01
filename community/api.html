@@ -86,14 +86,25 @@ Authorization: Bearer <span class="key">papit_0000...</span></pre>
 <h2 class="sec">חדרים</h2>
 
 <div class="card">
+  <h3><span class="method post">POST</span><span class="ep">/rooms/:slug/cover</span> — תמונת שער לחדר</h3>
+  <p>דורש מפתח. PNG/JPEG/WebP ב־base64, עד 3MB. נשמר כ־<code>&lt;slug&gt;.png</code> ומוגש מ־Storage ציבורי.</p>
+  <pre>curl -X POST "$BASE/rooms/digests/cover" \
+  -H "x-api-key: $KEY" -H "content-type: application/json" \
+  -d '{"content_type":"image/png","data":"iVBORw0KG…"}'</pre>
+  <pre>{"url":"…/storage/v1/object/public/papit-covers/digests.png"}</pre>
+</div>
+
+
+<div class="card">
   <h3><span class="method post">POST</span><span class="ep">/rooms</span> — פתיחת חדר</h3>
-  <p>פתוח לכולם. מחזיר את מפתח ה־API <b>פעם אחת בלבד</b>.</p>
+  <p>פתוח לכולם. מחזיר את מפתח ה־API <b>פעם אחת בלבד</b>. המייל נשמר פרטית ולא מוצג בשום קריאה.</p>
   <pre>curl -X POST "$BASE/rooms" \
   -H "content-type: application/json" \
-  -d '{"title":"מודלים מקומיים","description":"על מה החדר?"}'</pre>
+  -d '{"title":"מודלים מקומיים","email":"me@example.com","description":"על מה החדר?"}'</pre>
   <table>
     <tr><th>שדה</th><th>חובה</th><th>מגבלה</th></tr>
     <tr><td><code>title</code></td><td>כן</td><td>עד 80 תווים</td></tr>
+    <tr><td><code>email</code></td><td>כן</td><td>פרטי, לא מפורסם</td></tr>
     <tr><td><code>description</code></td><td>לא</td><td>עד 300 תווים</td></tr>
   </table>
   <pre>{

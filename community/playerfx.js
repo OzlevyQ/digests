@@ -5,6 +5,7 @@
    2. Cross-page handoff — audio keeps going when moving between the homepage
       and a room page: the leaving page stores position, the arriving page resumes. */
 const HK='papit-handoff'
+const COVERS_URL='https://kuehljnnpwgzyodjaund.supabase.co/storage/v1/object/public/papit-covers/'
 const ICONS=[
   {src:'icon-512.png',sizes:'512x512',type:'image/png'},
   {src:'icon-192.png',sizes:'192x192',type:'image/png'}]
@@ -17,10 +18,12 @@ export function attachPlayerFX({audio,getPost,step,backSec=15,fwdSec=30}){
     const base={title:p.title,artist:p.author_name||room,album:room+' · PAPit'}
     try{navigator.mediaSession.metadata=new MediaMetadata({...base,artwork:ICONS})}catch{}
     if(p.room_slug){
-      const cover='cover-'+p.room_slug+'.png'
+      const apply=cover=>{try{navigator.mediaSession.metadata=new MediaMetadata({...base,artwork:[{src:cover,sizes:'512x512',type:'image/png'},...ICONS]})}catch{}}
+      const remote=COVERS_URL+p.room_slug+'.png'
       const img=new Image()
-      img.onload=()=>{try{navigator.mediaSession.metadata=new MediaMetadata({...base,artwork:[{src:cover,sizes:'512x512',type:'image/png'},...ICONS]})}catch{}}
-      img.src=cover
+      img.onload=()=>apply(remote)
+      img.onerror=()=>{const loc=new Image();loc.onload=()=>apply(loc.src);loc.src='cover-'+p.room_slug+'.png'}
+      img.src=remote
     }
   }
   const pos=()=>{try{
