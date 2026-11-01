@@ -1,6 +1,6 @@
 /* PAPit service worker: offline shell + room push notifications.
    Pushes are payload-free tickles; the SW fetches the fresh post itself. */
-const CACHE='papit-v13'
+const CACHE='papit-v14'
 const API='https://kuehljnnpwgzyodjaund.supabase.co/functions/v1/papit-api'
 const SHELL=['./','index.html','room.html','auth.js','push.js','playerfx.js','manifest.webmanifest','icon.svg','icon-192.png','icon-512.png']
 self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(SHELL)).then(()=>self.skipWaiting())))
