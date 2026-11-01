@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0d1512">
+<title>PAPit — תיעוד API</title>
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#0d1512; --card:#15211c; --line:#24352d; --ink:#eef4ef; --dim:#9db3a6; --accent:#f0b429; --accent2:#3ecf8e; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--ink); font-family:'Heebo',system-ui,sans-serif; line-height:1.5; }
+  header { position:sticky; top:0; z-index:10; background:rgba(13,21,18,.92); backdrop-filter:blur(10px);
+           border-bottom:1px solid var(--line); padding:14px 18px; display:flex; align-items:center; gap:12px; }
+  .logo { width:38px; height:38px; border-radius:11px; background:linear-gradient(135deg,var(--accent),#e07b39);
+          display:flex; align-items:center; justify-content:center; font-size:20px; font-weight:800; color:#1a1205; flex:none; text-decoration:none; }
+  header h1 { font-size:19px; font-weight:800; }
+  header .sub { font-size:12px; color:var(--dim); }
+  .spacer { margin-inline-start:auto; }
+  .pill { flex:none; background:transparent; color:var(--accent2); border:1.5px solid var(--accent2);
+          border-radius:999px; padding:8px 14px; font-family:inherit; font-size:13px; font-weight:600; text-decoration:none; }
+  main { max-width:640px; margin:0 auto; padding:14px 18px 60px; }
+  h2.sec { font-size:15px; font-weight:800; margin:22px 0 10px; color:var(--accent2); }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:18px; margin-bottom:14px; }
+  .card h3 { font-size:15px; font-weight:800; margin-bottom:6px; }
+  .card p, .card li { font-size:13.5px; color:var(--dim); }
+  .card ul { padding-inline-start:18px; margin-top:6px; }
+  .method { display:inline-block; direction:ltr; font-family:ui-monospace,monospace; font-size:12px; font-weight:700;
+            border-radius:7px; padding:2px 8px; margin-inline-end:8px; }
+  .get { background:#0f2c1e; color:var(--accent2); border:1px solid #1d4a33; }
+  .post { background:#2c230f; color:var(--accent); border:1px solid #4a3a12; }
+  .del { background:#2c1215; color:#ef8f8f; border:1px solid #4a1d22; }
+  .ep { direction:ltr; display:inline-block; font-family:ui-monospace,monospace; font-size:13px; color:var(--ink); }
+  code, pre { font-family:ui-monospace,monospace; }
+  pre { direction:ltr; text-align:left; background:#0e1a15; border:1px solid var(--line); border-radius:12px;
+        padding:12px 14px; font-size:12px; overflow-x:auto; margin-top:10px; color:var(--ink); white-space:pre; }
+  pre .c { color:var(--dim); }
+  .key { color:var(--accent); }
+  table { width:100%; border-collapse:collapse; margin-top:8px; font-size:12.5px; }
+  th, td { text-align:start; padding:7px 8px; border-bottom:1px solid var(--line); }
+  th { color:var(--dim); font-weight:600; }
+  td code { direction:ltr; display:inline-block; font-size:12px; color:var(--accent2); }
+  footer { text-align:center; color:var(--dim); font-size:12px; padding:20px; }
+  footer a { color:var(--dim); }
+</style>
+</head>
+<body>
+<header>
+  <a class="logo" href="./">P</a>
+  <div>
+    <h1>PAPit API</h1>
+    <div class="sub">תיעוד מלא · גרסה 3</div>
+  </div>
+  <div class="spacer"></div>
+  <a class="pill" href="./">לחדרים</a>
+</header>
+<main>
+
+<div class="card">
+  <h3>בסיס</h3>
+  <p>כל הקריאות הן HTTPS מול כתובת אחת, JSON בשני הכיוונים, ו־CORS פתוח (אפשר לקרוא מכל דפדפן):</p>
+  <pre>BASE = https://kuehljnnpwgzyodjaund.supabase.co/functions/v1/papit-api</pre>
+  <ul>
+    <li>אין הרשמה ואין חשבונות. קריאות ופידי RSS פתוחים לכולם.</li>
+    <li>כתיבה (פרסום, מחיקה) דורשת מפתח API של חדר, שמתקבל פעם אחת בפתיחת החדר.</li>
+    <li>בשרת נשמר רק גיבוב (SHA-256) של המפתח — איבדתם אותו, אין שחזור; פותחים חדר חדש.</li>
+    <li>גוף בקשה מוגבל ל־64KB.</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h3>אימות כתיבה</h3>
+  <p>מעבירים את מפתח החדר באחת משתי דרכים (ערכים לדוגמה בלבד):</p>
+  <pre>x-api-key: <span class="key">papit_000000000000000000000000000000000000000000000000</span>
+<span class="c"># או</span>
+Authorization: Bearer <span class="key">papit_0000...</span></pre>
+</div>
+
+<h2 class="sec">חדרים</h2>
+
+<div class="card">
+  <h3><span class="method post">POST</span><span class="ep">/rooms</span> — פתיחת חדר</h3>
+  <p>פתוח לכולם. מחזיר את מפתח ה־API <b>פעם אחת בלבד</b>.</p>
+  <pre>curl -X POST "$BASE/rooms" \
+  -H "content-type: application/json" \
+  -d '{"title":"מודלים מקומיים","description":"על מה החדר?"}'</pre>
+  <table>
+    <tr><th>שדה</th><th>חובה</th><th>מגבלה</th></tr>
+    <tr><td><code>title</code></td><td>כן</td><td>עד 80 תווים</td></tr>
+    <tr><td><code>description</code></td><td>לא</td><td>עד 300 תווים</td></tr>
+  </table>
+  <pre>{
+  "slug": "room-a1b2c3",
+  "api_key": "<span class="key">papit_...</span>",
+  "rss": "https://.../papit-api/rss/room-a1b2c3"
+}</pre>
+  <p>ה־slug נגזר אוטומטית מהשם. מגבלת קצב: 3 חדרים לשעה ו־10 ליום מכתובת IP.</p>
+</div>
+
+<div class="card">
+  <h3><span class="method get">GET</span><span class="ep">/rooms</span> — ספריית החדרים</h3>
+  <pre>curl "$BASE/rooms"</pre>
+  <pre>{"rooms":[{"slug":"digests","title":"הדייג'סטים","description":"...",
+  "created_at":"2026-11-01T02:25:46.246Z","post_count":89}]}</pre>
+  <p>עד 100 חדרים, מהחדש לישן. לא חושף מפתחות ולא רמזים למפתחות.</p>
+</div>
+
+<div class="card">
+  <h3><span class="method get">GET</span><span class="ep">/rooms/{slug}</span> — חדר ופוסטים</h3>
+  <pre>curl "$BASE/rooms/digests"</pre>
+  <pre>{"room":{"slug":"digests","title":"הדייג'סטים","description":"...","created_at":"..."},
+ "posts":[{"id":"...","title":"...","body":"...","link":"https://...",
+           "author_name":"עוז לוי","created_at":"..."}]}</pre>
+  <p>עד 200 הפוסטים האחרונים בחדר, מהחדש לישן.</p>
+</div>
+
+<div class="card">
+  <h3><span class="method del">DELETE</span><span class="ep">/rooms/{slug}</span> — מחיקת חדר</h3>
+  <p>דורש מפתח. מוחק את החדר ואת כל הפוסטים שבו — ללא שחזור.</p>
+  <pre>curl -X DELETE "$BASE/rooms/digests" -H "x-api-key: <span class="key">papit_...</span>"</pre>
+</div>
+
+<h2 class="sec">פוסטים</h2>
+
+<div class="card">
+  <h3><span class="method post">POST</span><span class="ep">/rooms/{slug}/posts</span> — פרסום פוסט</h3>
+  <p>דורש מפתח של אותו חדר.</p>
+  <pre>curl -X POST "$BASE/rooms/digests/posts" \
+  -H "x-api-key: <span class="key">papit_...</span>" \
+  -H "content-type: application/json" \
+  -d '{"title":"פוסט ראשון","body":"טקסט חופשי","link":"https://example.com","author_name":"עוז"}'</pre>
+  <pre>{"id":"c0a80123-..."}</pre>
+  <table>
+    <tr><th>שדה</th><th>חובה</th><th>מגבלה</th></tr>
+    <tr><td><code>title</code></td><td>כן</td><td>עד 120 תווים</td></tr>
+    <tr><td><code>body</code></td><td>לא</td><td>עד 5,000 תווים</td></tr>
+    <tr><td><code>link</code></td><td>לא</td><td>עד 500 תווים, http/https בלבד</td></tr>
+    <tr><td><code>author_name</code></td><td>לא</td><td>עד 60 תווים</td></tr>
+  </table>
+  <p>מגבלות: 20 פוסטים לשעה ו־100 ליום מכתובת IP, ועד 500 פוסטים בחדר.</p>
+</div>
+
+<div class="card">
+  <h3><span class="method del">DELETE</span><span class="ep">/posts/{id}</span> — מחיקת פוסט</h3>
+  <p>דורש את מפתח החדר שהפוסט שייך לו.</p>
+  <pre>curl -X DELETE "$BASE/posts/c0a80123-..." -H "x-api-key: <span class="key">papit_...</span>"
+<span class="c"># {"ok":true}</span></pre>
+</div>
+
+<div class="card">
+  <h3><span class="method get">GET</span><span class="ep">/latest</span> — אחרונים מכל החדרים</h3>
+  <pre>curl "$BASE/latest"</pre>
+  <p>20 הפוסטים האחרונים בכל PAPit, כולל <code>room_slug</code> ו־<code>room_title</code> של כל פוסט.</p>
+</div>
+
+<h2 class="sec">פידי RSS</h2>
+
+<div class="card">
+  <h3><span class="method get">GET</span><span class="ep">/rss</span> ו־<span class="ep">/rss/{slug}</span></h3>
+  <ul>
+    <li><code>GET /rss</code> — פיד גלובלי של כל הפוסטים.</li>
+    <li><code>GET /rss/{slug}</code> — פיד של חדר אחד, למשל <code>/rss/digests</code>.</li>
+  </ul>
+  <p>RSS 2.0 תקין, 50 הפוסטים האחרונים, cache של 60 שניות. הקישור של הפוסט מופיע כ־link של ה־item וגם בתוך ה־description. מתעדכן מיד עם כל פרסום.</p>
+</div>
+
+<h2 class="sec">שגיאות</h2>
+
+<div class="card">
+  <table>
+    <tr><th>קוד</th><th>שגיאה</th><th>משמעות</th></tr>
+    <tr><td>400</td><td><code>title_required</code></td><td>חסר title בבקשה</td></tr>
+    <tr><td>400</td><td><code>invalid_link</code></td><td>link חייב להתחיל ב־http/https</td></tr>
+    <tr><td>401</td><td><code>bad_api_key</code></td><td>מפתח שגוי או חסר</td></tr>
+    <tr><td>404</td><td><code>room_not_found</code> / <code>not_found</code></td><td>חדר או פוסט לא קיימים</td></tr>
+    <tr><td>413</td><td><code>payload_too_large</code></td><td>גוף הבקשה מעל 64KB</td></tr>
+    <tr><td>429</td><td><code>rate_limited</code></td><td>חריגה ממגבלת הקצב; השדה <code>retry_after_seconds</code> אומר מתי לנסות שוב</td></tr>
+    <tr><td>429</td><td><code>room_post_limit</code></td><td>החדר הגיע ל־500 פוסטים</td></tr>
+    <tr><td>500</td><td><code>create_failed</code> / <code>server_error</code></td><td>תקלה בשרת — נסו שוב</td></tr>
+  </table>
+</div>
+
+<h2 class="sec">דוגמה מקצה לקצה (JavaScript)</h2>
+
+<div class="card">
+  <pre><span class="c">// פתיחת חדר ושמירת המפתח (מוצג פעם אחת!)</span>
+const BASE = 'https://kuehljnnpwgzyodjaund.supabase.co/functions/v1/papit-api'
+const r = await fetch(`${BASE}/rooms`, {
+  method: 'POST',
+  headers: { 'content-type': 'application/json' },
+  body: JSON.stringify({ title: 'החדר שלי' })
+}).then(r =&gt; r.json())
+localStorage.setItem('papit.key.' + r.slug, r.api_key)
+
+<span class="c">// פרסום פוסט</span>
+await fetch(`${BASE}/rooms/${r.slug}/posts`, {
+  method: 'POST',
+  headers: { 'content-type': 'application/json', 'x-api-key': r.api_key },
+  body: JSON.stringify({ title: 'היי', body: 'הפוסט הראשון שלי' })
+})</pre>
+  <p>בדיוק ככה האתר הזה עובד — אותו API, אותם מפתחות, בלי שרת ביניים.</p>
+</div>
+
+<div class="card">
+  <h3><span class="method get">GET</span><span class="ep">/health</span></h3>
+  <pre>curl "$BASE/health"
+<span class="c"># {"ok":true,"service":"papit-api","version":3}</span></pre>
+</div>
+
+</main>
+<footer>
+  <a href="./">חזרה לחדרים</a> · <a href="https://kuehljnnpwgzyodjaund.supabase.co/functions/v1/papit-api/rss">RSS גלובלי</a> · <a href="../">ארכיון הדייג'סטים</a> · <a href="privacy.html">פרטיות</a>
+</footer>
+</body>
+</html>
