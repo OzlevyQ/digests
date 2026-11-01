@@ -23,6 +23,7 @@
   .pill { flex:none; background:transparent; color:var(--accent); border:1.5px solid var(--accent);
           border-radius:999px; padding:8px 14px; font-family:inherit; font-size:13px; font-weight:600; text-decoration:none; cursor:pointer; }
   main { max-width:640px; margin:0 auto; padding:14px 18px 60px; }
+  body.player-on main { padding-bottom:150px; }
   .roomhead { padding:20px 0 6px; }
   .roomhead h2 { font-size:22px; font-weight:800; }
   .roomhead .desc { color:var(--dim); font-size:14px; margin-top:6px; }
@@ -31,7 +32,7 @@
   /* day groups */
   .dayhead { position:sticky; top:67px; z-index:5; background:rgba(13,21,18,.92); backdrop-filter:blur(8px);
              color:var(--accent2); font-size:13px; font-weight:800; padding:8px 2px; margin-top:6px; }
-  /* posts */
+  /* posts (classic mode) */
   .post { padding:16px 18px; }
   .post h3 { font-size:15.5px; font-weight:800; line-height:1.35; }
   .post .sub { font-size:12px; color:var(--dim); margin-top:4px; display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
@@ -47,6 +48,60 @@
   /* filter */
   .filter { width:100%; background:#0e1a15; border:1px solid var(--line); border-radius:999px; color:var(--ink);
             font-family:inherit; font-size:13.5px; padding:10px 16px; margin:4px 0 10px; }
+  /* podcast mode */
+  #podhero { display:flex; gap:16px; align-items:flex-end; padding:26px 2px 16px; }
+  .podcover { width:112px; height:112px; border-radius:16px; flex:none; position:relative; overflow:hidden;
+              background:linear-gradient(135deg,var(--accent),#e07b39); box-shadow:0 10px 28px rgba(0,0,0,.55); }
+  .podcover .fallback { position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+                        font-size:44px; font-weight:800; color:#1a1205; }
+  .podcover img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+  .podmeta { min-width:0; }
+  .podmeta .kind { font-size:11px; font-weight:700; letter-spacing:.4px; color:var(--accent2); }
+  .podmeta h2 { font-size:23px; font-weight:800; line-height:1.2; margin-top:2px; }
+  .podmeta .desc { font-size:13px; color:var(--dim); margin-top:4px; }
+  .podmeta .meta { font-size:12px; color:var(--dim); margin-top:6px; }
+  .chips { display:flex; gap:8px; overflow-x:auto; padding:2px 2px 12px; scrollbar-width:none; }
+  .chips::-webkit-scrollbar { display:none; }
+  .chip { flex:none; background:#0e1a15; border:1px solid var(--line); color:var(--dim); border-radius:999px;
+          padding:7px 15px; font-family:inherit; font-size:12.5px; font-weight:700; cursor:pointer; }
+  .chip.on { background:var(--accent2); border-color:var(--accent2); color:#06251a; }
+  .ep { border-bottom:1px solid #1b2a22; padding:12px 2px; }
+  .eprow { display:flex; gap:12px; align-items:center; cursor:pointer; }
+  .ep .thumb { width:56px; height:56px; border-radius:12px; flex:none; position:relative; display:flex;
+               align-items:center; justify-content:center; cursor:pointer; }
+  .ep .thumb > svg { width:26px; height:26px; }
+  .ep .eq { position:absolute; inset:0; background:rgba(0,0,0,.62); border-radius:12px; display:flex; gap:3px; align-items:center; justify-content:center; }
+  .ep .eq i { width:3px; height:14px; background:#fff; border-radius:2px; animation:eqb .9s ease-in-out infinite; }
+  .ep .eq i:nth-child(2) { animation-delay:.2s; } .ep .eq i:nth-child(3) { animation-delay:.4s; }
+  @keyframes eqb { 0%,100% { transform:scaleY(.35); } 50% { transform:scaleY(1); } }
+  .ep .info { flex:1; min-width:0; }
+  .ep h3 { font-size:14.5px; font-weight:800; line-height:1.3; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+  .ep.played h3 { color:var(--dim); }
+  .ep .meta { font-size:11.5px; color:var(--dim); margin-top:4px; }
+  .ep .heard { color:var(--accent2); }
+  .playbtn { width:42px; height:42px; border-radius:50%; flex:none; border:1.5px solid var(--dim); background:transparent;
+             color:var(--ink); display:flex; align-items:center; justify-content:center; cursor:pointer; }
+  .playbtn svg { width:18px; height:18px; }
+  .epnotes { padding:10px 2px 6px; }
+  .epnotes .body { font-size:13.5px; color:var(--ink); opacity:.9; white-space:pre-wrap; word-break:break-word; }
+  .epnotes .body a { color:var(--accent2); direction:ltr; display:inline-block; word-break:break-all; }
+  .epnotes .acts { margin-top:8px; display:flex; gap:12px; align-items:center; font-size:12px; color:var(--dim); }
+  /* playbar */
+  .playbar { position:fixed; inset-inline:0; bottom:0; z-index:40; background:rgba(16,27,22,.97); backdrop-filter:blur(14px);
+             border-top:1px solid var(--line); padding:8px 14px calc(10px + env(safe-area-inset-bottom)); }
+  .pb-progress { direction:ltr; height:4px; background:var(--line); border-radius:99px; cursor:pointer; position:relative; margin-bottom:8px; }
+  .pb-progress i { position:absolute; left:0; top:0; bottom:0; width:0; background:var(--accent2); border-radius:99px; }
+  .pb-row { display:flex; align-items:center; gap:10px; }
+  .pb-thumb { width:40px; height:40px; border-radius:9px; flex:none; display:flex; align-items:center; justify-content:center; }
+  .pb-thumb svg { width:18px; height:18px; }
+  .pb-info { flex:1; min-width:0; }
+  .pb-title { font-size:12.5px; font-weight:700; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .pb-time { font-size:11px; color:var(--dim); direction:ltr; text-align:right; }
+  .pb-btn { width:44px; height:44px; border-radius:50%; border:0; background:var(--accent2); color:#06251a;
+            display:flex; align-items:center; justify-content:center; cursor:pointer; flex:none; }
+  .pb-btn svg { width:20px; height:20px; }
+  .pb-btn.small { width:36px; height:36px; background:transparent; color:var(--dim); border:1px solid var(--line); }
+  .pb-btn.small svg { width:15px; height:15px; }
   /* management, kept secondary */
   details.manage { background:transparent; border:1px dashed var(--line); border-radius:14px; padding:0; margin-bottom:14px; }
   details.manage summary { list-style:none; cursor:pointer; padding:11px 16px; font-size:12.5px; color:var(--dim); font-weight:600; }
@@ -81,6 +136,7 @@
 </header>
 <main>
   <div class="notice" id="notice" hidden></div>
+  <div id="podhero" hidden></div>
   <div class="roomhead" id="roomhead"><div class="empty">טוען…</div></div>
 
   <details class="manage" id="composer" hidden>
@@ -116,6 +172,7 @@
     </div>
   </details>
 
+  <div id="chips" class="chips" hidden></div>
   <div id="filterWrap" hidden><input class="filter" id="filter" type="text" placeholder="סינון פוסטים… (למשל: בוקר, AI, גיטהאב)"></div>
   <div id="posts"><div class="empty">טוען…</div></div>
 
@@ -127,6 +184,19 @@
     </div>
   </details>
 </main>
+<div class="playbar" id="playbar" hidden>
+  <div class="pb-progress" id="pbSeek"><i id="pbFill"></i></div>
+  <div class="pb-row">
+    <div class="pb-thumb" id="pbThumb"></div>
+    <div class="pb-info">
+      <div class="pb-title" id="pbTitle"></div>
+      <div class="pb-time"><span id="pbCur">0:00</span> / <span id="pbTot">—</span></div>
+    </div>
+    <button class="pb-btn small" id="pbClose" aria-label="סגירת הנגן"></button>
+    <button class="pb-btn small" id="pbNext" aria-label="הפרק הבא"></button>
+    <button class="pb-btn" id="pbToggle" aria-label="נגינה או השהיה"></button>
+  </div>
+</div>
 <footer>
   <a href="./">כל החדרים</a> · <a href="../">ארכיון הדייג'סטים</a> · <a href="privacy.html">פרטיות</a>
 </footer>
@@ -146,6 +216,37 @@ const dayKey=iso=>{const d=new Date(iso);return d.getFullYear()+'-'+String(d.get
 const timeLabel=iso=>new Date(iso).toLocaleString('he-IL',{hour:'2-digit',minute:'2-digit'})
 const linkify=s=>esc(s).replace(URLRE,u=>`<a href="${u}" target="_blank" rel="noopener">${u}</a>`)
 const EXCERPT=260
+const IC_PLAY='<svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg>'
+const IC_PAUSE='<svg viewBox="0 0 24 24"><rect x="6.5" y="5" width="3.6" height="14" rx="1.2" fill="currentColor"/><rect x="13.9" y="5" width="3.6" height="14" rx="1.2" fill="currentColor"/></svg>'
+const IC_NEXT='<svg viewBox="0 0 24 24"><path d="M6 5.5v13l8.5-6.5z" fill="currentColor"/><rect x="15.5" y="5" width="2.8" height="14" rx="1.2" fill="currentColor"/></svg>'
+const IC_X='<svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>'
+const WAVE='<svg viewBox="0 0 24 24" fill="none"><rect x="4" y="9" width="2.6" height="6" rx="1.3" fill="#ffffffd9"/><rect x="8.4" y="6" width="2.6" height="12" rx="1.3" fill="#ffffffd9"/><rect x="12.8" y="10" width="2.6" height="4" rx="1.3" fill="#ffffffd9"/><rect x="17.2" y="7.5" width="2.6" height="9" rx="1.3" fill="#ffffffd9"/></svg>'
+$('pbToggle').innerHTML=IC_PLAY
+$('pbNext').innerHTML=IC_NEXT
+$('pbClose').innerHTML=IC_X
+/* ---------- podcast state ---------- */
+let podcast=false, activeChip='', expandedId=null, curId=null
+const audio=new Audio(); audio.preload='metadata'
+const durs={}
+const stateKey='papit-pod-'+slug, playedKey='papit-played-'+slug
+const loadState=()=>{try{return JSON.parse(localStorage.getItem(stateKey)||'null')}catch{return null}}
+const saveState=(id,t)=>{try{localStorage.setItem(stateKey,JSON.stringify({id,t}))}catch{}}
+const getPlayed=()=>{try{return new Set(JSON.parse(localStorage.getItem(playedKey)||'[]'))}catch{return new Set()}}
+const savePlayed=s=>{try{localStorage.setItem(playedKey,JSON.stringify([...s]))}catch{}}
+const seriesOf=t=>{const i=(t||'').lastIndexOf(' - ');return i>0?t.slice(i+3).trim():''}
+const hueOf=s=>{let h=0;for(const c of s)h=(h*31+c.charCodeAt(0))%360;return h}
+const grad=h=>`linear-gradient(135deg,hsl(${h},55%,42%),hsl(${(h+50)%360},65%,30%))`
+const fmtDur=s=>{s=Math.max(0,Math.round(s||0));return Math.floor(s/60)+':'+String(s%60).padStart(2,'0')}
+const isAudio=p=>p.link&&AUDIO.test(p.link)
+const epList=()=>filtered().filter(isAudio)
+function filtered(){
+  const q=($('filter').value||'').trim().toLowerCase()
+  let posts=allPosts
+  if(podcast&&activeChip)posts=posts.filter(p=>seriesOf(p.title)===activeChip)
+  if(q)posts=posts.filter(p=>(p.title+' '+(p.body||'')).toLowerCase().includes(q))
+  return posts
+}
+/* ---------- classic bodies ---------- */
 function bodyHtml(p){
   if(!p.body)return ''
   const b=p.body
@@ -154,6 +255,187 @@ function bodyHtml(p){
   const sp=cut.lastIndexOf(' '); if(sp>180)cut=cut.slice(0,sp)
   return `<div class="body">${linkify(cut)}…<span class="rest" hidden>${linkify('\n'+b.slice(cut.length))}</span></div>
   <button class="more" type="button">קראו עוד</button>`
+}
+/* ---------- podcast rendering ---------- */
+function notesHtml(p){
+  return `${p.body?`<div class="body">${linkify(p.body)}</div>`:''}
+  <div class="acts">
+    <span>${timeLabel(p.created_at)}${p.author_name?' · מאת '+esc(p.author_name):''}</span>
+    ${key()?`<button class="del" data-del="${p.id}">מחיקה</button>`:''}
+  </div>`
+}
+function epHtml(p){
+  const tag=seriesOf(p.title), h=hueOf(tag||p.title)
+  const played=getPlayed().has(p.id)
+  const isCur=curId===p.id, playing=isCur&&!audio.paused
+  return `<div class="ep${played?' played':''}" data-ep="${p.id}">
+    <div class="eprow">
+      <div class="thumb" data-play="${p.id}" style="background:${grad(h)}">
+        ${WAVE}
+        ${playing?'<div class="eq"><i></i><i></i><i></i></div>':''}
+      </div>
+      <div class="info">
+        <h3>${esc(p.title)}</h3>
+        <div class="meta">${dayLabel(p.created_at)} · <span data-dur="${p.id}">${durs[p.id]!=null?fmtDur(durs[p.id]):'—'}</span>${played?' · <span class="heard">הושמע ✓</span>':''}</div>
+      </div>
+      <button class="playbtn" data-play="${p.id}" aria-label="${playing?'השהיה':'נגינה'}">${playing?IC_PAUSE:IC_PLAY}</button>
+    </div>
+    <div class="epnotes"${expandedId===p.id?'':' hidden'}>${expandedId===p.id?notesHtml(p):''}</div>
+  </div>`
+}
+function miniHtml(p){
+  return `<div class="card post">
+    <h3>${esc(p.title)}</h3>
+    <div class="sub"><span>${timeLabel(p.created_at)}</span>${p.author_name?`<span>מאת ${esc(p.author_name)}</span>`:''}</div>
+    ${bodyHtml(p)}
+    ${p.link?`<a class="ext" href="${esc(p.link)}" target="_blank" rel="noopener">${esc(p.link)}</a>`:''}
+  </div>`
+}
+let durObs=null
+function observeDurs(){
+  if(durObs)durObs.disconnect()
+  durObs=new IntersectionObserver(es=>{
+    for(const e of es)if(e.isIntersecting){durObs.unobserve(e.target);loadDur(e.target.dataset.dur)}
+  },{rootMargin:'250px'})
+  document.querySelectorAll('[data-dur]').forEach(el=>{if(durs[el.dataset.dur]==null)durObs.observe(el)})
+}
+function loadDur(id){
+  const p=allPosts.find(x=>x.id===id); if(!p||durs[id]!=null)return
+  const a=new Audio(); a.preload='metadata'; a.src=p.link
+  a.onloadedmetadata=()=>{durs[id]=a.duration;a.removeAttribute('src');a.load();const el=document.querySelector(`[data-dur="${id}"]`);if(el)el.textContent=fmtDur(durs[id]);if(curId===id)updateBar()}
+  a.onerror=()=>{a.removeAttribute('src');a.load()}
+}
+/* ---------- player ---------- */
+function playPost(p){
+  if(curId===p.id){audio.paused?audio.play().catch(()=>{}):audio.pause();return}
+  curId=p.id
+  const st=loadState()
+  audio.src=p.link
+  audio.play().catch(()=>{})
+  audio.onloadedmetadata=()=>{
+    if(st&&st.id===p.id&&st.t>3&&st.t<audio.duration-8)audio.currentTime=st.t
+    durs[p.id]=audio.duration
+    updateBar()
+    const el=document.querySelector(`[data-dur="${p.id}"]`);if(el)el.textContent=fmtDur(audio.duration)
+  }
+  document.body.classList.add('player-on')
+  renderPosts();updateBar()
+}
+function updateBar(){
+  const p=allPosts.find(x=>x.id===curId)
+  $('playbar').hidden=!p
+  document.body.classList.toggle('player-on',!!p)
+  if(!p)return
+  const tag=seriesOf(p.title)
+  $('pbThumb').style.background=grad(hueOf(tag||p.title))
+  $('pbThumb').innerHTML=WAVE
+  $('pbTitle').textContent=p.title
+  $('pbToggle').innerHTML=audio.paused?IC_PLAY:IC_PAUSE
+  const d=audio.duration||durs[p.id]||0
+  $('pbCur').textContent=fmtDur(audio.currentTime)
+  $('pbTot').textContent=d?fmtDur(d):'—'
+  $('pbFill').style.width=d?Math.min(100,audio.currentTime/d*100)+'%':'0%'
+}
+audio.addEventListener('play',()=>{renderPosts();updateBar()})
+audio.addEventListener('pause',()=>{renderPosts();updateBar()})
+let lastSave=0
+audio.addEventListener('timeupdate',()=>{
+  updateBar()
+  const now=Date.now()
+  if(curId&&now-lastSave>4000){lastSave=now;saveState(curId,audio.currentTime)}
+})
+audio.addEventListener('ended',()=>{
+  const s=getPlayed();s.add(curId);savePlayed(s)
+  const l=epList(),i=l.findIndex(p=>p.id===curId)
+  if(i>=0&&i+1<l.length){curId=null;playPost(l[i+1])}
+  else{curId=null;updateBar();renderPosts()}
+})
+$('pbToggle').onclick=()=>{if(curId){audio.paused?audio.play().catch(()=>{}):audio.pause()}}
+$('pbNext').onclick=()=>{
+  const l=epList(),i=l.findIndex(p=>p.id===curId)
+  if(i>=0&&i+1<l.length){const s=getPlayed();s.add(curId);savePlayed(s);curId=null;playPost(l[i+1])}
+}
+$('pbClose').onclick=()=>{audio.pause();if(curId)saveState(curId,audio.currentTime);curId=null;updateBar();renderPosts()}
+$('pbSeek').onclick=e=>{
+  const r=e.currentTarget.getBoundingClientRect()
+  const ratio=Math.min(1,Math.max(0,(e.clientX-r.left)/r.width))
+  const d=audio.duration||0
+  if(d)audio.currentTime=ratio*d
+}
+/* ---------- render ---------- */
+function renderHero(){
+  if(!podcast){$('podhero').hidden=true;$('roomhead').hidden=false;return}
+  $('roomhead').hidden=true
+  $('podhero').hidden=false
+  const eps=allPosts.filter(isAudio).length
+  const author=(allPosts.find(p=>p.author_name)||{}).author_name||''
+  $('podhero').innerHTML=`
+    <div class="podcover">
+      <div class="fallback">${esc(room.title.charAt(0))}</div>
+      <img src="cover-${slug}.png" alt="" onerror="this.remove()">
+    </div>
+    <div class="podmeta">
+      <div class="kind">פודקאסט · חדר PAPit</div>
+      <h2>${esc(room.title)}</h2>
+      ${room.description?`<div class="desc">${esc(room.description)}</div>`:''}
+      <div class="meta">${eps} פרקים${author?' · '+esc(author):''} · משודר ב-RSS</div>
+    </div>`
+}
+function renderChips(){
+  if(!podcast){$('chips').hidden=true;return}
+  const counts={}
+  for(const p of allPosts){const t=seriesOf(p.title);if(t)counts[t]=(counts[t]||0)+1}
+  const tags=Object.entries(counts).filter(([,n])=>n>=3).sort((a,b)=>b[1]-a[1]).map(([t])=>t)
+  if(!tags.length){$('chips').hidden=true;return}
+  $('chips').hidden=false
+  $('chips').innerHTML=['',...tags].map(t=>`<button class="chip${activeChip===t?' on':''}" data-chip="${esc(t)}">${t?esc(t):'הכל'}</button>`).join('')
+  document.querySelectorAll('[data-chip]').forEach(b=>b.onclick=()=>{activeChip=b.dataset.chip;renderChips();renderPosts()})
+}
+function renderPosts(){
+  const canDel=!!key()
+  const posts=filtered()
+  if(!posts.length){$('posts').innerHTML='<div class="empty">'+(($('filter').value||'').trim()||activeChip?'שום פוסט לא מתאים לסינון.':'עוד אין פוסטים בחדר. הראשון שייך אליך.')+'</div>';return}
+  let html='',lastDay=''
+  for(const p of posts){
+    const dk=dayKey(p.created_at)
+    if(dk!==lastDay){html+=`<div class="dayhead">${dayLabel(p.created_at)}</div>`;lastDay=dk}
+    if(podcast)html+=isAudio(p)?epHtml(p):miniHtml(p)
+    else html+=`<div class="card post">
+    <h3>${esc(p.title)}</h3>
+    <div class="sub">
+      <span>${timeLabel(p.created_at)}</span>
+      ${p.author_name?`<span>מאת ${esc(p.author_name)}</span>`:''}
+      ${canDel?'<button class="del" data-del="'+p.id+'">מחיקה</button>':''}
+    </div>
+    ${isAudio(p)?`<audio controls preload="none" src="${esc(p.link)}"></audio>`:''}
+    ${bodyHtml(p)}
+    ${p.link&&!isAudio(p)?`<a class="ext" href="${esc(p.link)}" target="_blank" rel="noopener">${esc(p.link)}</a>`:''}
+  </div>`
+  }
+  $('posts').innerHTML=html
+  document.querySelectorAll('.more').forEach(b=>b.onclick=()=>{
+    const rest=b.previousElementSibling.querySelector('.rest')
+    const open=rest&&rest.hidden
+    if(rest)rest.hidden=!open
+    b.textContent=open?'סגירה':'קראו עוד'
+  })
+  document.querySelectorAll('.ep .eprow').forEach(row=>row.addEventListener('click',e=>{
+    if(e.target.closest('[data-play]'))return
+    const id=row.closest('.ep').dataset.ep
+    expandedId=expandedId===id?null:id
+    renderPosts()
+  }))
+  document.querySelectorAll('[data-play]').forEach(b=>b.addEventListener('click',e=>{
+    e.stopPropagation()
+    const p=allPosts.find(x=>x.id===b.dataset.play)
+    if(p)playPost(p)
+  }))
+  document.querySelectorAll('[data-del]').forEach(b=>b.onclick=async()=>{
+    if(!confirm('למחוק את הפוסט?'))return
+    try{await api('/posts/'+b.dataset.del,{method:'DELETE',apiKey:key()});load()}
+    catch(e){notice(e.message==='bad_api_key'?'המפתח השמור לא מתאים לחדר.':'המחיקה נכשלה.')}
+  })
+  if(podcast)observeDurs()
 }
 function renderGate(){
   const has=!!key()
@@ -168,40 +450,6 @@ function renderGate(){
   -d '{"title":"כותרת","body":"תוכן","link":"https://…","author_name":"שם"}'`
   }
 }
-function renderPosts(){
-  const q=($('filter').value||'').trim().toLowerCase()
-  const canDel=!!key()
-  const posts=q?allPosts.filter(p=>(p.title+' '+(p.body||'')).toLowerCase().includes(q)):allPosts
-  if(!posts.length){$('posts').innerHTML='<div class="empty">'+(q?'שום פוסט לא מתאים לסינון.':'עוד אין פוסטים בחדר. הראשון שייך אליך.')+'</div>';return}
-  let html='',lastDay=''
-  for(const p of posts){
-    const dk=dayKey(p.created_at)
-    if(dk!==lastDay){html+=`<div class="dayhead">${dayLabel(p.created_at)}</div>`;lastDay=dk}
-    html+=`<div class="card post">
-    <h3>${esc(p.title)}</h3>
-    <div class="sub">
-      <span>${timeLabel(p.created_at)}</span>
-      ${p.author_name?`<span>מאת ${esc(p.author_name)}</span>`:''}
-      ${canDel?'<button class="del" data-del="'+p.id+'">מחיקה</button>':''}
-    </div>
-    ${p.link&&AUDIO.test(p.link)?`<audio controls preload="none" src="${esc(p.link)}"></audio>`:''}
-    ${bodyHtml(p)}
-    ${p.link&&!AUDIO.test(p.link)?`<a class="ext" href="${esc(p.link)}" target="_blank" rel="noopener">${esc(p.link)}</a>`:''}
-  </div>`
-  }
-  $('posts').innerHTML=html
-  document.querySelectorAll('.more').forEach(b=>b.onclick=()=>{
-    const rest=b.parentElement===void 0?null:b.previousElementSibling.querySelector('.rest')
-    const open=rest&&rest.hidden
-    if(rest)rest.hidden=!open
-    b.textContent=open?'סגירה':'קראו עוד'
-  })
-  document.querySelectorAll('[data-del]').forEach(b=>b.onclick=async()=>{
-    if(!confirm('למחוק את הפוסט?'))return
-    try{await api('/posts/'+b.dataset.del,{method:'DELETE',apiKey:key()});load()}
-    catch(e){notice(e.message==='bad_api_key'?'המפתח השמור לא מתאים לחדר.':'המחיקה נכשלה.')}
-  })
-}
 async function load(){
   let d
   try{d=await api('/rooms/'+encodeURIComponent(slug))}
@@ -209,18 +457,34 @@ async function load(){
   room=d.room
   document.title=room.title+' · PAPit'
   $('hdrSub').textContent=room.title
-  $('roomhead').innerHTML=`
-    <h2>${esc(room.title)}</h2>
-    ${room.description?`<div class="desc">${esc(room.description)}</div>`:''}
-    <div class="meta">
-      <span>${d.posts.length} פוסטים</span>
-      <span>·</span>
-      <span>משודרים ב-RSS של החדר</span>
-    </div>`
-  renderGate()
   allPosts=d.posts
+  const aud=allPosts.filter(isAudio).length
+  podcast=aud>=3&&aud*2>=allPosts.length
+  if(!podcast){
+    $('roomhead').innerHTML=`
+      <h2>${esc(room.title)}</h2>
+      ${room.description?`<div class="desc">${esc(room.description)}</div>`:''}
+      <div class="meta">
+        <span>${d.posts.length} פוסטים</span>
+        <span>·</span>
+        <span>משודרים ב-RSS של החדר</span>
+      </div>`
+  }
+  renderGate()
+  renderHero()
+  renderChips()
   $('filterWrap').hidden=!allPosts.length
   renderPosts()
+  if(podcast&&!curId){
+    const st=loadState()
+    if(st&&st.id&&allPosts.some(p=>p.id===st.id)){
+      curId=st.id
+      const p=allPosts.find(x=>x.id===st.id)
+      audio.src=p.link
+      audio.onloadedmetadata=()=>{if(st.t>3&&st.t<audio.duration-8)audio.currentTime=st.t;durs[p.id]=audio.duration;updateBar()}
+      updateBar();renderPosts()
+    }
+  }
 }
 $('filter').addEventListener('input',renderPosts)
 $('postForm').addEventListener('submit',async e=>{

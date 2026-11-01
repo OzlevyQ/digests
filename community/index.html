@@ -28,6 +28,9 @@
   main { max-width:640px; margin:0 auto; padding:14px 18px 60px; }
   h2.sec { font-size:15px; font-weight:800; margin:22px 0 10px; color:var(--accent2); }
   .card { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:18px; margin-bottom:14px; }
+  .room { display:flex; gap:14px; align-items:flex-start; }
+  .room .rcov { width:64px; height:64px; border-radius:12px; flex:none; object-fit:cover; box-shadow:0 4px 14px rgba(0,0,0,.4); }
+  .room .rbody { min-width:0; }
   .room h3 { font-size:16px; font-weight:800; }
   .room h3 a { color:inherit; text-decoration:none; }
   .room .desc { font-size:13.5px; color:var(--dim); margin-top:4px; }
@@ -125,6 +128,8 @@ async function loadRooms(){
     if(!rooms.length){$('rooms').innerHTML='<div class="empty">עוד אין חדרים. הראשון שלך?</div>';return}
     $('rooms').innerHTML=rooms.map(r=>`
     <div class="card room">
+      <img class="rcov" src="cover-${r.slug}.png" alt="" loading="lazy" onerror="this.remove()">
+      <div class="rbody">
       <h3><a href="room.html?r=${encodeURIComponent(r.slug)}">${esc(r.title)}</a></h3>
       ${r.description?`<div class="desc">${esc(r.description)}</div>`:''}
       <div class="meta">
@@ -132,6 +137,7 @@ async function loadRooms(){
         <span>${r.post_count} פוסטים</span>
         <span>${fmtDate(r.created_at)}</span>
         <a class="rss" href="${API_BASE}/rss/${encodeURIComponent(r.slug)}">RSS</a>
+      </div>
       </div>
     </div>`).join('')
   }catch(e){$('rooms').innerHTML='<div class="empty">לא הצלחנו לטעון את החדרים כרגע.</div>'}
