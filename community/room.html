@@ -651,5 +651,46 @@ renderBell()
 refreshSwRooms()
 load()
 </script>
+
+<script>
+/* first-visit install hint: shown once, dismissible, skipped when already installed */
+(function(){
+  var FLAG='papit.installHint'
+  try{if(localStorage.getItem(FLAG))return}catch(e){}
+  var standalone=false
+  try{standalone=(navigator.standalone===true)||(window.matchMedia&&window.matchMedia('(display-mode: standalone)').matches)}catch(e){}
+  if(standalone)return
+  var ua=navigator.userAgent||''
+  var ios=/iPhone|iPad|iPod/.test(ua)||(navigator.platform==='MacIntel'&&(navigator.maxTouchPoints||0)>1)
+  var android=/Android/i.test(ua)
+  var steps=ios?['לחצו על כפתור השיתוף בספארי (הריבוע עם החץ למעלה)','גללו ובחרו "הוספה למסך הבית"','לחצו "הוסף" — וזהו, PAPit נפתח כמו אפליקציה']
+    :android?['לחצו על ⋮ (התפריט) בכרום','בחרו "התקנת אפליקציה" או "הוספה למסך הבית"','אשרו — וזהו, PAPit נפתח כמו אפליקציה']
+    :['בתפריט הדפדפן או ליד שורת הכתובת בחרו "התקנה"','PAPit ייפתח בחלון משלו, כמו אפליקציה']
+  var st=document.createElement('style')
+  st.textContent='.papit-inst-ov{position:fixed;inset:0;background:rgba(4,8,6,.7);z-index:90;display:flex;align-items:flex-end;justify-content:center;padding:16px;padding-bottom:calc(16px + env(safe-area-inset-bottom))}'
+  +'.papit-inst{background:#15211c;border:1px solid #24352d;border-radius:20px;padding:22px 20px 18px;max-width:430px;width:100%;direction:rtl;color:#eef4ef;font-family:inherit;box-shadow:0 18px 50px rgba(0,0,0,.5);position:relative;animation:papitInstUp .25s ease}'
+  +'@keyframes papitInstUp{from{transform:translateY(26px);opacity:0}to{transform:none;opacity:1}}'
+  +'.papit-inst h3{font-size:16.5px;font-weight:800;margin-bottom:8px;padding-inline-end:26px}'
+  +'.papit-inst p{font-size:13.5px;color:#9db3a6;margin-bottom:12px}'
+  +'.papit-inst ol{margin:0 0 16px;padding-inline-start:20px;font-size:13.5px;color:#eef4ef}'
+  +'.papit-inst ol li{margin-bottom:5px}'
+  +'.papit-inst .ok{display:block;width:100%;background:linear-gradient(135deg,#f0b429,#e07b39);color:#1a1205;border:0;border-radius:13px;padding:12px;font-family:inherit;font-size:14.5px;font-weight:800;cursor:pointer}'
+  +'.papit-inst .x{position:absolute;top:10px;inset-inline-end:12px;background:none;border:0;color:#9db3a6;font-size:20px;cursor:pointer;padding:4px 8px;line-height:1}'
+  document.head.appendChild(st)
+  var ov=document.createElement('div');ov.className='papit-inst-ov'
+  var card=document.createElement('div');card.className='papit-inst'
+  var h=document.createElement('h3');h.textContent='טיפ: שמרו את PAPit כאפליקציה 📲'
+  var p=document.createElement('p');p.textContent='לחוויה נוחה יותר שמרו את PAPit במסך הבית — נפתח במסך מלא כמו אפליקציה, בלי שורת כתובת.'
+  var ol=document.createElement('ol')
+  steps.forEach(function(s){var li=document.createElement('li');li.textContent=s;ol.appendChild(li)})
+  var ok=document.createElement('button');ok.className='ok';ok.textContent='הבנתי, תודה'
+  var x=document.createElement('button');x.className='x';x.setAttribute('aria-label','סגירה');x.textContent='✕'
+  function close(){try{localStorage.setItem(FLAG,'1')}catch(e){}ov.remove()}
+  ok.onclick=close;x.onclick=close
+  card.appendChild(x);card.appendChild(h);card.appendChild(p);card.appendChild(ol);card.appendChild(ok)
+  ov.appendChild(card)
+  setTimeout(function(){document.body.appendChild(ov)},600)
+})()
+</script>
 </body>
 </html>
