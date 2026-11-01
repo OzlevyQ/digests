@@ -38,3 +38,14 @@ create table if not exists public.papit_rate_events (
 create index if not exists papit_rate_events_lookup
   on public.papit_rate_events (action, actor, created_at desc);
 alter table public.papit_rate_events enable row level security;
+
+-- Push subscriptions (2026-11-01): one row per browser endpoint per room.
+-- Endpoints only: pushes are payload-free tickles, the client SW fetches the post.
+create table if not exists public.papit_push_subs (
+  id uuid primary key default gen_random_uuid(),
+  room_id uuid not null references public.papit_rooms(id) on delete cascade,
+  endpoint text not null check (char_length(endpoint) between 1 and 1000),
+  created_at timestamptz not null default now(),
+  unique (room_id, endpoint)
+);
+alter table public.papit_push_subs enable row level security;

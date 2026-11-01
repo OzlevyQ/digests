@@ -9,6 +9,44 @@ const SITE = 'https://ozlevyq.github.io/digests/community'
 const API_PUBLIC = 'https://kuehljnnpwgzyodjaund.supabase.co/functions/v1/papit-api'
 const sb = createClient(SB_URL, SVC)
 
+/* Web Push (VAPID). Payload-free tickles: the service worker fetches the fresh
+   post itself, so no payload encryption is needed and only endpoints are stored. */
+const VAPID_JWK = Deno.env.get('VAPID_JWK') ?? ''
+const VAPID_SUB = Deno.env.get('VAPID_SUB') ?? 'https://ozlevyq.github.io/digests/community/'
+const VAPID_PUBLIC = 'BFlhYf01n-6jz4hVWY-Uq0tOIDUv7vo4KrtfKQEmCjAFkti7iLFhUp4TFk8cizueQCJIaUpC29wttao84uDgOEU'
+function b64u(buf: ArrayBuffer | Uint8Array): string {
+  const b = buf instanceof Uint8Array ? buf : new Uint8Array(buf)
+  let s = ''
+  for (const x of b) s += String.fromCharCode(x)
+  return btoa(s).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '')
+}
+async function vapidJwt(endpoint: string): Promise<string> {
+  const aud = new URL(endpoint).origin
+  const header = b64u(new TextEncoder().encode(JSON.stringify({ typ: 'JWT', alg: 'ES256' })))
+  const payload = b64u(new TextEncoder().encode(JSON.stringify({ aud, exp: Math.floor(Date.now() / 1000) + 3600 * 12, sub: VAPID_SUB })))
+  const key = await crypto.subtle.importKey('jwk', JSON.parse(VAPID_JWK), { name: 'ECDSA', namedCurve: 'P-256' }, false, ['sign'])
+  const sig = await crypto.subtle.sign({ name: 'ECDSA', hash: 'SHA-256' }, key, new TextEncoder().encode(header + '.' + payload))
+  return header + '.' + payload + '.' + b64u(sig)
+}
+async function sendPush(endpoint: string): Promise<'ok' | 'gone' | 'fail'> {
+  try {
+    const jwt = await vapidJwt(endpoint)
+    const r = await fetch(endpoint, {
+      method: 'POST',
+      headers: { authorization: `vapid t=${jwt}, k=${VAPID_PUBLIC}`, ttl: '86400', urgency: 'high' },
+    })
+    if (r.status === 404 || r.status === 410) return 'gone'
+    return r.status >= 200 && r.status < 300 ? 'ok' : 'fail'
+  } catch { return 'fail' }
+}
+async function fanout(roomId: string) {
+  if (!VAPID_JWK) return
+  const { data: subs } = await sb.from('papit_push_subs').select('id,endpoint').eq('room_id', roomId).limit(2000)
+  for (const s of subs ?? []) {
+    if (await sendPush(s.endpoint) === 'gone') await sb.from('papit_push_subs').delete().eq('id', s.id)
+  }
+}
+
 const CORS: Record<string, string> = {
   'access-control-allow-origin': '*',
   'access-control-allow-methods': 'GET,POST,DELETE,OPTIONS',
@@ -133,7 +171,7 @@ Deno.serve(async (req: Request) => {
   const rest = parts.slice(1) // strip 'papit-api'
   const seg = (i: number) => (rest[i] ? decodeURIComponent(rest[i]) : '')
   try {
-    if (req.method === 'GET' && seg(0) === 'health') return json({ ok: true, service: 'papit-api', version: 3 })
+    if (req.method === 'GET' && seg(0) === 'health') return json({ ok: true, service: 'papit-api', version: 4 })
     if (req.method === 'GET' && seg(0) === 'rss') return await rssFeed(seg(1) || null)
 
     if (req.method === 'GET' && seg(0) === 'rooms' && !seg(1)) {
@@ -166,6 +204,34 @@ Deno.serve(async (req: Request) => {
         author_name: p.author_name ?? '',
         room_slug: p.papit_rooms?.slug ?? '', room_title: p.papit_rooms?.title ?? '',
       })) })
+    }
+
+    /* Push subscriptions: per-room, endpoint-only, payload-free tickles. */
+    if (req.method === 'POST' && seg(0) === 'push' && seg(1) === 'subscribe') {
+      const rl = await rateLimit('push_write', callerIp(req), 30, 120)
+      if (rl !== null) return tooMany(rl)
+      const b = await req.json().catch(() => ({}))
+      const slug = clean(b.room_slug, 60)
+      const endpoint = clean(b.endpoint, 1000)
+      if (!slug || !/^https:\/\/\S+$/i.test(endpoint)) return json({ error: 'bad_request' }, 400)
+      const { data: room } = await sb.from('papit_rooms').select('id').eq('slug', slug).maybeSingle()
+      if (!room) return json({ error: 'room_not_found' }, 404)
+      const { error } = await sb.from('papit_push_subs').upsert({ room_id: room.id, endpoint }, { onConflict: 'room_id,endpoint' })
+      if (error) { console.error(error); return json({ error: 'subscribe_failed' }, 500) }
+      return json({ ok: true })
+    }
+    if (req.method === 'POST' && seg(0) === 'push' && seg(1) === 'unsubscribe') {
+      const b = await req.json().catch(() => ({}))
+      const endpoint = clean(b.endpoint, 1000)
+      if (!endpoint) return json({ error: 'bad_request' }, 400)
+      let q = sb.from('papit_push_subs').delete().eq('endpoint', endpoint)
+      const slug = clean(b.room_slug, 60)
+      if (slug) {
+        const { data: room } = await sb.from('papit_rooms').select('id').eq('slug', slug).maybeSingle()
+        if (room) q = q.eq('room_id', room.id)
+      }
+      await q
+      return json({ ok: true })
     }
 
     /* Open room creation. Returns the room's API key exactly once. */
@@ -204,6 +270,9 @@ Deno.serve(async (req: Request) => {
         .insert({ room_id: room!.id, title, body: clean(b.body, 5000), link, author_name: clean(b.author_name, 60) })
         .select('id').single()
       if (ie) { console.error(ie); return json({ error: 'create_failed' }, 500) }
+      const er = (globalThis as { EdgeRuntime?: { waitUntil: (p: Promise<unknown>) => void } }).EdgeRuntime
+      if (er?.waitUntil) er.waitUntil(fanout(room!.id))
+      else await fanout(room!.id)
       return json({ id: data.id })
     }
 

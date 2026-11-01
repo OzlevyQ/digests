@@ -26,6 +26,7 @@
   .hero { padding:26px 18px 8px; max-width:640px; margin:0 auto; }
   .hero p { color:var(--dim); font-size:14px; }
   main { max-width:640px; margin:0 auto; padding:14px 18px 60px; }
+  body.player-on main { padding-bottom:150px; }
   h2.sec { font-size:15px; font-weight:800; margin:22px 0 10px; color:var(--accent2); }
   .card { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:18px; margin-bottom:14px; }
   .room { display:flex; gap:14px; align-items:flex-start; }
@@ -37,6 +38,8 @@
   .room .meta { font-size:12px; color:var(--dim); margin-top:8px; display:flex; gap:10px; flex-wrap:wrap; }
   .room .meta .rss { color:var(--accent); text-decoration:none; }
   .room .mine { color:var(--accent2); font-weight:600; }
+  .bell { background:none; border:1px solid var(--line); border-radius:999px; padding:2px 9px; font-size:12px; cursor:pointer; color:var(--dim); }
+  .bell.on { border-color:var(--accent2); }
   .post h3 { font-size:15px; font-weight:700; }
   .post .body { font-size:13.5px; color:var(--ink); opacity:.85; margin-top:4px; white-space:pre-wrap; word-break:break-word; }
   .post .meta { font-size:12px; color:var(--dim); margin-top:8px; display:flex; gap:10px; flex-wrap:wrap; }
@@ -44,6 +47,73 @@
   .post a.ext { color:var(--accent2); font-size:12.5px; direction:ltr; display:inline-block; word-break:break-all; margin-top:6px; }
   .empty { color:var(--dim); font-size:13.5px; text-align:center; padding:24px 0; }
   .notice { background:#241a08; border:1px solid #4a3a12; color:var(--accent); border-radius:14px; padding:12px 16px; font-size:13px; margin-bottom:14px; }
+  /* episode rows (podcast style, same as room page) */
+  .eplist { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:4px 14px; margin-bottom:14px; }
+  .ep { border-bottom:1px solid #1b2a22; padding:12px 0; }
+  .ep:last-child { border-bottom:0; }
+  .eprow { display:flex; gap:12px; align-items:center; cursor:pointer; }
+  .ep .thumb { width:56px; height:56px; border-radius:12px; flex:none; position:relative; display:flex;
+               align-items:center; justify-content:center; cursor:pointer; }
+  .ep .thumb > svg { width:26px; height:26px; }
+  .ep .eq { position:absolute; inset:0; background:rgba(0,0,0,.62); border-radius:12px; display:flex; gap:3px; align-items:center; justify-content:center; }
+  .ep .eq i { width:3px; height:14px; background:#fff; border-radius:2px; animation:eqb .9s ease-in-out infinite; }
+  .ep .eq i:nth-child(2) { animation-delay:.2s; } .ep .eq i:nth-child(3) { animation-delay:.4s; }
+  @keyframes eqb { 0%,100% { transform:scaleY(.35); } 50% { transform:scaleY(1); } }
+  .ep .info { flex:1; min-width:0; }
+  .ep h3 { font-size:14.5px; font-weight:800; line-height:1.3; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+  .ep .meta { font-size:11.5px; color:var(--dim); margin-top:4px; }
+  .ep .meta a { color:var(--accent2); text-decoration:none; }
+  .playbtn { width:42px; height:42px; border-radius:50%; flex:none; border:1.5px solid var(--dim); background:transparent;
+             color:var(--ink); display:flex; align-items:center; justify-content:center; cursor:pointer; }
+  .playbtn svg { width:18px; height:18px; }
+  .epnotes { padding:10px 0 6px; }
+  .epnotes .body { font-size:13.5px; color:var(--ink); opacity:.9; white-space:pre-wrap; word-break:break-word; }
+  .epnotes .body a { color:var(--accent2); direction:ltr; display:inline-block; word-break:break-all; }
+  .epnotes .acts { margin-top:8px; font-size:12px; color:var(--dim); }
+  /* playbar */
+  .playbar { position:fixed; inset-inline:0; bottom:0; z-index:40; background:rgba(16,27,22,.97); backdrop-filter:blur(14px);
+             border-top:1px solid var(--line); padding:8px 14px calc(10px + env(safe-area-inset-bottom)); }
+  .pb-progress { direction:ltr; height:4px; background:var(--line); border-radius:99px; cursor:pointer; position:relative; margin-bottom:8px; }
+  .pb-progress i { position:absolute; left:0; top:0; bottom:0; width:0; background:var(--accent2); border-radius:99px; }
+  .pb-row { display:flex; align-items:center; gap:10px; }
+  .pb-thumb { width:40px; height:40px; border-radius:9px; flex:none; display:flex; align-items:center; justify-content:center; cursor:pointer; }
+  .pb-thumb svg { width:18px; height:18px; }
+  .pb-info { flex:1; min-width:0; cursor:pointer; }
+  .pb-title { font-size:12.5px; font-weight:700; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .pb-time { font-size:11px; color:var(--dim); direction:ltr; text-align:right; }
+  .pb-btn { width:44px; height:44px; border-radius:50%; border:0; background:var(--accent2); color:#06251a;
+            display:flex; align-items:center; justify-content:center; cursor:pointer; flex:none; }
+  .pb-btn svg { width:20px; height:20px; }
+  .pb-btn.small { width:36px; height:36px; background:transparent; color:var(--dim); border:1px solid var(--line); }
+  .pb-btn.small svg { width:15px; height:15px; }
+  /* full player */
+  .fplayer { position:fixed; inset:0; z-index:60; background:linear-gradient(180deg,#1a2b22 0%,var(--bg) 55%);
+             display:flex; flex-direction:column; align-items:center;
+             padding:calc(14px + env(safe-area-inset-top)) 26px calc(22px + env(safe-area-inset-bottom));
+             animation:fpup .25s ease; }
+  .fplayer[hidden] { display:none; }
+  @keyframes fpup { from { transform:translateY(40px); opacity:0; } to { transform:none; opacity:1; } }
+  .fp-top { width:100%; display:flex; align-items:center; justify-content:space-between; }
+  .fp-chev { width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,.06); border:0; color:var(--ink);
+             display:flex; align-items:center; justify-content:center; cursor:pointer; }
+  .fp-chev svg { width:20px; height:20px; }
+  .fp-kind { font-size:12px; font-weight:700; color:var(--accent2); letter-spacing:.4px; }
+  .fp-cover { width:min(72vw,300px); aspect-ratio:1; border-radius:22px; margin-top:26px; position:relative; overflow:hidden;
+              box-shadow:0 24px 60px rgba(0,0,0,.6); display:flex; align-items:center; justify-content:center; }
+  .fp-cover .fallback { font-size:96px; font-weight:800; color:#ffffff33; }
+  .fp-cover img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+  .fp-title { margin-top:26px; font-size:20px; font-weight:800; text-align:center; line-height:1.3; width:100%; }
+  .fp-sub { margin-top:6px; font-size:13px; color:var(--dim); }
+  .fp-progress { direction:ltr; width:100%; height:5px; background:#2a3d33; border-radius:99px; margin-top:26px; cursor:pointer; position:relative; }
+  .fp-progress i { position:absolute; left:0; top:0; bottom:0; width:0; background:var(--accent2); border-radius:99px; }
+  .fp-times { direction:ltr; width:100%; display:flex; justify-content:space-between; font-size:11.5px; color:var(--dim); margin-top:6px; }
+  .fp-controls { margin-top:auto; width:100%; display:flex; align-items:center; justify-content:center; gap:14px; }
+  .fp-btn { min-width:50px; height:50px; border-radius:50%; border:0; background:transparent; color:var(--ink);
+            display:flex; align-items:center; justify-content:center; cursor:pointer; font-family:inherit; font-size:13.5px; font-weight:800; }
+  .fp-btn svg { width:24px; height:24px; }
+  .fp-btn.big { width:70px; height:70px; background:var(--accent2); color:#06251a; }
+  .fp-btn.big svg { width:30px; height:30px; }
+  /* room creation */
   label { display:block; font-size:13px; font-weight:600; color:var(--dim); margin:12px 0 5px; }
   input[type=text], textarea { width:100%; background:#0e1a15; border:1px solid var(--line); border-radius:12px; color:var(--ink);
     font-family:inherit; font-size:14px; padding:11px 13px; }
@@ -108,18 +178,221 @@
   <h2 class="sec">חדרים</h2>
   <div id="rooms"><div class="empty">טוען…</div></div>
 
-  <h2 class="sec">פוסטים אחרונים מכל החדרים</h2>
+  <h2 class="sec">אחרונים מכל החדרים</h2>
   <div id="latest"><div class="empty">טוען…</div></div>
 </main>
+<div class="playbar" id="playbar" hidden>
+  <div class="pb-progress" id="pbSeek"><i id="pbFill"></i></div>
+  <div class="pb-row">
+    <div class="pb-thumb" id="pbThumb"></div>
+    <div class="pb-info" id="pbInfo">
+      <div class="pb-title" id="pbTitle"></div>
+      <div class="pb-time"><span id="pbCur">0:00</span> / <span id="pbTot">—</span></div>
+    </div>
+    <button class="pb-btn small" id="pbClose" aria-label="סגירת הנגן"></button>
+    <button class="pb-btn small" id="pbNext" aria-label="הפרק הבא"></button>
+    <button class="pb-btn" id="pbToggle" aria-label="נגינה או השהיה"></button>
+  </div>
+</div>
+<div class="fplayer" id="fplayer" hidden>
+  <div class="fp-top">
+    <button class="fp-chev" id="fpClose" aria-label="סגירת הנגן המלא"></button>
+    <div class="fp-kind" id="fpKind"></div>
+    <div style="width:38px"></div>
+  </div>
+  <div class="fp-cover" id="fpCover"><div class="fallback" id="fpFallback">♪</div><img id="fpImg" alt=""></div>
+  <div class="fp-title" id="fpTitle"></div>
+  <div class="fp-sub" id="fpSub"></div>
+  <div class="fp-progress" id="fpSeek"><i id="fpFill"></i></div>
+  <div class="fp-times"><span id="fpCur">0:00</span><span id="fpTot">—</span></div>
+  <div class="fp-controls">
+    <button class="fp-btn" id="fpPrev" aria-label="הפרק הקודם"></button>
+    <button class="fp-btn" id="fpBack" aria-label="רבע דקה אחורה">15-</button>
+    <button class="fp-btn big" id="fpToggle" aria-label="נגינה או השהיה"></button>
+    <button class="fp-btn" id="fpFwd" aria-label="חצי דקה קדימה">30+</button>
+    <button class="fp-btn" id="fpNext" aria-label="הפרק הבא"></button>
+  </div>
+</div>
 <footer>
   <a href="https://kuehljnnpwgzyodjaund.supabase.co/functions/v1/papit-api/rss">RSS של כל הפוסטים</a> · <a href="api.html">תיעוד API</a> · <a href="../">ארכיון הדייג'סטים</a> · <a href="privacy.html">פרטיות</a>
 </footer>
 
 <script type="module">
 import { api, saveRoomKey, myRoomSlugs, esc, fmtDate, API_BASE } from './auth.js?v=2'
+import { supported as pushSupported, roomState, subscribeRoom, unsubscribeRoom, refreshSwRooms, localRooms } from './push.js?v=1'
 const $=id=>document.getElementById(id)
 const notice=t=>{const n=$('notice');if(!t){n.hidden=true;return}n.textContent=t;n.hidden=false}
 
+/* ---------- shared bits (same design language as the room page) ---------- */
+const AUDIO=/\.(ogg|oga|mp3|m4a|wav|aac|opus|flac)(\?|#|$)/i
+const URLRE=/https?:\/\/[^\s<>"']+/g
+const isAudio=p=>p.link&&AUDIO.test(p.link)
+const linkify=s=>esc(s).replace(URLRE,u=>`<a href="${u}" target="_blank" rel="noopener">${u}</a>`)
+const dayLabel=iso=>new Date(iso).toLocaleString('he-IL',{weekday:'long',day:'numeric',month:'numeric'})
+const timeLabel=iso=>new Date(iso).toLocaleString('he-IL',{hour:'2-digit',minute:'2-digit'})
+const seriesOf=t=>{const i=(t||'').lastIndexOf(' - ');return i>0?t.slice(i+3).trim():''}
+const hueOf=s=>{let h=0;for(const c of s)h=(h*31+c.charCodeAt(0))%360;return h}
+const grad=h=>`linear-gradient(135deg,hsl(${h},55%,42%),hsl(${(h+50)%360},65%,30%))`
+const fmtDur=s=>{s=Math.max(0,Math.round(s||0));return Math.floor(s/60)+':'+String(s%60).padStart(2,'0')}
+const IC_PLAY='<svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg>'
+const IC_PAUSE='<svg viewBox="0 0 24 24"><rect x="6.5" y="5" width="3.6" height="14" rx="1.2" fill="currentColor"/><rect x="13.9" y="5" width="3.6" height="14" rx="1.2" fill="currentColor"/></svg>'
+const IC_NEXT='<svg viewBox="0 0 24 24"><path d="M6 5.5v13l8.5-6.5z" fill="currentColor"/><rect x="15.5" y="5" width="2.8" height="14" rx="1.2" fill="currentColor"/></svg>'
+const IC_PREV='<svg viewBox="0 0 24 24"><path d="M18 5.5v13l-8.5-6.5z" fill="currentColor"/><rect x="5.7" y="5" width="2.8" height="14" rx="1.2" fill="currentColor"/></svg>'
+const IC_X='<svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>'
+const IC_CHEV='<svg viewBox="0 0 24 24"><path d="M6 9.5l6 6 6-6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>'
+const WAVE='<svg viewBox="0 0 24 24" fill="none"><rect x="4" y="9" width="2.6" height="6" rx="1.3" fill="#ffffffd9"/><rect x="8.4" y="6" width="2.6" height="12" rx="1.3" fill="#ffffffd9"/><rect x="12.8" y="10" width="2.6" height="4" rx="1.3" fill="#ffffffd9"/><rect x="17.2" y="7.5" width="2.6" height="9" rx="1.3" fill="#ffffffd9"/></svg>'
+$('pbToggle').innerHTML=IC_PLAY
+$('pbNext').innerHTML=IC_NEXT
+$('pbClose').innerHTML=IC_X
+$('fpClose').innerHTML=IC_CHEV
+$('fpPrev').innerHTML=IC_PREV
+$('fpNext').innerHTML=IC_NEXT
+$('fpToggle').innerHTML=IC_PLAY
+
+/* ---------- player state ---------- */
+let latestPosts=[], curId=null, expandedId=null
+const audio=new Audio(); audio.preload='metadata'
+const durs={}
+const epList=()=>latestPosts.filter(isAudio)
+
+function playPost(p){
+  if(curId===p.id){audio.paused?audio.play().catch(()=>{}):audio.pause();return}
+  curId=p.id
+  audio.src=p.link
+  audio.play().catch(()=>{})
+  audio.onloadedmetadata=()=>{
+    durs[p.id]=audio.duration
+    updateBar()
+    const el=document.querySelector(`[data-dur="${p.id}"]`);if(el)el.textContent=fmtDur(audio.duration)
+  }
+  document.body.classList.add('player-on')
+  renderLatest();updateBar()
+}
+function step(d){
+  const l=epList(),i=l.findIndex(p=>p.id===curId)
+  const j=i+d
+  if(i>=0&&j>=0&&j<l.length){curId=null;playPost(l[j])}
+}
+function updateBar(){
+  const p=latestPosts.find(x=>x.id===curId)
+  $('playbar').hidden=!p
+  document.body.classList.toggle('player-on',!!p)
+  if(!p){$('fplayer').hidden=true;return}
+  const tag=seriesOf(p.title)
+  $('pbThumb').style.background=grad(hueOf(tag||p.title))
+  $('pbThumb').innerHTML=WAVE
+  $('pbTitle').textContent=p.title
+  $('pbToggle').innerHTML=audio.paused?IC_PLAY:IC_PAUSE
+  const d=audio.duration||durs[p.id]||0
+  $('pbCur').textContent=fmtDur(audio.currentTime)
+  $('pbTot').textContent=d?fmtDur(d):'—'
+  $('pbFill').style.width=d?Math.min(100,audio.currentTime/d*100)+'%':'0%'
+  if(!$('fplayer').hidden){
+    $('fpCover').style.background=grad(hueOf(tag||p.title))
+    $('fpFallback').textContent=(tag||p.title||'♪').charAt(0)
+    $('fpImg').src='cover-'+p.room_slug+'.png'
+    $('fpImg').onerror=()=>{$('fpImg').style.display='none'}
+    $('fpImg').onload=()=>{$('fpImg').style.display=''}
+    $('fpKind').textContent='מתנגן מחדר · '+p.room_title
+    $('fpTitle').textContent=p.title
+    $('fpSub').textContent=(p.author_name?p.author_name+' · ':'')+dayLabel(p.created_at)+' '+timeLabel(p.created_at)
+    $('fpToggle').innerHTML=audio.paused?IC_PLAY:IC_PAUSE
+    $('fpCur').textContent=fmtDur(audio.currentTime)
+    $('fpTot').textContent=d?fmtDur(d):'—'
+    $('fpFill').style.width=d?Math.min(100,audio.currentTime/d*100)+'%':'0%'
+  }
+}
+audio.addEventListener('play',()=>{renderLatest();updateBar()})
+audio.addEventListener('pause',()=>{renderLatest();updateBar()})
+audio.addEventListener('timeupdate',updateBar)
+audio.addEventListener('ended',()=>{curId&&step(1)||(curId=null,updateBar(),renderLatest());if(!curId){updateBar();renderLatest()}})
+$('pbToggle').onclick=()=>{if(curId){audio.paused?audio.play().catch(()=>{}):audio.pause()}}
+$('pbNext').onclick=()=>step(1)
+$('pbClose').onclick=()=>{audio.pause();curId=null;updateBar();renderLatest()}
+const openFp=()=>{if(!curId)return;$('fplayer').hidden=false;updateBar()}
+$('pbThumb').onclick=openFp
+$('pbInfo').onclick=openFp
+$('fpClose').onclick=()=>{$('fplayer').hidden=true}
+$('fpToggle').onclick=()=>{if(curId){audio.paused?audio.play().catch(()=>{}):audio.pause()}}
+$('fpNext').onclick=()=>step(1)
+$('fpPrev').onclick=()=>step(-1)
+$('fpBack').onclick=()=>{audio.currentTime=Math.max(0,audio.currentTime-15)}
+$('fpFwd').onclick=()=>{if(audio.duration)audio.currentTime=Math.min(audio.duration,audio.currentTime+30)}
+const seekFrom=(el,e)=>{
+  const r=el.getBoundingClientRect()
+  const ratio=Math.min(1,Math.max(0,(e.clientX-r.left)/r.width))
+  const d=audio.duration||0
+  if(d)audio.currentTime=ratio*d
+}
+$('pbSeek').onclick=e=>seekFrom(e.currentTarget,e)
+$('fpSeek').onclick=e=>seekFrom(e.currentTarget,e)
+
+/* ---------- latest posts ---------- */
+let durObs=null
+function observeDurs(){
+  if(durObs)durObs.disconnect()
+  durObs=new IntersectionObserver(es=>{
+    for(const e of es)if(e.isIntersecting){durObs.unobserve(e.target);loadDur(e.target.dataset.dur)}
+  },{rootMargin:'250px'})
+  document.querySelectorAll('[data-dur]').forEach(el=>{if(durs[el.dataset.dur]==null)durObs.observe(el)})
+}
+function loadDur(id){
+  const p=latestPosts.find(x=>x.id===id); if(!p||durs[id]!=null)return
+  const a=new Audio(); a.preload='metadata'; a.src=p.link
+  a.onloadedmetadata=()=>{durs[id]=a.duration;a.removeAttribute('src');a.load();const el=document.querySelector(`[data-dur="${id}"]`);if(el)el.textContent=fmtDur(durs[id]);if(curId===id)updateBar()}
+  a.onerror=()=>{a.removeAttribute('src');a.load()}
+}
+function epHtml(p){
+  const tag=seriesOf(p.title), h=hueOf(tag||p.title)
+  const isCur=curId===p.id, playing=isCur&&!audio.paused
+  return `<div class="ep" data-ep="${p.id}">
+    <div class="eprow">
+      <div class="thumb" data-play="${p.id}" style="background:${grad(h)}">
+        ${WAVE}
+        ${playing?'<div class="eq"><i></i><i></i><i></i></div>':''}
+      </div>
+      <div class="info">
+        <h3>${esc(p.title)}</h3>
+        <div class="meta">${dayLabel(p.created_at)} ${timeLabel(p.created_at)} · <span data-dur="${p.id}">${durs[p.id]!=null?fmtDur(durs[p.id]):'—'}</span> · <a href="room.html?r=${encodeURIComponent(p.room_slug)}">${esc(p.room_title)}</a></div>
+      </div>
+      <button class="playbtn" data-play="${p.id}" aria-label="${playing?'השהיה':'נגינה'}">${playing?IC_PAUSE:IC_PLAY}</button>
+    </div>
+    <div class="epnotes"${expandedId===p.id?'':' hidden'}>${expandedId===p.id?`${p.body?`<div class="body">${linkify(p.body)}</div>`:''}<div class="acts">${p.author_name?'מאת '+esc(p.author_name):''}</div>`:''}</div>
+  </div>`
+}
+function renderLatest(){
+  const posts=latestPosts
+  if(!posts.length){$('latest').innerHTML='<div class="empty">עוד לא פורסם כלום.</div>';return}
+  const eps=posts.filter(isAudio), rest=posts.filter(p=>!isAudio(p))
+  let html=''
+  if(eps.length)html+='<div class="eplist">'+eps.map(epHtml).join('')+'</div>'
+  html+=rest.map(p=>`
+    <div class="card post">
+      <h3>${esc(p.title)}</h3>
+      ${p.body?`<div class="body">${esc(p.body.length>280?p.body.slice(0,280)+'…':p.body)}</div>`:''}
+      ${p.link?`<a class="ext" href="${esc(p.link)}" target="_blank" rel="noopener">${esc(p.link)}</a>`:''}
+      <div class="meta">
+        <span>בחדר <a href="room.html?r=${encodeURIComponent(p.room_slug)}">${esc(p.room_title)}</a></span>
+        ${p.author_name?`<span>מאת ${esc(p.author_name)}</span>`:''}
+        <span>${fmtDate(p.created_at)}</span>
+      </div>
+    </div>`).join('')
+  $('latest').innerHTML=html
+  document.querySelectorAll('.ep .eprow').forEach(row=>row.addEventListener('click',e=>{
+    if(e.target.closest('[data-play]')||e.target.closest('a'))return
+    const id=row.closest('.ep').dataset.ep
+    expandedId=expandedId===id?null:id
+    renderLatest()
+  }))
+  document.querySelectorAll('[data-play]').forEach(b=>b.addEventListener('click',e=>{
+    e.stopPropagation()
+    const p=latestPosts.find(x=>x.id===b.dataset.play)
+    if(p)playPost(p)
+  }))
+  observeDurs()
+}
+
+/* ---------- rooms ---------- */
 async function loadRooms(){
   try{
     const d=await api('/rooms')
@@ -137,27 +410,37 @@ async function loadRooms(){
         <span>${r.post_count} פוסטים</span>
         <span>${fmtDate(r.created_at)}</span>
         <a class="rss" href="${API_BASE}/rss/${encodeURIComponent(r.slug)}">RSS</a>
+        ${pushSupported()?`<button class="bell" data-bell="${esc(r.slug)}">🔕</button>`:''}
       </div>
       </div>
     </div>`).join('')
+    await renderBells()
   }catch(e){$('rooms').innerHTML='<div class="empty">לא הצלחנו לטעון את החדרים כרגע.</div>'}
+}
+async function renderBells(){
+  const subs=localRooms()
+  for(const b of document.querySelectorAll('[data-bell]')){
+    const slug=b.dataset.bell
+    const st=await roomState(slug)
+    b.classList.toggle('on',st==='on')
+    b.textContent=st==='on'?'🔔':'🔕'
+    b.title=st==='on'?'התראות פעילות — לחיצה מכבה':'הפעלת התראות על פוסטים חדשים בחדר'
+    b.onclick=async()=>{
+      const cur=await roomState(slug)
+      if(cur==='on'){await unsubscribeRoom(slug)}
+      else{
+        const r=await subscribeRoom(slug)
+        if(r==='denied')notice('ההתראות חסומות בדפדפן — אפשר לאשר אותן בהגדרות האתר.')
+      }
+      renderBells()
+    }
+  }
 }
 async function loadLatest(){
   try{
     const d=await api('/latest')
-    const posts=d.posts||[]
-    if(!posts.length){$('latest').innerHTML='<div class="empty">עוד לא פורסם כלום.</div>';return}
-    $('latest').innerHTML=posts.map(p=>`
-    <div class="card post">
-      <h3>${esc(p.title)}</h3>
-      ${p.body?`<div class="body">${esc(p.body.length>280?p.body.slice(0,280)+'…':p.body)}</div>`:''}
-      ${p.link?`<a class="ext" href="${esc(p.link)}" target="_blank" rel="noopener">${esc(p.link)}</a>`:''}
-      <div class="meta">
-        <span>בחדר <a href="room.html?r=${encodeURIComponent(p.room_slug)}">${esc(p.room_title)}</a></span>
-        ${p.author_name?`<span>מאת ${esc(p.author_name)}</span>`:''}
-        <span>${fmtDate(p.created_at)}</span>
-      </div>
-    </div>`).join('')
+    latestPosts=d.posts||[]
+    renderLatest()
   }catch(e){$('latest').innerHTML=''}
 }
 $('roomForm').addEventListener('submit',async e=>{
@@ -179,7 +462,7 @@ $('roomForm').addEventListener('submit',async e=>{
   }catch(err){notice('לא הצלחנו לפתוח את החדר. נסו שוב.')}
   $('rSubmit').disabled=false
 })
-loadRooms();loadLatest()
+loadRooms();loadLatest();refreshSwRooms()
 </script>
 </body>
 </html>
