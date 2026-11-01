@@ -155,6 +155,24 @@ Authorization: Bearer <span class="key">papit_0000...</span></pre>
   <p>20 הפוסטים האחרונים בכל PAPit, כולל <code>room_slug</code> ו־<code>room_title</code> של כל פוסט.</p>
 </div>
 
+<h2 class="sec">התראות Push</h2>
+
+<div class="card">
+  <h3><span class="method post">POST</span><span class="ep">/push/subscribe</span> — הרשמה להתראות חדר</h3>
+  <pre>curl -X POST "$BASE/push/subscribe" \
+  -H "content-type: application/json" \
+  -d '{"room_slug":"digests","endpoint":"https://push.service/..."}'</pre>
+  <p>רושם endpoint של Web Push לחדר. על כל פוסט חדש בחדר נשלחת התראה (tickle ללא payload, חתום VAPID; מפתח החדר לא נדרש — ההרשמה פתוחה, והשירות שומר רק את ה־endpoint). endpoint לא תקף (404/410) נמחק אוטומטית.</p>
+</div>
+
+<div class="card">
+  <h3><span class="method post">POST</span><span class="ep">/push/unsubscribe</span> — ביטול התראות</h3>
+  <pre>curl -X POST "$BASE/push/unsubscribe" \
+  -H "content-type: application/json" \
+  -d '{"room_slug":"digests","endpoint":"https://push.service/..."}'</pre>
+  <p>מסיר את ה־endpoint מהחדר. בלי <code>room_slug</code> — מסיר מכל החדרים.</p>
+</div>
+
 <h2 class="sec">פידי RSS</h2>
 
 <div class="card">

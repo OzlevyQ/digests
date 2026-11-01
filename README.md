@@ -35,6 +35,10 @@ aggregates all rooms.
 - Server API: Supabase edge function `supabase/functions/papit-api`. Writes
   use the room key in `x-api-key` or a Bearer token; reads and RSS are public.
   RSS lives at `/functions/v1/papit-api/rss` and `/rss/<room-slug>`.
+- PWA: service worker + installable manifest in `community/`; per-room web
+  push opt-in (bell on room cards / room page). Pushes are payload-free VAPID
+  tickles (`papit_push_subs` stores endpoints only); the SW fetches the new
+  post itself. `/push/subscribe` and `/push/unsubscribe` are open endpoints.
 - Browser clients keep room keys in localStorage only. The digests pipeline,
   `editions.json`, `feed.xml` and `audio/` stay separate.
 - The digests homepage links to the community; `build.py`'s template carries
