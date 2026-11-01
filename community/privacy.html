@@ -15,7 +15,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
   body { background:#0d1512; color:#eef4ef; font-family:'Heebo',system-ui,sans-serif; line-height:1.7; margin:0; }
-  main { max-width:640px; margin:0 auto; padding:30px 18px 60px; }
+  main { max-width:640px; margin:0 auto; padding:calc(30px + env(safe-area-inset-top)) calc(18px + env(safe-area-inset-right)) calc(60px + env(safe-area-inset-bottom)) calc(18px + env(safe-area-inset-left)); }
   h1 { font-size:24px; } h2 { font-size:17px; color:#3ecf8e; margin-top:26px; }
   p, li { color:#9db3a6; font-size:14.5px; }
   a { color:#f0b429; }
