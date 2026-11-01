@@ -278,6 +278,7 @@ function playPost(p){
   document.body.classList.add('player-on')
   renderLatest();updateBar()
 }
+window.addEventListener('pageshow',e=>{if(e.persisted)resumeHandoff()})
 function step(d){
   const l=epList(),i=l.findIndex(p=>p.id===curId)
   const j=i+d
@@ -347,6 +348,7 @@ function resumeHandoff(){
   document.body.classList.add('player-on')
   renderLatest();updateBar()
 }
+window.addEventListener('pageshow',e=>{if(e.persisted)resumeHandoff()})
 
 /* ---------- latest posts ---------- */
 let durObs=null

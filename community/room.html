@@ -464,6 +464,17 @@ attachPlayerFX({audio,
   getPost:()=>{const p=allPosts.find(x=>x.id===curId);return p?{...p,room_title:room.title,room_slug:slug}:null},
   step:d=>{if(d>0)$('pbNext').onclick();else $('fpPrev').onclick()},
   backSec:30,fwdSec:30})
+window.addEventListener('pageshow',e=>{
+  if(!e.persisted)return
+  const h=takeHandoff();if(!h)return
+  const p=allPosts.find(x=>x.id===h.id);if(!p||!isAudio(p))return
+  curId=p.id
+  audio.src=p.link
+  if(h.playing)audio.play().catch(()=>{})
+  audio.onloadedmetadata=()=>{durs[p.id]=audio.duration;if(h.t>2&&(!isFinite(audio.duration)||h.t<audio.duration-2))audio.currentTime=h.t;updateBar()}
+  document.body.classList.add('player-on')
+  renderPosts();updateBar()
+})
 /* ---------- render ---------- */
 function renderHero(){
   if(!podcast){$('podhero').hidden=true;$('roomhead').hidden=false;return}
