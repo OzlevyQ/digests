@@ -123,7 +123,7 @@
   .fp-btn.big svg { width:30px; height:30px; }
   /* room creation */
   label { display:block; font-size:13px; font-weight:600; color:var(--dim); margin:12px 0 5px; }
-  input[type=text], textarea { width:100%; background:#0e1a15; border:1px solid var(--line); border-radius:12px; color:var(--ink);
+  input[type=text], input[type=email], input:not([type]), textarea { width:100%; background:#0e1a15; border:1px solid var(--line); border-radius:12px; color:var(--ink);
     font-family:inherit; font-size:14px; padding:11px 13px; }
   textarea { min-height:80px; resize:vertical; }
   .btn { display:block; width:100%; margin-top:16px; background:linear-gradient(135deg,var(--accent),#e07b39); color:#1a1205; border:0;
@@ -137,14 +137,16 @@
   .keybox .k { direction:ltr; text-align:left; font-family:ui-monospace,monospace; font-size:13px; word-break:break-all;
                color:var(--accent); background:#00000040; border-radius:8px; padding:10px; }
   .keybox .warn { font-size:12.5px; color:var(--accent); margin-top:8px; }
-  .row { display:flex; gap:10px; margin-top:10px; }
+  .row { display:flex; flex-wrap:wrap; gap:10px; margin-top:10px; }
+  .row .btn { flex:1 1 auto; text-align:center; }
   .row .btn { margin-top:0; }
   footer { text-align:center; color:var(--dim); font-size:12px; padding:20px 20px calc(20px + env(safe-area-inset-bottom)); }
   footer a { color:var(--dim); }
   @media (max-width:430px){ header .sub { display:none; } }
 
-  .filepick { display:block; font-size:13px; color:var(--dim); border:1.5px dashed var(--line); border-radius:12px; padding:10px 14px; cursor:pointer; margin-top:8px; }
-  .filepick input { margin-inline-start:8px; max-width:100%; }
+  .filepick { position:relative; display:block; text-align:center; font-size:13.5px; font-weight:600; color:var(--dim); border:1.5px dashed var(--line); border-radius:12px; padding:12px 14px; cursor:pointer; margin-top:8px; }
+  .filepick.has { color:var(--accent2); border-color:var(--accent2); }
+  .filepick input[type=file] { position:absolute; inset:0; opacity:0; cursor:pointer; }
 </style>
 </head>
 <body>
@@ -169,7 +171,7 @@
         <input id="rTitle" required maxlength="80" placeholder="שם החדר">
         <input id="rEmail" type="email" required maxlength="120" placeholder="המייל שלך (לא מוצג לאף אחד)">
         <textarea id="rDesc" maxlength="300" rows="2" placeholder="תיאור קצר (לא חובה)"></textarea>
-        <label class="filepick">תמונת שער (לא חובה)
+        <label class="filepick"><span id="rCoverName">תמונת שער (לא חובה) — בחירת קובץ</span>
           <input id="rCover" type="file" accept="image/png,image/jpeg,image/webp">
         </label>
         <button id="rSubmit" type="submit">פתיחת החדר וקבלת מפתח</button>
@@ -521,6 +523,11 @@ function coverBlob(file){
     img.src=URL.createObjectURL(file)
   })
 }
+$('rCover').addEventListener('change',()=>{
+  const f=$('rCover').files[0]
+  $('rCoverName').textContent=f?('✓ '+f.name):'תמונת שער (לא חובה) — בחירת קובץ'
+  $('rCover').closest('.filepick').classList.toggle('has',!!f)
+})
 $('roomForm').addEventListener('submit',async e=>{
   e.preventDefault()
   const title=$('rTitle').value.trim(), desc=$('rDesc').value.trim(), email=$('rEmail').value.trim()
