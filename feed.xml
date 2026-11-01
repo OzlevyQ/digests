@@ -10,6 +10,24 @@
     <itunes:explicit>no</itunes:explicit>
     <itunes:category text="Technology"/>
     <item>
+      <title>דייג&#x27;סט בוקר 1.11 - חדשות AI</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-11-01-morning-ai</guid>
+      <pubDate>Sun, 01 Nov 2026 06:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-11-01-morning-ai.ogg" length="719871" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>בוקר טוב עוז. היום ה-AI עושה שני קפיצות מאוד שונות: אחת לתוך החלל, ואחת לתוך הבירוקרטיה הכי אפורה שיש. ושניהן אמיתיות. מתחילים מעל הראש.</p><p>מקורות:<br/><a href="https://blog.google/innovation-and-ai/models-and-research/google-research/project-suncatcher-satellite-response/">https://blog.google/innovation-and-ai/models-and-research/google-research/project-suncatcher-satellite-response/</a><br/><a href="https://blog.google/innovation-and-ai/models-and-research/google-research/project-suncatcher-prototype/">https://blog.google/innovation-and-ai/models-and-research/google-research/project-suncatcher-prototype/</a><br/><a href="https://techcrunch.com/2026/10/30/googles-first-data-center-satellite-is-online-and-writing-poetry/">https://techcrunch.com/2026/10/30/googles-first-data-center-satellite-is-online-and-writing-poetry/</a><br/><a href="https://www.theverge.com/tech/1023528/google-project-suncatcher-ai-satellite-transmission">https://www.theverge.com/tech/1023528/google-project-suncatcher-ai-satellite-transmission</a><br/><a href="https://deepmind.google/blog/speeding-up-planning-decisions-with-ai/">https://deepmind.google/blog/speeding-up-planning-decisions-with-ai/</a><br/><a href="https://www.gov.uk/government/news/faster-planning-decisions-as-new-rules-and-ai-tackle-delays">https://www.gov.uk/government/news/faster-planning-decisions-as-new-rules-and-ai-tackle-delays</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט בוקר 1.11 - פצצות מגיטהאב</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-11-01-morning-gh</guid>
+      <pubDate>Sun, 01 Nov 2026 06:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-11-01-morning-gh.ogg" length="997125" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>ועכשיו גיטהאב, חמישה ריפוז טריים. פותחים ב-Mika, 2,892 כוכבים, Kotlin ו-Apache-2. סוכן AI לאנדרואיד שמפעיל אפליקציות ואתרים על מסך וירטואלי נסתר, בזמן שאתה ממשיך לעבוד.</p><p>מקורות:<br/><a href="https://github.com/wangzan101/Mika">https://github.com/wangzan101/Mika</a><br/><a href="https://github.com/Djihads80/Eglantine">https://github.com/Djihads80/Eglantine</a><br/><a href="https://github.com/Arjun-Ingole/hop">https://github.com/Arjun-Ingole/hop</a><br/><a href="https://github.com/harsha20599/lidtap">https://github.com/harsha20599/lidtap</a><br/><a href="https://github.com/Koppar-AI/koppar-lte-modem">https://github.com/Koppar-AI/koppar-lte-modem</a><br/></p>]]></description>
+    </item>
+    <item>
       <title>דייג&#x27;סט ערב 31.10 - חדשות AI</title>
       <link>https://ozlevyq.github.io/digests/</link>
       <guid isPermaLink="false">digest-2026-10-31-evening-ai</guid>
