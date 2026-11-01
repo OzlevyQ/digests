@@ -10,6 +10,24 @@
     <itunes:explicit>no</itunes:explicit>
     <itunes:category text="Technology"/>
     <item>
+      <title>דייג&#x27;סט ערב 1.11 - חדשות AI</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-11-01-evening-ai</guid>
+      <pubDate>Sun, 01 Nov 2026 18:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-11-01-evening-ai.ogg" length="685351" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>ערב טוב עוז. שתי מהדורות הערב, ושתיהן על אותו מהלך: הבינה הגדולה מפסיקה לחיות בענן ונוחתת בתוך מערכות אמיתיות. אחת נכנסת למדינה שלמה, והשנייה נכנסת לצ&#x27;אט של הצוות שלך.</p><p>מקורות:<br/><a href="https://www.scmp.com/tech/big-tech/article/3372831/apple-intelligence-roll-out-iphones-china-december-alibaba-backing">https://www.scmp.com/tech/big-tech/article/3372831/apple-intelligence-roll-out-iphones-china-december-alibaba-backing</a><br/><a href="https://www.theverge.com/tech/1023974/apple-intelligence-china-ios-27-3">https://www.theverge.com/tech/1023974/apple-intelligence-china-ios-27-3</a><br/><a href="https://www.macrumors.com/2026/10/30/apple-says-ios-27-3-beta-coming-next-week/">https://www.macrumors.com/2026/10/30/apple-says-ios-27-3-beta-coming-next-week/</a><br/><a href="https://thenextweb.com/news/apple-intelligence-china-ios-27-3-alibaba-qwen">https://thenextweb.com/news/apple-intelligence-china-ios-27-3-alibaba-qwen</a><br/><a href="https://thenextweb.com/news/deepseek-super-agent-open-source-coding-agent">https://thenextweb.com/news/deepseek-super-agent-open-source-coding-agent</a><br/><a href="https://www.bloomberg.com/news/articles/2026-11-01/deepseek-drops-enhanced-coding-agent-with-aim-to-rival-anthropic">https://www.bloomberg.com/news/articles/2026-11-01/deepseek-drops-enhanced-coding-agent-with-aim-to-rival-anthropic</a><br/><a href="https://github.com/deepseek-ai/dsh-superagent-prototype/">https://github.com/deepseek-ai/dsh-superagent-prototype/</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט ערב 1.11 - פצצות מגיטהאב</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-11-01-evening-gh</guid>
+      <pubDate>Sun, 01 Nov 2026 18:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-11-01-evening-gh.ogg" length="793087" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>ועכשיו גיטהאב, ויש הערב חמישה פרויקטים שכל אחד מהם פנטזיה קטנה שהפכה לקוד. פותחים ב-silk reel, ארבעים וארבעה כוכבים, אפצ&#x27;י. מישהו החליט שכרטיס פיתוח ראוי לקליפ הופעה.</p><p>מקורות:<br/><a href="https://github.com/hridaya423/silkreel">https://github.com/hridaya423/silkreel</a><br/><a href="https://github.com/alchaincyf/huashu-bird-sticker">https://github.com/alchaincyf/huashu-bird-sticker</a><br/><a href="https://github.com/designfuchen/word-atlas">https://github.com/designfuchen/word-atlas</a><br/><a href="https://github.com/arpanjot-coding/AVault">https://github.com/arpanjot-coding/AVault</a><br/><a href="https://github.com/sqlpxc/airhand">https://github.com/sqlpxc/airhand</a><br/></p>]]></description>
+    </item>
+    <item>
       <title>דייג&#x27;סט בוקר 1.11 - חדשות AI</title>
       <link>https://ozlevyq.github.io/digests/</link>
       <guid isPermaLink="false">digest-2026-11-01-morning-ai</guid>
