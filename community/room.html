@@ -145,6 +145,10 @@
   details.manage summary::-webkit-details-marker { display:none; }
   details.manage .inner { padding:0 16px 16px; }
   details.manage[open] { background:var(--card); border-style:solid; }
+  .keyrow { display:flex; gap:8px; align-items:center; }
+  .keyval { flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; background:#0e1a15; border:1px solid var(--line); border-radius:10px; padding:9px 12px; font-size:12.5px; color:var(--ink); }
+  .keybtn { width:auto; margin:0; padding:9px 14px; flex:none; font-size:13px; }
+  .keynote { font-size:12px; color:var(--dim); margin-top:6px; }
   label { display:block; font-size:13px; font-weight:600; color:var(--dim); margin:12px 0 5px; }
   input[type=text], input[type=url], input[type=password], input[type=email], textarea { width:100%; background:#0e1a15; border:1px solid var(--line); border-radius:12px; color:var(--ink);
     font-family:inherit; font-size:14px; padding:11px 13px; }
@@ -237,6 +241,23 @@
       </div>
       <div id="mConsole" hidden>
         <div style="font-size:12.5px;color:var(--dim);margin-bottom:8px">מחובר כ־<span id="mMasked"></span> · <a href="#" id="mOut" style="color:var(--dim)">יציאה</a></div>
+        <label>מפתח ה-API של החדר</label>
+        <div id="mKeyHave" hidden>
+          <div class="keyrow">
+            <code class="keyval" id="mKeyVal" dir="ltr"></code>
+            <button class="btn ghost keybtn" id="mKeyShow" type="button">הצג</button>
+            <button class="btn ghost keybtn" id="mKeyCopy" type="button">העתק</button>
+          </div>
+          <div class="keynote">המפתח שמור בדפדפן הזה בלבד — השרת שומר רק גיבוב חד־כיווני ולא יכול לשחזר אותו.</div>
+        </div>
+        <div id="mKeyMissing" hidden>
+          <div class="keynote">המפתח לא שמור בדפדפן הזה, ואי אפשר לשחזר אותו מהשרת (נשמר רק גיבוב חד־כיווני) — הוא קיים רק אצל מי שפתח את החדר. אם המפתח אצלך, שמרו אותו כאן פעם אחת:</div>
+          <form id="mKeyForm" class="keyrow" style="margin-top:8px">
+            <input type="password" id="mKeyIn" placeholder="papit_…" dir="ltr" style="text-align:left;flex:1;margin-top:0" autocomplete="off">
+            <button class="btn ghost keybtn" type="submit">שמור בדפדפן</button>
+          </form>
+        </div>
+        <div class="keynote" style="margin-bottom:14px">לפרסום מסקריפט או מהאתר: <a href="./api.html" target="_blank" rel="noopener" style="color:var(--accent2)">תיעוד ה-API המלא ↗</a></div>
         <label for="mTitle">שם החדר</label>
         <input type="text" id="mTitle" maxlength="80">
         <label for="mDesc">תיאור</label>
@@ -754,9 +775,43 @@ function renderMPosts(posts){
       '</div>'+
     '</details>').join('')
 }
+const maskKey=k=>k.length<=10?'••••••••':k.slice(0,6)+'••••••••'+k.slice(-4)
+let mKeyShown=false
+function renderMKey(){
+  const k=key()
+  $('mKeyHave').hidden=!k
+  $('mKeyMissing').hidden=!!k
+  mKeyShown=false
+  if(k){$('mKeyVal').textContent=maskKey(k);$('mKeyShow').textContent='הצג'}
+}
+$('mKeyShow').onclick=()=>{
+  const k=key();if(!k)return
+  mKeyShown=!mKeyShown
+  $('mKeyVal').textContent=mKeyShown?k:maskKey(k)
+  $('mKeyShow').textContent=mKeyShown?'הסתר':'הצג'
+}
+$('mKeyCopy').onclick=async()=>{
+  const k=key();if(!k)return
+  try{await navigator.clipboard.writeText(k);notice('המפתח הועתק ✓')}
+  catch{
+    const t=document.createElement('textarea');t.value=k;t.style.position='fixed';t.style.opacity='0'
+    document.body.appendChild(t);t.select()
+    try{document.execCommand('copy');notice('המפתח הועתק ✓')}catch{notice('ההעתקה נכשלה — לחצו "הצג" וסמנו ידנית.')}
+    t.remove()
+  }
+}
+$('mKeyForm').addEventListener('submit',e=>{
+  e.preventDefault()
+  const k=$('mKeyIn').value.trim();if(!k)return
+  saveRoomKey(slug,k)
+  $('mKeyIn').value=''
+  renderMKey();renderGate();load()
+  notice('המפתח נשמר בדפדפן הזה. אפשר גם לפרסם איתו מהעמוד.')
+})
 function renderConsole(d){
   $('mLogin').hidden=true
   $('mConsole').hidden=false
+  renderMKey()
   $('mMasked').textContent=d.owner_email_masked
   $('mTitle').value=d.room.title
   $('mDesc').value=d.room.description||''
