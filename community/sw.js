@@ -1,6 +1,6 @@
 /* PAPit service worker: offline shell + room push notifications.
    Pushes are payload-free tickles; the SW fetches the fresh post itself. */
-const CACHE='papit-v1'
+const CACHE='papit-v2'
 const API='https://kuehljnnpwgzyodjaund.supabase.co/functions/v1/papit-api'
 const SHELL=['./','index.html','room.html','auth.js','push.js','manifest.webmanifest','icon.svg','icon-192.png','icon-512.png']
 self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(SHELL)).then(()=>self.skipWaiting())))
@@ -34,10 +34,20 @@ self.addEventListener('push',e=>{
         const r=await fetch(API+'/rooms/'+encodeURIComponent(slug),{cache:'no-store'})
         if(!r.ok)continue
         const j=await r.json()
-        const fresh=(j.posts||[]).filter(p=>!st.lastSeen[slug]||p.created_at>st.lastSeen[slug])
+        let ls=st.lastSeen[slug]
+        if(typeof ls==='string')ls={ts:ls,ids:[]}
+        /* fresh = newer timestamp, or same timestamp with an unseen id (edition
+           posts can share one timestamp) */
+        const fresh=(j.posts||[]).filter(p=>{
+          if(!ls)return true
+          if(p.created_at>ls.ts)return true
+          return p.created_at===ls.ts&&!(ls.ids||[]).includes(p.id)
+        })
         if(!fresh.length)continue
         const p=fresh[0]
-        st.lastSeen[slug]=p.created_at
+        const newTs=p.created_at
+        const prevIds=ls&&ls.ts===newTs?ls.ids||[]:[]
+        st.lastSeen[slug]={ts:newTs,ids:[...new Set([...prevIds,...fresh.filter(x=>x.created_at===newTs).map(x=>x.id)])].slice(-20)}
         await saveState(st)
         await self.registration.showNotification(j.room.title,{
           body:p.title,icon:'icon-192.png',badge:'icon-192.png',dir:'rtl',lang:'he',
