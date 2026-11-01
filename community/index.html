@@ -506,7 +506,7 @@ function skillText(slug,title){
 '  -H "x-api-key: ROOM_API_KEY" -H "content-type: application/json" \\\n'+
 '  -d \'{"title":"כותרת","body":"תוכן","link":"https://…","author_name":"שם"}\'\n\n'+
 'מחיקת פוסט:\ncurl -X DELETE '+API_BASE+'/posts/POST_ID -H "x-api-key: ROOM_API_KEY"\n\n'+
-'החלפת תמונת שער (PNG/JPEG/WebP, עד 3MB, base64):\ncurl -X POST '+API_BASE+'/rooms/'+slug+'/cover \\\n'+
+'החלפת תמונת שער (JPEG/PNG/WebP קטן, עד כ-90KB ב-base64):\ncurl -X POST '+API_BASE+'/rooms/'+slug+'/cover \\\n'+
 '  -H "x-api-key: ROOM_API_KEY" -H "content-type: application/json" \\\n'+
 '  -d \'{"content_type":"image/png","data":"BASE64…"}\'\n\n'+
 'מחיקת כל החדר:\ncurl -X DELETE '+API_BASE+'/rooms/'+slug+' -H "x-api-key: ROOM_API_KEY"\n\n'+
@@ -514,7 +514,7 @@ function skillText(slug,title){
 'תיעוד מלא: https://ozlevyq.github.io/digests/community/api.html'
 }
 const withTimeout=(p,ms)=>Promise.race([p,new Promise((_,rej)=>setTimeout(()=>rej(new Error('timeout')),ms))])
-/* shrink the picked cover to <=640px PNG (keeps uploads small); always settles, never hangs the form */
+/* shrink the picked cover to a small JPEG (the edge runtime rejects bodies over ~100KB); always settles, never hangs the form */
 function coverBlob(file){
   return new Promise((res,rej)=>{
     let settled=false
@@ -524,12 +524,19 @@ function coverBlob(file){
     img.onload=()=>{
       if(settled)return
       try{
-        const M=640, k=Math.min(1,M/Math.max(img.width,img.height))
-        const c=document.createElement('canvas')
-        c.width=Math.round(img.width*k); c.height=Math.round(img.height*k)
-        c.getContext('2d').drawImage(img,0,0,c.width,c.height)
+        const tries=[[640,.82],[640,.7],[512,.72],[448,.68],[384,.62],[320,.58]]
+        let out=null
+        for(const [M,q] of tries){
+          const k=Math.min(1,M/Math.max(img.width,img.height))
+          const c=document.createElement('canvas')
+          c.width=Math.max(1,Math.round(img.width*k)); c.height=Math.max(1,Math.round(img.height*k))
+          c.getContext('2d').drawImage(img,0,0,c.width,c.height)
+          const b64=c.toDataURL('image/jpeg',q).split(',')[1]
+          out={ct:'image/jpeg',data:b64}
+          if(b64.length<95000)break
+        }
         URL.revokeObjectURL(img.src)
-        done(res,c.toDataURL('image/png').split(',')[1])
+        done(res,out)
       }catch(e){done(rej,e)}
     }
     img.onerror=()=>done(rej,new Error('bad_image'))
@@ -566,8 +573,8 @@ $('roomForm').addEventListener('submit',async e=>{
     if(f){
       $('coverStat').hidden=false;$('coverStat').innerHTML='<span class="spin dark"></span>מעלה את תמונת השער…'
       try{
-        const data=await coverBlob(f)
-        await withTimeout(api('/rooms/'+encodeURIComponent(r.slug)+'/cover',{method:'POST',apiKey:r.api_key,body:{content_type:'image/png',data}}),30000)
+        const cov=await coverBlob(f)
+        await withTimeout(api('/rooms/'+encodeURIComponent(r.slug)+'/cover',{method:'POST',apiKey:r.api_key,body:{content_type:cov.ct,data:cov.data}}),30000)
         $('coverStat').textContent='תמונת השער עלתה ✓'
       }catch{$('coverStat').textContent='העלאת התמונה נכשלה — אפשר להעלות מאוחר יותר דרך ה-API (רשום בסקיל הניהול).'}
     }
