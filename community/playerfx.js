@@ -40,10 +40,23 @@ export function attachPlayerFX({audio,getPost,step,backSec=15,fwdSec=30}){
   audio.addEventListener('loadedmetadata',()=>{setMeta(getPost());pos()})
   audio.addEventListener('timeupdate',pos)
   audio.addEventListener('ratechange',pos)
-  window.addEventListener('pagehide',()=>{
+  /* Handoff: written continuously, not only on pagehide — when a page freezes
+     into the back/forward cache the browser has already paused the element, so
+     reading audio.paused on pagehide records a lie. `intent` tracks what the
+     user last asked for: play sets it at once, pause only after a grace period,
+     so a freeze-time pause (immediately followed by pagehide) is ignored. */
+  let intent=false, intentTimer=null, lastWrite=0
+  const writeHandoff=()=>{
     const p=getPost()
-    if(p)try{localStorage.setItem(HK,JSON.stringify({id:p.id,t:audio.currentTime,playing:!audio.paused,ts:Date.now()}))}catch{}
-  })
+    try{
+      if(!p){localStorage.removeItem(HK);return}
+      localStorage.setItem(HK,JSON.stringify({id:p.id,t:audio.currentTime,playing:intent,ts:Date.now()}))
+    }catch{}
+  }
+  audio.addEventListener('play',()=>{clearTimeout(intentTimer);intent=true;writeHandoff()})
+  audio.addEventListener('pause',()=>{clearTimeout(intentTimer);intentTimer=setTimeout(()=>{intent=false;writeHandoff()},400)})
+  audio.addEventListener('timeupdate',()=>{const n=Date.now();if(n-lastWrite>3000){lastWrite=n;writeHandoff()}})
+  window.addEventListener('pagehide',()=>{clearTimeout(intentTimer);writeHandoff()})
   setMeta(getPost())
 }
 
