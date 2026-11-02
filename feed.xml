@@ -10,6 +10,24 @@
     <itunes:explicit>no</itunes:explicit>
     <itunes:category text="Technology"/>
     <item>
+      <title>דייג&#x27;סט בוקר 2.11 - חדשות AI</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-11-02-morning-ai</guid>
+      <pubDate>Mon, 02 Nov 2026 06:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-11-02-morning-ai.ogg" length="710562" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>בוקר טוב עוז. שתי ידיעות, ושתיהן על אותה שאלה: מה באמת מניע מודל קדמי - עוד ארכיטקטורה מפוארת, או משהו פשוט שמחובר נכון.</p><p>מקורות:<br/><a href="https://longcat.ai/blog/longcat-2.5">https://longcat.ai/blog/longcat-2.5</a><br/><a href="https://arxiv.org/abs/2610.35962">https://arxiv.org/abs/2610.35962</a><br/><a href="https://cryptobriefing.com/meta-nyu-h1-automated-theorem-proving/">https://cryptobriefing.com/meta-nyu-h1-automated-theorem-proving/</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט בוקר 2.11 - פצצות מגיטהאב</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-11-02-morning-gh</guid>
+      <pubDate>Mon, 02 Nov 2026 06:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-11-02-morning-gh.ogg" length="745512" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>ועכשיו גיטהאב, וחמישה פרויקטים טריים שנולדו בסוף השבוע. פותחים ב-CivSwitch, שלוש מאות שלושים ושבעה כוכבים, MIT.</p><p>מקורות:<br/><a href="https://github.com/Gezine/CivSwitch">https://github.com/Gezine/CivSwitch</a><br/><a href="https://github.com/Balanov/uncut">https://github.com/Balanov/uncut</a><br/><a href="https://github.com/LingDong-/paint-irl">https://github.com/LingDong-/paint-irl</a><br/><a href="https://github.com/nilbuild/tinyhand">https://github.com/nilbuild/tinyhand</a><br/><a href="https://github.com/intelc/Apple-Watch-Cursor">https://github.com/intelc/Apple-Watch-Cursor</a><br/></p>]]></description>
+    </item>
+    <item>
       <title>דייג&#x27;סט ערב 1.11 - חדשות AI</title>
       <link>https://ozlevyq.github.io/digests/</link>
       <guid isPermaLink="false">digest-2026-11-01-evening-ai</guid>
