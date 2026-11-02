@@ -10,6 +10,24 @@
     <itunes:explicit>no</itunes:explicit>
     <itunes:category text="Technology"/>
     <item>
+      <title>דייג&#x27;סט ערב 2.11 - חדשות AI</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-11-02-evening-ai</guid>
+      <pubDate>Mon, 02 Nov 2026 18:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-11-02-evening-ai.ogg" length="1533572" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>דייג&#x27;סט ערב, שני בנובמבר, ויש שני סיפורים שהופכים את השולחן: הבינה המלאכותית לא רק צורכת - היא נותנת בחזרה. לחשמל שלך, ולתחזית שיכולה להציל חיים.</p><p>מקורות:<br/><a href="https://openai.com/index/grid-protectors-program/">https://openai.com/index/grid-protectors-program/</a><br/><a href="https://www.weather.gov/news/261102-AI-Hurricane-Forecasting">https://www.weather.gov/news/261102-AI-Hurricane-Forecasting</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט ערב 2.11 - פצצות מגיטהאב</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-11-02-evening-gh</guid>
+      <pubDate>Mon, 02 Nov 2026 18:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-11-02-evening-gh.ogg" length="1463039" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>פצצות מגיטהאב, מהדורת ערב, ויש לי חמש בחירות שכל אחת מהן עולם בפני עצמו. נתחיל בפצצה לאמני התלת-ממד: SculptForge.</p><p>מקורות:<br/><a href="https://github.com/islandmed/SculptForge">https://github.com/islandmed/SculptForge</a><br/><a href="https://github.com/rockorager/lua">https://github.com/rockorager/lua</a><br/><a href="https://github.com/justrach/nanolight">https://github.com/justrach/nanolight</a><br/><a href="https://github.com/Avarce/ghostty-cursor-fx">https://github.com/Avarce/ghostty-cursor-fx</a><br/><a href="https://github.com/dax8it/nous-girl-stackchan">https://github.com/dax8it/nous-girl-stackchan</a><br/></p>]]></description>
+    </item>
+    <item>
       <title>דייג&#x27;סט בוקר 2.11 - חדשות AI</title>
       <link>https://ozlevyq.github.io/digests/</link>
       <guid isPermaLink="false">digest-2026-11-02-morning-ai</guid>
