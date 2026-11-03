@@ -10,6 +10,24 @@
     <itunes:explicit>no</itunes:explicit>
     <itunes:category text="Technology"/>
     <item>
+      <title>דייג&#x27;סט ערב 3.11 - חדשות AI</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-11-03-evening-ai</guid>
+      <pubDate>Tue, 03 Nov 2026 18:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-11-03-evening-ai.ogg" length="1137824" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>דייג&#x27;סט ערב, שלישי בנובמבר, ושני סיפורים שמחזיקים את שני קצוות הסקאלה: מודל שמבטיח לך בעלות מלאה, ובנצ&#x27;מרק שמזכיר לכולם כמה רחוק הטופ עוד.</p><p>מקורות:<br/><a href="https://flower.ai/blog/2026-11-03-introducing-endeavor-1.1">https://flower.ai/blog/2026-11-03-introducing-endeavor-1.1</a><br/><a href="https://newsletter.semianalysis.com/p/gdpx-measuring-frontier-model-capabilities">https://newsletter.semianalysis.com/p/gdpx-measuring-frontier-model-capabilities</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט ערב 3.11 - פצצות מגיטהאב</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-11-03-evening-gh</guid>
+      <pubDate>Tue, 03 Nov 2026 18:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-11-03-evening-gh.ogg" length="1305342" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>פצצות מגיטהאב, מהדורת ערב, וחמש בחירות משולחן העבודה עד חדר המכונות. ראשון: gputaskman - ושם המפתח מוכר: סקוט הנסלמן.</p><p>מקורות:<br/><a href="https://github.com/shanselman/gputaskman">https://github.com/shanselman/gputaskman</a><br/><a href="https://github.com/terraseraph/sectorforge">https://github.com/terraseraph/sectorforge</a><br/><a href="https://github.com/Renly1994/xiaotang-daozai">https://github.com/Renly1994/xiaotang-daozai</a><br/><a href="https://github.com/1337isnot1337/DOPPLERGEIST">https://github.com/1337isnot1337/DOPPLERGEIST</a><br/><a href="https://github.com/fuyichen0725/blinkmimic">https://github.com/fuyichen0725/blinkmimic</a><br/></p>]]></description>
+    </item>
+    <item>
       <title>דייג&#x27;סט בוקר 3.11 - חדשות AI</title>
       <link>https://ozlevyq.github.io/digests/</link>
       <guid isPermaLink="false">digest-2026-11-03-morning-ai</guid>
