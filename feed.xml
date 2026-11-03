@@ -10,6 +10,24 @@
     <itunes:explicit>no</itunes:explicit>
     <itunes:category text="Technology"/>
     <item>
+      <title>דייג&#x27;סט בוקר 3.11 - חדשות AI</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-11-03-morning-ai</guid>
+      <pubDate>Tue, 03 Nov 2026 06:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-11-03-morning-ai.ogg" length="1211800" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>דייג&#x27;סט בוקר, שלישי בנובמבר, והיום שני סיפורים על אותה מלחמה משתי חזיתות שונות: מי הבעלים של התוכן באינטרנט בעידן הבינה המלאכותית. חזית ראשונה: בית המשפט.</p><p>מקורות:<br/><a href="https://www.theverge.com/tech/1024588/brave-lawsuit-ai-scraping-new-york-times">https://www.theverge.com/tech/1024588/brave-lawsuit-ai-scraping-new-york-times</a><br/><a href="https://nytco-assets.nytimes.com/2026/11/new-york-times-brave-complaint-11-2-26.pdf">https://nytco-assets.nytimes.com/2026/11/new-york-times-brave-complaint-11-2-26.pdf</a><br/><a href="https://www.theverge.com/tech/1023763/openai-google-microsoft-ai-scraping-standard-opt-out">https://www.theverge.com/tech/1023763/openai-google-microsoft-ai-scraping-standard-opt-out</a><br/><a href="https://datatracker.ietf.org/doc/draft-kelley-aipref-training-preference-signal/">https://datatracker.ietf.org/doc/draft-kelley-aipref-training-preference-signal/</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט בוקר 3.11 - פצצות מגיטהאב</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-11-03-morning-gh</guid>
+      <pubDate>Tue, 03 Nov 2026 06:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-11-03-morning-gh.ogg" length="1322019" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>פצצות מגיטהאב, מהדורת בוקר, והיום חמישה פרויקטים שמוכיחים שהדברים הכי מעניינים קורים על חומרה אמיתית. ראשון, והכי חמוד: Flashduck.</p><p>מקורות:<br/><a href="https://github.com/FlashCat-Jordan/Flashduck">https://github.com/FlashCat-Jordan/Flashduck</a><br/><a href="https://github.com/the-scott-davis/netorbit">https://github.com/the-scott-davis/netorbit</a><br/><a href="https://github.com/kralonur/samsung-washer-monitor-esphome">https://github.com/kralonur/samsung-washer-monitor-esphome</a><br/><a href="https://github.com/enjoy-digital/slogic16u3">https://github.com/enjoy-digital/slogic16u3</a><br/><a href="https://github.com/Zengkailin/parametric-topdown-pixel-architecture">https://github.com/Zengkailin/parametric-topdown-pixel-architecture</a><br/></p>]]></description>
+    </item>
+    <item>
       <title>דייג&#x27;סט ערב 2.11 - חדשות AI</title>
       <link>https://ozlevyq.github.io/digests/</link>
       <guid isPermaLink="false">digest-2026-11-02-evening-ai</guid>
