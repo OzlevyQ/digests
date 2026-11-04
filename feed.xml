@@ -10,6 +10,24 @@
     <itunes:explicit>no</itunes:explicit>
     <itunes:category text="Technology"/>
     <item>
+      <title>דייג&#x27;סט בוקר 4.11 - חדשות AI</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-11-04-morning-ai</guid>
+      <pubDate>Wed, 04 Nov 2026 06:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-11-04-morning-ai.ogg" length="2080849" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>בוקר טוב, ויש לי שתי ידיעות שעונות על אותה שאלה מכיוונים הפוכים: איך יודעים מי באמת מדבר אליך? הראשונה נראית מתמטיקה יבשה, אבל היא חתימה דיגיטלית על המוח של מודל.</p><p>מקורות:<br/><a href="https://www.anthropic.com/research/provable-inference">https://www.anthropic.com/research/provable-inference</a><br/><a href="https://github.com/anthropics/FlashProve">https://github.com/anthropics/FlashProve</a><br/><a href="https://techcrunch.com/2026/11/03/anthropic-is-working-on-a-system-to-prove-ai-models-identity/">https://techcrunch.com/2026/11/03/anthropic-is-working-on-a-system-to-prove-ai-models-identity/</a><br/><a href="https://blog.google/products-and-platforms/products/education/ai-learning-era-updates-2026/">https://blog.google/products-and-platforms/products/education/ai-learning-era-updates-2026/</a><br/><a href="https://www.theverge.com/tech/1025411/google-turn-off-search-ai-features">https://www.theverge.com/tech/1025411/google-turn-off-search-ai-features</a><br/><a href="https://apnews.com/article/ai-schools-classroom-students-google-7ba4219e505db1c11d672f6eefe7155a">https://apnews.com/article/ai-schools-classroom-students-google-7ba4219e505db1c11d672f6eefe7155a</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט בוקר 4.11 - פצצות מגיטהאב</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-11-04-morning-gh</guid>
+      <pubDate>Wed, 04 Nov 2026 06:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-11-04-morning-gh.ogg" length="2456451" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>ועכשיו - פצצות מגיטהאב. חמישה ריפוז טריים, כל אחד פותר בעיה אמיתית ומרגיזה. נפתח בגדול: terminal-mac. ארבע מאות וארבעים ואחד כוכבים ביממה.</p><p>מקורות:<br/><a href="https://github.com/govijr/terminal-mac">https://github.com/govijr/terminal-mac</a><br/><a href="https://github.com/deanyool/tallybar">https://github.com/deanyool/tallybar</a><br/><a href="https://github.com/Clahen86/ha-replace-device">https://github.com/Clahen86/ha-replace-device</a><br/><a href="https://github.com/triffski/tr_immich_photocopy">https://github.com/triffski/tr_immich_photocopy</a><br/><a href="https://github.com/acnekot/frauddb">https://github.com/acnekot/frauddb</a><br/></p>]]></description>
+    </item>
+    <item>
       <title>דייג&#x27;סט ערב 3.11 - חדשות AI</title>
       <link>https://ozlevyq.github.io/digests/</link>
       <guid isPermaLink="false">digest-2026-11-03-evening-ai</guid>
