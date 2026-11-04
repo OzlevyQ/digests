@@ -10,6 +10,24 @@
     <itunes:explicit>no</itunes:explicit>
     <itunes:category text="Technology"/>
     <item>
+      <title>דייג&#x27;סט ערב 4.11 - חדשות AI</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-11-04-evening-ai</guid>
+      <pubDate>Wed, 04 Nov 2026 18:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-11-04-evening-ai.ogg" length="2224884" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>ערב טוב, ויש לי שתי ידיעות על אותה מהפכה משני קצוותיה: ה-AI יוצא מהאפליקציה שלו ונכנס לכל האפליקציות, על שבבים של יותר משחקן אחד. הראשונה: סירי נפתחת.</p><p>מקורות:<br/><a href="https://developer.apple.com/news/?id=gdk2umrf">https://developer.apple.com/news/?id=gdk2umrf</a><br/><a href="https://www.theverge.com/tech/1025694/apple-siri-ai-third-party-apps">https://www.theverge.com/tech/1025694/apple-siri-ai-third-party-apps</a><br/><a href="https://ppc.land/apple-opens-siri-ai-to-all-developers-but-apps-cant-ship-it-until-spring/">https://ppc.land/apple-opens-siri-ai-to-all-developers-but-apps-cant-ship-it-until-spring/</a><br/><a href="https://ir.amd.com/news-events/press-releases/detail/1303/amd-reports-third-quarter-2026-financial-results">https://ir.amd.com/news-events/press-releases/detail/1303/amd-reports-third-quarter-2026-financial-results</a><br/><a href="https://www.theverge.com/tech/1026148/amd-earnings-q3-2026-data-center-pc">https://www.theverge.com/tech/1026148/amd-earnings-q3-2026-data-center-pc</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט ערב 4.11 - פצצות מגיטהאב</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-11-04-evening-gh</guid>
+      <pubDate>Wed, 04 Nov 2026 18:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-11-04-evening-gh.ogg" length="2554984" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>ועכשיו - פצצות מגיטהאב. חמישה ריפוז טריים מהימים האחרונים, ואחד מהם הוא באמת משהו שלא ראיתי קודם. נתחיל בו: qwenFS, שישים ושישה כוכבים. מישהו לקח מודל Qwen3.</p><p>מקורות:<br/><a href="https://github.com/Balanov/shim">https://github.com/Balanov/shim</a><br/><a href="https://github.com/vixhal-baraiya/qwenFS">https://github.com/vixhal-baraiya/qwenFS</a><br/><a href="https://github.com/nethercoded/heron">https://github.com/nethercoded/heron</a><br/><a href="https://github.com/Omraj09/MacMelody">https://github.com/Omraj09/MacMelody</a><br/><a href="https://github.com/MIY-Y/eUICC-Nexus">https://github.com/MIY-Y/eUICC-Nexus</a><br/></p>]]></description>
+    </item>
+    <item>
       <title>דייג&#x27;סט בוקר 4.11 - חדשות AI</title>
       <link>https://ozlevyq.github.io/digests/</link>
       <guid isPermaLink="false">digest-2026-11-04-morning-ai</guid>
