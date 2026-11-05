@@ -10,6 +10,24 @@
     <itunes:explicit>no</itunes:explicit>
     <itunes:category text="Technology"/>
     <item>
+      <title>דייג&#x27;סט בוקר 5.11 - חדשות AI</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-11-05-morning-ai</guid>
+      <pubDate>Thu, 05 Nov 2026 06:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-11-05-morning-ai.ogg" length="2131601" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>בוקר טוב, ויש לי שתי ידיעות שמספרות איפה ה-AI באמת נמצא עכשיו: אחת על איך כותבים קוד, ואחת על איך מלמדים מכוניות לנהוג.</p><p>מקורות:<br/><a href="https://openai.com/index/openai-to-acquire-pierre">https://openai.com/index/openai-to-acquire-pierre</a><br/><a href="https://cnevpost.com/2026/11/05/baidu-apollo-world-model-ai-teach-ai-to-drive/">https://cnevpost.com/2026/11/05/baidu-apollo-world-model-ai-teach-ai-to-drive/</a><br/></p>]]></description>
+    </item>
+    <item>
+      <title>דייג&#x27;סט בוקר 5.11 - פצצות מגיטהאב</title>
+      <link>https://ozlevyq.github.io/digests/</link>
+      <guid isPermaLink="false">digest-2026-11-05-morning-gh</guid>
+      <pubDate>Thu, 05 Nov 2026 06:30:00 +0300</pubDate>
+      <enclosure url="https://ozlevyq.github.io/digests/audio/2026-11-05-morning-gh.ogg" length="2329005" type="audio/ogg"/>
+      <itunes:author>Oz Levy</itunes:author>
+      <description><![CDATA[<p>ועכשיו - פצצות מגיטהאב, ונפתח בכלי לשחקני NIKKE על ה-PC. ראשון: NIKKE-Launcher-Check.</p><p>מקורות:<br/><a href="https://github.com/MotherSphere/NIKKE-Launcher-Check">https://github.com/MotherSphere/NIKKE-Launcher-Check</a><br/><a href="https://github.com/Balanov/latch">https://github.com/Balanov/latch</a><br/><a href="https://github.com/joeseesun/qiaomu-jot">https://github.com/joeseesun/qiaomu-jot</a><br/><a href="https://github.com/tancheng33/tingo">https://github.com/tancheng33/tingo</a><br/><a href="https://github.com/neondeex/atlas-filemanager">https://github.com/neondeex/atlas-filemanager</a><br/></p>]]></description>
+    </item>
+    <item>
       <title>דייג&#x27;סט ערב 4.11 - חדשות AI</title>
       <link>https://ozlevyq.github.io/digests/</link>
       <guid isPermaLink="false">digest-2026-11-04-evening-ai</guid>
